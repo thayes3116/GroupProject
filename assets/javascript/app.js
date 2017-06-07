@@ -113,6 +113,8 @@ $(document).ready(function() {
 			  	// console.log(cityName);
 			  	
 			  	// console.log("Population: ", cityPop);
+
+			  	showScores(pop);
 			})
 
 		})
@@ -148,7 +150,8 @@ $(document).ready(function() {
     	})
 
     	// for (var i = 0; i < cities.length; i++) {
-    	// 	var name = key
+    	// 	var name = cities[i].city;
+    	// 	console.log(name);
     	// }
     }
 
