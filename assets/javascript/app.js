@@ -7,75 +7,123 @@ $(document).ready(function() {
 	var cities = [
 		{
 			'city': 'austin',
-			// 'queryURL': '',
-			// 'scoreQueryURL': ''
+			'Housing'  :  2,
+		  	'Cost of Living'  :  2,
+			'Startups'  :  5,
+			'Venture Capital'  :  4,
+			'Travel Connectivity'  :  1,
+			'Commute'  :  2,
+			'Business Freedom'  :  4,
+			'Safety'  :  3,
+			'Healthcare'  :  3,
+			'Education'  :  3,
+			'Environmental Quality ' :  4,
+			'Economy'  :  3,
+			'Taxation'  :  2,
+			'Internet Access'  :  5,
+			'Leisure & Culture ' :  3,
+			'Tolerance'  :  3,
+			'Outdoors'  :  2,
 		},
 
 		{
-			'city': 'denver'
+			'city': 'denver',
+			'Housing'  :  ,
+		  	'Cost of Living'  :  ,
+			'Startups'  :  ,
+			'Venture Capital'  :  4,
+			'Travel Connectivity'  :  1,
+			'Commute'  :  2,
+			'Business Freedom'  :  4,
+			'Safety'  :  3,
+			'Healthcare'  :  3,
+			'Education'  :  3,
+			'Environmental Quality ' :  4,
+			'Economy'  :  3,
+			'Taxation'  :  2,
+			'Internet Access'  :  5,
+			'Leisure & Culture ' :  3,
+			'Tolerance'  :  3,
+			'Outdoors'  :  2,		},
+
+		{
+			'city': 'washington-dc',
+			'response': ''
 		},
 
 		{
-			'city': 'washington-dc'
+			'city': 'seattle',
+			'response': ''
 		},
 
 		{
-			'city': 'seattle'
+			'city': 'raleigh',
+			'response': ''
 		},
 
 		{
-			'city': 'raleigh'
+			'city': 'boston',
+			'response': ''
 		},
 
 		{
-			'city': 'boston'
+			'city': 'des-moines',
+			'response': ''
 		},
 
 		{
-			'city': 'des-moines'
+			'city': 'salt-lake-city',
+			'response': ''
 		},
 
 		{
-			'city': 'salt-lake-city'
+			'city': 'colorado-springs',
+			'response': ''
 		},
 
 		{
-			'city': 'colorado-springs'
+			'city': 'boise',
+			'response': ''
 		},
 
 		{
-			'city': 'boise'
+			'city': 'nashville',
+			'response': ''
 		},
 
 		{
-			'city': 'nashville'
+			'city': 'charlotte',
+			'response': ''
 		},
 
 		{
-			'city': 'charlotte'
+			'city': 'dallas',
+			'response': ''
 		},
 
 		{
-			'city': 'dallas'
+			'city': 'san-francisco-bay-area',
+			'response': ''
 		},
 
 		{
-			'city': 'san-francisco-bay-area'
+			'city': 'madison',
+			'response': ''
 		},
 
 		{
-			'city': 'madison'
+			'city': 'houston',
+			'response': ''
 		},
 
 		{
-			'city': 'houston'
-		},
-
-		{
-			'city': 'minneapolis-saint-paul'
+			'city': 'minneapolis-saint-paul',
+			'response': ''
 		}		
 
 	]
+
+	var cityName;
 
 	for (var i = 0; i < cities.length; i++) {
 		// console.log(cities[i].city); 
@@ -108,13 +156,14 @@ $(document).ready(function() {
 			  	
 			  	var cityPop = pop.population;
 			  	
-			  	var cityName = pop.full_name;
+			  	cityName = pop.full_name;
 
 			  	// console.log(cityName);
 			  	
 			  	// console.log("Population: ", cityPop);
 
-			  	showScores(pop);
+
+			  	showScores(response);
 			})
 
 		})
@@ -129,8 +178,14 @@ $(document).ready(function() {
 	    	method: "GET"
 	    }).done(function(response) {
 	    	// console.log("response ", response);
+	    	// for (var i = 0; i < cities.length; i++) {
+
+
+	    	// cities.response[i] = response;
+	    	// console.log(cities[i]);
 
 	    	showScores(response);
+	    
 	    })
 
     // 
@@ -141,18 +196,22 @@ $(document).ready(function() {
 
 
     function showScores(response) {
+
+    	
+
     	$.each(response.categories, function(key, value) {
 
     		var out_of_5 = value.score_out_of_10 / 2;
 
     		var roundScore = Math.round(out_of_5);
-    		console.log("result ", key, value.name, " ", roundScore);
+
+    		valueName = value.name;
+    		console.log("", value.name, "", ": ", roundScore);
+    		
+
     	})
 
-    	// for (var i = 0; i < cities.length; i++) {
-    	// 	var name = cities[i].city;
-    	// 	console.log(name);
-    	// }
+
     }
 
 
