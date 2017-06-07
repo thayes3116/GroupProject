@@ -8,6 +8,10 @@
     margin-top: 25px;
 }
 
+.attBtn {
+    margin:10px;
+}
+
 body {
     display: flex;
     min-height: 100vh;
