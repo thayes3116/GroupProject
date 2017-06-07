@@ -144,7 +144,7 @@ $(document).ready(function() {
     		var out_of_5 = value.score_out_of_10 / 2;
 
     		var roundScore = Math.round(out_of_5);
-    		console.log("result ", key, roundScore);
+    		console.log("result ", key, value.name, " ", roundScore);
     	})
 
     	// for (var i = 0; i < cities.length; i++) {
