@@ -1,6 +1,7 @@
 	var cities = [
 		{
 			'city': 'austin',
+			'fullName': "Austin,Texas",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -15,6 +16,7 @@
 
 		{
 			'city': 'denver',
+			'fullName': "Denver,Colorado",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -29,6 +31,7 @@
 
 		{
 			'city': 'washington-dc',
+			'fullName': "Washington D.C.",
 			'Housing'  :  [1, 'Housing'],
 		  	'Cost of Living'  :  [1, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
