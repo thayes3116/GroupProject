@@ -1,4 +1,3 @@
-
 .submitImg {
     width: 100%;
     height: 180px;
@@ -6,6 +5,10 @@
 
 .submit {
     margin-top: 25px;
+}
+
+.attBtn {
+    margin:10px;
 }
 
 body {

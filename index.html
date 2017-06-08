@@ -5,10 +5,10 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
 
     <!-- OUR CSS -->
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
 
     <!-- OUR JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
@@ -20,15 +20,17 @@
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-</head>
 
+</head>
+<!-- MAIN -->
 <body>
 
 <!-- NAV BAR -->
 <header>
 <nav>
-    <div class="nav-wrapper blue lighten-1">
+    <div class="nav-wrapper green darken-3">
         <div class="container">
             <div class="row">
                 <div class="col s2">
@@ -41,14 +43,15 @@
 </header>
 
 <div class="section no-pad-bot" id="index-banner">
+    <br>
 </div>
 
 
 <!-- MAIN -->
 <main>
-<div class="container text-alling center">
+<div class="container text-alling center green lighten-5 z-depth-5">
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 questions">
             <div id="questionDiv">
             </div>
             <div id="questionnaire">
@@ -59,15 +62,12 @@
     <div class="row">
         <div class="col s12" id="initialPrompt">
 
-            <br>
-            <br>
-
             <h2 class="header col s12 light">Moving can be difficult. Let's decide where to live together!</h2>
             <h2 class="header col s12 light">First, enter your name:</h2>
 
             <div class="col s12">
                 <br>
-            <img class="submitImg" src="img/submit.jpg">
+            <img class="submitImg z-depth-4" src="img/submit.jpg">
             </div>
 
             <div class="row">
@@ -80,21 +80,19 @@
                 <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
-               
+
             </div>
         </div>
     </div>
 </div>
 </div>
-<div id = "button">
-</div>
 </main>
 
 <!-- FOOTER -->
-<footer class="page-footer blue lighten-1">
+<footer class="page-footer green darken-3">
     <div class="footer-copyright">
         <div class="container text-allign center">
-            © 2017 Copyright Text
+            &copy; We Want Your Money - 2017 Copyright
         </div>
     </div>
 </footer>
