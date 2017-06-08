@@ -11,6 +11,12 @@
     margin:10px;
 }
 
+#map {
+    width: auto;
+    height: 300px;
+    background-color: grey;
+}
+
 body {
     display: flex;
     min-height: 100vh;

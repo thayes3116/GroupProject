@@ -54,9 +54,9 @@ window.onload = function () {
 
     // API GOOGLE MAPS
     function initMap() {
-        var city = {lat: 28.538336, lng: -81.379234};
+        var city = {lat: 28.537529, lng: -81.379781};
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 8,
+            zoom: 12,
             center: city
         });
         var marker = new google.maps.Marker({
