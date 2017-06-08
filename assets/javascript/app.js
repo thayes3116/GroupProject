@@ -1,5 +1,7 @@
 var attributesChosen = [];
 $(document).ready(function() {
+
+	$("#buttons").hide();
 	var queryURL1;
 
 	var queryURL2;
@@ -284,9 +286,11 @@ window.onload = function () {
         $(this).hide();
         if (numberOfClicks === 3) {
             $('#questionnaire').hide();
-            showCharts();
+            $("#buttons").show();
+         
         }
         console.log(attributesChosen);
+        showCharts();
     });
 };
 
@@ -346,8 +350,8 @@ window.onload = function () {
 	// 
     }
 
-    // var attributesChosen = ["Housing", "Commute", "Safety"]
-
+	    // var attributesChosen = ["Housing", "Commute", "Safety"]
+	    showCharts();
 // for (var i = 0; i < cities.length; i++) {
 	function showCharts(){
     switch (attributesChosen[0]) {
@@ -544,8 +548,8 @@ window.onload = function () {
                 var citybutton = $('<button>')
                 .attr("data-name", cities[i].city)
                 .text(cities[i].city)
-                $("#buttons").append(citybutton); 
-                 console.log(cities[i].Housing[i]);   
+                $("#initialPrompt").append(citybutton); 
+                 // console.log(cities[i].Housing[i]);   
             }
         }       
     }
@@ -555,7 +559,8 @@ window.onload = function () {
                 var citybutton = $('<button>')
                 .attr("data-name", cities[i].city)
                 .text(cities[i].city)
-                $("#buttons").append(citybutton);
+                $("body").append(citybutton);
+
             }
         }       
     }
