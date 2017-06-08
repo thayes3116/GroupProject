@@ -1,18 +1,4 @@
-var attributesChosen = [];
-$(document).ready(function() {
-	var queryURL1;
-
-	var queryURL2;
-
-
-
-	var cityName;
-	// **** SAM Y MARIO **** //
-var userName;
-var categories = ['Housing', 'Cost of Living', 'Education', 'Public Safety', "Outdoors Accessibility", "Culture & Leisure", "Taxation", 'Economy', 'Environment Quality'];
-
-
-var numberOfClicks = 0;
+var categories = ['Housing', 'Cost of Living', 'Education', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
 window.onload = function () {
 
@@ -105,6 +91,7 @@ window.onload = function () {
 	    
 	    })
 
+
     // 
 	// end for loop
 	// 
@@ -116,10 +103,39 @@ window.onload = function () {
    	
    		function showCity0List(){ 
         	for(var i = 0; i < cities.length; i++){
-            	if(cities[i][attributesChosen[0]][0] >= 3){
+            	if(cities[i][attributesChosen[0]][0] >= 4){
+                    var APIKey = "166a433c57516f51dfab1f7edaed8413";
+ 
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
+      "q="+cities[i]+"&units=imperial&appid=" + APIKey;
+
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      
+      .done(function(response) {
+
+        console.log(queryURL);
+
+        console.log(response);
+        console.log(response.coord.lat);
+        console.log(response.coord.lon);
+       /* $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+        $(".wind").html("Wind Speed: " + response.wind.speed);
+        $(".humidity").html("Humidity: " + response.main.humidity);
+        $(".temp").html("Temperature (F) " + response.main.temp);*/
+
+        // Log the data in the console as well
+        console.log("Wind Speed: " + response.wind.speed);
+        console.log("Humidity: " + response.main.humidity);
+        console.log("Temperature (F): " + response.main.temp);
+      });
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
+                    citybutton.addClass(cityBtn);
                 	$("#first").append(citybutton); 
                     $('#name').html(userName);
                     $('#firstAttribute').html(attributesChosen[0]);
@@ -130,10 +146,11 @@ window.onload = function () {
     	function showCity1List(){ 
         	for(var i = 0; i < cities.length; i++){
         		console.log(attributesChosen[1])
-            	if(cities[i][attributesChosen[1]][0] >= 3){
+            	if(cities[i][attributesChosen[1]][0] >= 4){
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
+                    citybutton.addClass(cityBtn);
                 	$("#second").append(citybutton); 
                     $('#name').html(userName);
                     $('#secondAttribute').html([attributesChosen[1]]);
@@ -143,10 +160,11 @@ window.onload = function () {
     	}
     	function showCity2List(){ 
         	for(var i = 0; i < cities.length; i++){
-            	if(cities[i][attributesChosen[2]][0] >= 3){
+            	if(cities[i][attributesChosen[2]][0] >= 4){
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
+                    citybutton.addClass(cityBtn);
                 	$("body").append(citybutton);
                     $("#third").append(citybutton); 
                     $('#name').html(userName);
