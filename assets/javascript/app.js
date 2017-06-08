@@ -1,22 +1,20 @@
 var attributesChosen = [];
 $(document).ready(function() {
 	var queryURL1;
-
 	var queryURL2;
-
-
-
 	var cityName;
+
 	// **** SAM Y MARIO **** //
 var userName;
 var categories = ['Housing', 'Cost of Living', 'Education', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
 
 var numberOfClicks = 0;
+var map;
 
 window.onload = function () {
 
-   // SUBMIT BTN on click hidden:
+    // SUBMIT BTN on click hidden:
     $('#userNameSubmit').on('click', function (event) {
         event.preventDefault();
         userName = $('#userNameInput').val().trim();
@@ -50,17 +48,41 @@ window.onload = function () {
             showCity1List();
             showCity2List();
         }
+
         console.log(attributesChosen);
-    });
+	});
+
+    // API GOOGLE MAPS
+    function initMap() {
+        var city = {lat: 28.538336, lng: -81.379234};
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: city
+        });
+        var marker = new google.maps.Marker({
+            position: city,
+            map: map
+        });
+    }
+
+    // SHOW Google Maps
+    var card = $('<div id="map">');
+    $('#map').append(map);
+
+    initMap();
+
+    // TRIGGER MODAL city information
+    $(document).ready(function(){
+
+        $('.modal').modal();
+	});
 };
-
-
 // *****   SAM Y MARIO ****  ////
 
 	for (var i = 0; i < cities.length; i++) {
 		// console.log(cities[i].city); 
 		// API url that grabs geoname API
-		queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/"	
+		queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/";
 		// console.log(queryURL1);
 		
 		$.ajax({
@@ -84,7 +106,7 @@ window.onload = function () {
 			  	// console.log("Population: ", cityPop);
 			  	showScores(response);
 			})
-		})
+		});
 
 	    // API url that grabs the scores from the city
 	    // 
@@ -97,10 +119,8 @@ window.onload = function () {
 	    	// console.log("response ", response);
 	    	// for (var i = 0; i < cities.length; i++) {
 
-
 	    	// cities.response[i] = response;
 	    	// console.log(cities[i]);
-
 	    	showScores(response);
 	    
 	    })
@@ -111,15 +131,15 @@ window.onload = function () {
     }
     //beginning show city loop
 
+
     //console.log(cities[0][attributesChosen[0]][0])
     //console.log(cities[0][attributesChosen[0]][1])
-   	
-   	
    		function showCity0List(){ 
         	for(var i = 0; i < cities.length; i++){
             	if(cities[i][attributesChosen[0]][0] >= 3){
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
+
                 	.text(cities[i].city)
                 	$("#first").append(citybutton); 
                     $('#name').html(userName);
@@ -130,7 +150,7 @@ window.onload = function () {
     	}
     	function showCity1List(){ 
         	for(var i = 0; i < cities.length; i++){
-        		console.log(attributesChosen[1])
+        		console.log(attributesChosen[1]);
             	if(cities[i][attributesChosen[1]][0] >= 3){
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
@@ -152,34 +172,26 @@ window.onload = function () {
                     $("#third").append(citybutton); 
                     $('#name').html(userName);
                     $('#thirdAttribute').html([attributesChosen[2]]);
-                 	console.log(cities[i][attributesChosen[2]][1]);   
+                  	console.log(cities[i][attributesChosen[2]][1]);   
            		}
         	}               
     	}
-
     //end of functions to showcity lists
 
-
     function showScores(response) {
-
-    	
-
     	$.each(response.categories, function(key, value) {
-
     		var out_of_5 = value.score_out_of_10 / 2;
-
     		var roundScore = Math.round(out_of_5);
-
     		valueName = value.name;
     		// console.log("", value.name, "", ": ", roundScore);
-    		
-
     	})
-
     }
-	
-	
-})
+
+    // GOOGLE MAPS //
+
+
+
+});
    
 	
 	
