@@ -284,7 +284,9 @@ window.onload = function () {
         $(this).hide();
         if (numberOfClicks === 3) {
             $('#questionnaire').hide();
-            showCharts();
+            showCity0List();
+            showCity1List();
+            showCity2List();
         }
         console.log(attributesChosen);
     });
@@ -345,300 +347,46 @@ window.onload = function () {
 	// end for loop
 	// 
     }
+    //beginning show city loop
+    console.log(cities[0][attributesChosen[0]][0])
+    console.log(cities[0][attributesChosen[0]][1])
+   	
+   	
+   		function showCity0List(){ 
+        	for(var i = 0; i < cities.length; i++){
+            	if(cities[i][attributesChosen[0]][0] >= 3){
+                	var citybutton = $('<button>')
+                	.attr("data-name", cities[i].city)
+                	.text(cities[i].city)
+                	$("body").append(citybutton); 
+                 	console.log(cities[i][attributesChosen[0]][1]);   
+           		}
+        	}               
+    	}
+    	function showCity1List(){ 
+        	for(var i = 0; i < cities.length; i++){
+        		console.log(attributesChosen[1])
+            	if(cities[i][attributesChosen[1]][0] >= 3){
+                	var citybutton = $('<button>')
+                	.attr("data-name", cities[i].city)
+                	.text(cities[i].city)
+                	$("body").append(citybutton); 
+                 	console.log(cities[i][attributesChosen[1]][1]);   
+           		}
+        	}               
+    	}
+    	function showCity2List(){ 
+        	for(var i = 0; i < cities.length; i++){
+            	if(cities[i][attributesChosen[2]][0] >= 3){
+                	var citybutton = $('<button>')
+                	.attr("data-name", cities[i].city)
+                	.text(cities[i].city)
+                	$("body").append(citybutton); 
+                 	console.log(cities[i][attributesChosen[2]][1]);   
+           		}
+        	}               
+    	}
 
-    // var attributesChosen = ["Housing", "Commute", "Safety"]
-
-// for (var i = 0; i < cities.length; i++) {
-	function showCharts(){
-    switch (attributesChosen[0]) {
-    	case cities[0].Housing[1]:
-    		// $("#butotns").empty()
-    		showHousingList();
-    		 console.log("works");
-    		break;
-
-    	case cities[0]["Cost of Living"][1]:
-    		// $("#butotns").empty()
-    		showCostofLivingList();
-    		// console.log("works");
-    		break; 
-
-    	case cities[0].Commute[1]:
-    		// $("#butotns").empty()
-    		showCommuteList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Safety[1]:
-    		// $("#butotns").empty()
-    		showSafetyList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Education[1]:
-    		// $("#butotns").empty()
-    		showEducationList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0]["Environmental Quality"][1]:
-    		// $("#butotns").empty()
-    		showEnvironmentalQualityList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Economy[1]:
-    		// $("#butotns").empty()
-    		showEconomyList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Taxation[1]:
-    		// $("#butotns").empty()
-    		showTaxationList();
-    		// console.log("works");
-    		break;	
-
-    	case cities[0]["Leisure & Culture"][1]:
-    		// $("#butotns").empty()
-    		showLeisureCultureList();
-    		// console.log("works");
-    		break;				
-
-    	case cities[0].Outdoors[1]:
-    		// $("#butotns").empty()
-    		showOutdoorsList();
-    		// console.log("works");
-    		break;			
-    }
-    switch (attributesChosen[1]) {
-    	case cities[0].Housing[1]:
-    		// $("#butotns").empty()
-    		showHousingList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0]["Cost of Living"][1]:
-    		// $("#butotns").empty()
-    		showCostofLivingList();
-    		// console.log("works");
-    		break; 
-
-    	case cities[0].Commute[1]:
-    		// $("#butotns").empty()
-    		showCommuteList();
-    		 console.log("works");
-    		break;
-
-    	case cities[0].Safety[1]:
-    		// $("#butotns").empty()
-    		showSafetyList();
-    		console.log("works");
-    		break;
-
-    	case cities[0].Education[1]:
-    		// $("#butotns").empty()
-    		showEducationList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0]["Environmental Quality"][1]:
-    		// $("#butotns").empty()
-    		showEnvironmentalQualityList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Economy[1]:
-    		// $("#butotns").empty()
-    		showEconomyList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Taxation[1]:
-    		// $("#butotns").empty()
-    		showTaxationList();
-    		// console.log("works");
-    		break;	
-
-    	case cities[0]["Leisure & Culture"][1]:
-    		// $("#butotns").empty()
-    		showLeisureCultureList();
-    		// console.log("works");
-    		break;				
-
-    	case cities[0].Outdoors[1]:
-    		// $("#butotns").empty()
-    		showOutdoorsList();
-    		// console.log("works");
-    		break;			
-    }
-    switch (attributesChosen[2]) {
-    	case cities[0].Housing[1]:
-    		// $("#butotns").empty()
-    		showHousingList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0]["Cost of Living"][1]:
-    		// $("#butotns").empty()
-    		showCostofLivingList();
-    		// console.log("works");
-    		break; 
-
-    	case cities[0].Commute[1]:
-    		// $("#butotns").empty()
-    		showCommuteList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Safety[1]:
-    		// $("#butotns").empty()
-    		showSafetyList();
-    		console.log("works");
-    		break;
-
-    	case cities[0].Education[1]:
-    		// $("#butotns").empty()
-    		showEducationList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0]["Environmental Quality"][1]:
-    		// $("#butotns").empty()
-    		showEnvironmentalQualityList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Economy[1]:
-    		// $("#butotns").empty()
-    		showEconomyList();
-    		// console.log("works");
-    		break;
-
-    	case cities[0].Taxation[1]:
-    		// $("#butotns").empty()
-    		showTaxationList();
-    		// console.log("works");
-    		break;	
-
-    	case cities[0]["Leisure & Culture"][1]:
-    		// $("#butotns").empty()
-    		showLeisureCultureList();
-    		// console.log("works");
-    		break;				
-
-    	case cities[0].Outdoors[1]:
-    		// $("#butotns").empty()
-    		showOutdoorsList();
-    		// console.log("works");
-    		break;			
-    }
- }
-    // 
-    //beginnings of functions to showcity lists
-
-    function showHousingList(){
-    		
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Housing[0] >= 3){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton); 
-                 console.log(cities[i].Housing[i]);   
-            }
-        }       
-    }
-    function showCostofLivingList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i]["Cost of Living"] >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }       
-    }
-    function showCommuteList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Commute >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }        
-    }
-    function showSafetyList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Safety >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }        
-    }
-    function showEducationList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Education >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }       
-    }
-    function showEnvironmentalQualityList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i]["Environmental Quality "] >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }       
-    }
-    function showEconomyList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Economy >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }
-    }
-    function showTaxationList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Taxation >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }        
-    }
-    function showLeisureCultureList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i]["Leisure & Culture "] >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }        
-    }
-    function showOutdoorsList(){
-        for(var i = 0; i < cities.length; i++){
-            if(cities[i].Outdoors >= 1){
-                var citybutton = $('<button>')
-                .attr("data-name", cities[i].city)
-                .text(cities[i].city)
-                $("#buttons").append(citybutton);
-            }
-        }       
-    }
     //end of functions to showcity lists
 
 
