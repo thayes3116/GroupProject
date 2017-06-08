@@ -1,4 +1,5 @@
-//$(document).ready(function() {
+var attributesChosen = [];
+$(document).ready(function() {
 	var queryURL1;
 
 	var queryURL2;
@@ -11,10 +12,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [3, 'Safety'], 
 			'Education'  :  [3, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [3, 'Leisure & Culture '],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
 
@@ -25,10 +26,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [3, 'Safety'],
 			'Education'  :  [2, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [3, 'Leisure & Culture '],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors']
 		},
 
@@ -39,10 +40,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [1, 'Safety'],
 			'Education'  :  [2, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [5, 'Leisure & Culture '],
+			'Leisure & Culture' :  [5, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
 
@@ -53,10 +54,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [3, 'Safety'],
 			'Education'  :  [3, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [4, 'Leisure & Culture '],
+			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors']
 		},
 
@@ -67,10 +68,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [3, 'Safety'],
 			'Education'  :  [4, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [3, 'Leisure & Culture '],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
 
@@ -81,10 +82,10 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [4, 'Safety'],
 			'Education'  :  [4, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [4, 'Leisure & Culture '],
+			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
 
@@ -95,10 +96,10 @@
 			'Commute'  :  [1, 'Commute'],
 			'Safety'  :  [3, 'Safety'],
 			'Education'  :  [2, 'Education'],
-			'Environmental Quality ' :  [4, 'Environmental Quality '],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [3, 'Leisure & Culture '],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
 
@@ -109,151 +110,151 @@
 			'Commute'  :  [2, 'Commute'],
 			'Safety'  :  [3, 'Safety'],
 			'Education'  :  [2, 'Education'],
-			'Environmental Quality ' :  [3, 'Environmental Quality '],
+			'Environmental Quality' :  [3, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
-			'Leisure & Culture ' :  [3, 'Leisure & Culture '],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
 
 		{
 			'city': 'colorado-springs',
-			'Housing'  :  2,
-		  	'Cost of Living'  :  0,
-			'Commute'  :  1,
-			'Safety'  :  3,
-			'Education'  :  2,
-			'Environmental Quality ' :  4,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  2,
-			'Outdoors'  :  4,
+			'Housing'  :  [2, 'Housing'],
+		  	'Cost of Living'  :  [0, 'Cost of Living'],
+			'Commute'  :  [1, 'Commute'],
+			'Safety'  :  [3, 'Safety'], 
+			'Education'  :  [2, 'Education'], 
+			'Environmental Quality' :  [4, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'], 
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [2, 'Leisure & Culture'],
+			'Outdoors'  :  [4, 'Outdoors']
 		},
 
 		{
 			'city': 'boise',
-			'Housing'  :  4,
-		  	'Cost of Living'  :  3,
-			'Commute'  :  1,
-			'Safety'  :  3,
-			'Education'  :  2,
-			'Environmental Quality ' :  4,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  2,
-			'Outdoors'  :  3,
+			'Housing'  :  [4, 'Housing'],
+		  	'Cost of Living'  :  [3, 'Cost of Living'],
+			'Commute'  :  [1, 'Commute'],
+			'Safety'  :  [3, 'Safety'],
+			'Education'  :  [2, 'Education'],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [2, 'Leisure & Culture'],
+			'Outdoors'  :  [3, 'Outdoors']
 		},
 
 		{
 			'city': 'nashville',
-			'Housing'  :  2,
-		  	'Cost of Living'  :  2,
-			'Commute'  :  2,
-			'Safety'  :  3,
-			'Education'  :  2,
-			'Environmental Quality ' :  3,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  4,
-			'Outdoors'  :  1,
+			'Housing'  :  [2, 'Housing'],
+		  	'Cost of Living'  :  [2, 'Cost of Living'],
+			'Commute'  :  [2, 'Commute'],
+			'Safety'  :  [3, 'Safety'],
+			'Education'  :  [2, 'Education'],
+			'Environmental Quality' :  [3, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [4, 'Leisure & Culture'],
+			'Outdoors'  :  [1, 'Outdoors']
 		},
 
 		{
 			'city': 'charlotte',
 			'Housing'  :  3,
 		  	'Cost of Living'  :  2,
-			'Commute'  :  2,
-			'Safety'  :  3,
-			'Education'  :  2,
-			'Environmental Quality ' :  4,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  3,
-			'Outdoors'  :  1,
+			'Commute'  :  [2, 'Commute'],
+			'Safety'  :  [3, 'Safety'],
+			'Education'  :  [2, 'Education'],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
+			'Outdoors'  :  [1, 'Outdoors']
 		},
 
 		{
 			'city': 'dallas',
-			'Housing'  :  3,
-		  	'Cost of Living'  :  3,
-			'Commute'  :  2,
-			'Safety'  :  2,
-			'Education'  :  2,
-			'Environmental Quality ' :  3,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  4,
-			'Outdoors'  :  2,
+			'Housing'  :  [3, 'Housing'],
+		  	'Cost of Living'  :  [3, 'Cost of Living'],
+			'Commute'  :  [2, 'Commute'],
+			'Safety'  :  [2, 'Safety'],
+			'Education'  :  [2, 'Education'],
+			'Environmental Quality' :  [3, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [4, 'Leisure & Culture'],
+			'Outdoors'  :  [2, 'Outdoors']
 		},
 
 		{
 			'city': 'san-francisco-bay-area',
-			'Housing'  :  1,
-		  	'Cost of Living'  :  1,
-			'Commute'  :  2,
-			'Safety'  :  3,
-			'Education'  :  4,
-			'Environmental Quality ' :  3,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  5,
-			'Outdoors'  :  4,
+			'Housing'  :  [1, 'Housing'],
+		  	'Cost of Living'  :  [1, 'Cost of Living'],
+			'Commute'  :  [2, 'Commute'],
+			'Safety'  :  [3, 'Safety'],
+			'Education'  :  [4, 'Education'],
+			'Environmental Quality' :  [3, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [5, 'Leisure & Culture'],
+			'Outdoors'  :  [4, 'Outdoors']
 		},
 
 		{
 			'city': 'madison',
-			'Housing'  :  3,
-		  	'Cost of Living'  :  3,
-			'Commute'  :  3,
-			'Safety'  :  4,
-			'Education'  :  3,
-			'Environmental Quality ' :  5,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  2,
-			'Outdoors'  :  2,
+			'Housing'  :  [3, 'Housing'],
+		  	'Cost of Living'  :  [3, 'Cost of Living'], 
+			'Commute'  :  [3, 'Commute'],
+			'Safety'  :  [4, 'Safety'],
+			'Education'  :  [3, 'Education'],
+			'Environmental Quality' :  [5, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [2, 'Leisure & Culture'],
+			'Outdoors'  :  [2, 'Outdoors']
 		},
 
 		{
 			'city': 'houston',
-			'Housing'  :  3,
-		  	'Cost of Living'  :  3,
-			'Commute'  :  2,
-			'Safety'  :  1,
-			'Education'  :  2,
-			'Environmental Quality ' :  3,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  4,
-			'Outdoors'  :  3,
+			'Housing'  :  [3, 'Housing'],
+		  	'Cost of Living'  :  [3, 'Cost of Living'],
+			'Commute'  :  [2,'Commute'],
+			'Safety'  :  [1, 'Safety'],
+			'Education'  :  [2, 'Education'],
+			'Environmental Quality' :  [3, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [4, 'Leisure & Culture'],
+			'Outdoors'  :  [3, 'Outdoors']
 		},
 
 		{
 			'city': 'minneapolis-saint-paul',
-			'Housing'  :  3,
-		  	'Cost of Living'  :  2,
-			'Commute'  :  2,
-			'Safety'  :  3,
-			'Education'  :  3,
-			'Environmental Quality ' :  4,
-			'Economy'  :  3,
-			'Taxation'  :  2,
-			'Leisure & Culture ' :  3,
-			'Outdoors'  :  3,
+			'Housing'  :  [3, 'Housing'],
+		  	'Cost of Living'  :  [2,'Cost of Living'],
+			'Commute'  :  [2, 'Commute'],
+			'Safety'  :  [3, 'Safety'],
+			'Education'  :  [3, 'Education'],
+			'Environmental Quality' :  [4, 'Environmental Quality'],
+			'Economy'  :  [3, 'Economy'],
+			'Taxation'  :  [2, 'Taxation'],
+			'Leisure & Culture' :  [3, 'Leisure & Culture'],
+			'Outdoors'  :  [3, 'Outdoors']
 		}		
 	];
 
 	var cityName;
 	// **** SAM Y MARIO **** //
 var userName;
-var categories = ['Housing', 'Cost of Living', 'Education', 'Public Safety', "Outdoors Accessibility", "Culture and Leisure", "Taxation", 'Economy', 'Environment Quality'];
+var categories = ['Housing', 'Cost of Living', 'Education', 'Public Safety', "Outdoors Accessibility", "Culture & Leisure", "Taxation", 'Economy', 'Environment Quality'];
 
-var attributesChosen = [];
+
 var numberOfClicks = 0;
 
 window.onload = function () {
 
-   // SUBMIT BTN on click hidde:
+   // SUBMIT BTN on click hidden:
     $('#userNameSubmit').on('click', function (event) {
         event.preventDefault();
         userName = $('#userNameInput').val().trim();
@@ -273,9 +274,22 @@ window.onload = function () {
             $('#questionnaire').append(categoryButton);
         }
     }
-
-   
+    // GRAB 3 BTN OPTIONS store in var attributesChosen[]:
+    $('#questionnaire').on('click','.attributes', function(){
+       var dataName = $(this).data('category');
+        console.log(dataName);
+        attributesChosen.push(dataName);
+        numberOfClicks++;
+        console.log(numberOfClicks)
+        $(this).hide();
+        if (numberOfClicks === 3) {
+            $('#questionnaire').hide();
+            showCharts();
+        }
+        console.log(attributesChosen);
+    });
 };
+
 
 // *****   SAM Y MARIO ****  ////
 
@@ -332,21 +346,194 @@ window.onload = function () {
 	// 
     }
 
-    var attributesChosen = ["Housing", "Something"]
+    // var attributesChosen = ["Housing", "Commute", "Safety"]
 
 // for (var i = 0; i < cities.length; i++) {
-	
+	function showCharts(){
     switch (attributesChosen[0]) {
+    	case cities[0].Housing[1]:
+    		// $("#butotns").empty()
+    		showHousingList();
+    		 console.log("works");
+    		break;
+
+    	case cities[0]["Cost of Living"][1]:
+    		// $("#butotns").empty()
+    		showCostofLivingList();
+    		// console.log("works");
+    		break; 
+
+    	case cities[0].Commute[1]:
+    		// $("#butotns").empty()
+    		showCommuteList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Safety[1]:
+    		// $("#butotns").empty()
+    		showSafetyList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Education[1]:
+    		// $("#butotns").empty()
+    		showEducationList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0]["Environmental Quality"][1]:
+    		// $("#butotns").empty()
+    		showEnvironmentalQualityList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Economy[1]:
+    		// $("#butotns").empty()
+    		showEconomyList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Taxation[1]:
+    		// $("#butotns").empty()
+    		showTaxationList();
+    		// console.log("works");
+    		break;	
+
+    	case cities[0]["Leisure & Culture"][1]:
+    		// $("#butotns").empty()
+    		showLeisureCultureList();
+    		// console.log("works");
+    		break;				
+
+    	case cities[0].Outdoors[1]:
+    		// $("#butotns").empty()
+    		showOutdoorsList();
+    		// console.log("works");
+    		break;			
+    }
+    switch (attributesChosen[1]) {
     	case cities[0].Housing[1]:
     		// $("#butotns").empty()
     		showHousingList();
     		// console.log("works");
     		break;
 
-    	case :
-    		
+    	case cities[0]["Cost of Living"][1]:
+    		// $("#butotns").empty()
+    		showCostofLivingList();
+    		// console.log("works");
+    		break; 
+
+    	case cities[0].Commute[1]:
+    		// $("#butotns").empty()
+    		showCommuteList();
+    		 console.log("works");
+    		break;
+
+    	case cities[0].Safety[1]:
+    		// $("#butotns").empty()
+    		showSafetyList();
+    		console.log("works");
+    		break;
+
+    	case cities[0].Education[1]:
+    		// $("#butotns").empty()
+    		showEducationList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0]["Environmental Quality"][1]:
+    		// $("#butotns").empty()
+    		showEnvironmentalQualityList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Economy[1]:
+    		// $("#butotns").empty()
+    		showEconomyList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Taxation[1]:
+    		// $("#butotns").empty()
+    		showTaxationList();
+    		// console.log("works");
+    		break;	
+
+    	case cities[0]["Leisure & Culture"][1]:
+    		// $("#butotns").empty()
+    		showLeisureCultureList();
+    		// console.log("works");
+    		break;				
+
+    	case cities[0].Outdoors[1]:
+    		// $("#butotns").empty()
+    		showOutdoorsList();
+    		// console.log("works");
+    		break;			
     }
-// }
+    switch (attributesChosen[2]) {
+    	case cities[0].Housing[1]:
+    		// $("#butotns").empty()
+    		showHousingList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0]["Cost of Living"][1]:
+    		// $("#butotns").empty()
+    		showCostofLivingList();
+    		// console.log("works");
+    		break; 
+
+    	case cities[0].Commute[1]:
+    		// $("#butotns").empty()
+    		showCommuteList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Safety[1]:
+    		// $("#butotns").empty()
+    		showSafetyList();
+    		console.log("works");
+    		break;
+
+    	case cities[0].Education[1]:
+    		// $("#butotns").empty()
+    		showEducationList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0]["Environmental Quality"][1]:
+    		// $("#butotns").empty()
+    		showEnvironmentalQualityList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Economy[1]:
+    		// $("#butotns").empty()
+    		showEconomyList();
+    		// console.log("works");
+    		break;
+
+    	case cities[0].Taxation[1]:
+    		// $("#butotns").empty()
+    		showTaxationList();
+    		// console.log("works");
+    		break;	
+
+    	case cities[0]["Leisure & Culture"][1]:
+    		// $("#butotns").empty()
+    		showLeisureCultureList();
+    		// console.log("works");
+    		break;				
+
+    	case cities[0].Outdoors[1]:
+    		// $("#butotns").empty()
+    		showOutdoorsList();
+    		// console.log("works");
+    		break;			
+    }
+ }
     // 
     //beginnings of functions to showcity lists
 
@@ -358,13 +545,11 @@ window.onload = function () {
                 .attr("data-name", cities[i].city)
                 .text(cities[i].city)
                 $("#buttons").append(citybutton); 
-                // console.log(cities[i].Housing[i]);   
+                 console.log(cities[i].Housing[i]);   
             }
-
-        }
-       
+        }       
     }
-    function showCostofLivingCityList(){
+    function showCostofLivingList(){
         for(var i = 0; i < cities.length; i++){
             if(cities[i]["Cost of Living"] >= 1){
                 var citybutton = $('<button>')
@@ -372,8 +557,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }       
     }
     function showCommuteList(){
         for(var i = 0; i < cities.length; i++){
@@ -383,8 +567,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }        
     }
     function showSafetyList(){
         for(var i = 0; i < cities.length; i++){
@@ -394,8 +577,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }        
     }
     function showEducationList(){
         for(var i = 0; i < cities.length; i++){
@@ -405,8 +587,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }       
     }
     function showEnvironmentalQualityList(){
         for(var i = 0; i < cities.length; i++){
@@ -416,8 +597,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }       
     }
     function showEconomyList(){
         for(var i = 0; i < cities.length; i++){
@@ -428,7 +608,6 @@ window.onload = function () {
                 $("#buttons").append(citybutton);
             }
         }
-        
     }
     function showTaxationList(){
         for(var i = 0; i < cities.length; i++){
@@ -438,8 +617,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }        
     }
     function showLeisureCultureList(){
         for(var i = 0; i < cities.length; i++){
@@ -449,8 +627,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }        
     }
     function showOutdoorsList(){
         for(var i = 0; i < cities.length; i++){
@@ -460,8 +637,7 @@ window.onload = function () {
                 .text(cities[i].city)
                 $("#buttons").append(citybutton);
             }
-        }
-        
+        }       
     }
     //end of functions to showcity lists
 
@@ -485,7 +661,8 @@ window.onload = function () {
     }
 	
 	
-//})
+})
+   
 	
 	
 
