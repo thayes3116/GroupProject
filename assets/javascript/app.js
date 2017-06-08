@@ -54,14 +54,9 @@ window.onload = function () {
 
     // API GOOGLE MAPS
     function initMap() {
-        var city = {lat: 28.537529, lng: -81.379781};
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: city
-        });
-        var marker = new google.maps.Marker({
-            position: city,
-            map: map
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
         });
     }
 
@@ -74,7 +69,8 @@ window.onload = function () {
     // TRIGGER MODAL city information
     $(document).ready(function(){
 
-        $('.modal').modal();
+        $('.modal').modal()
+
 	});
 };
 // *****   SAM Y MARIO ****  ////
