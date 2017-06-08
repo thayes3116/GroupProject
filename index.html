@@ -20,6 +20,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
+    <script type="text/javascript" src="assets/javascript/citylist.js"></script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
@@ -34,7 +35,7 @@
 <header>
 <nav>
     <div class="nav-wrapper green darken-3">
-        <div class="container">
+        <div class="container" id = "maincontainer">
             <div class="row">
                 <div class="col s2">
                     <a href="#" class="brand-logo">Logo</a>
@@ -68,8 +69,8 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <div id="map"></div>
             <h4>My City</h4>
+            <div id="map"></div>
             <p>Orlando belong to Mickey</p>
         </div>
         <div class="modal-footer">
@@ -100,9 +101,23 @@
                 <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
-
+			
             </div>
         </div>
+    </div>
+    <div class="row">
+    	<div class="col s12">
+    		
+    		<span class="charts" id="first">
+    		<h2 id="firstAttribute"></h2>
+    		</span>
+    		<span class="charts" id="second">
+    		<h2 id="secondAttribute"></h2>
+    		</span>
+    		<span class="charts" id="third">
+    		<h2 id="thirdAttribute"></h2>
+    		</span>
+    	</div>
     </div>
 </div>
 </div>
