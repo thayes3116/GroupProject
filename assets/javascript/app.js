@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var cityName;
 	// **** SAM Y MARIO **** //
 var userName;
-var categories = ['Housing', 'Cost of Living', 'Education', 'Public Safety', "Outdoors Accessibility", "Culture & Leisure", "Taxation", 'Economy', 'Environment Quality'];
+var categories = ['Housing', 'Cost of Living', 'Education', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
 
 var numberOfClicks = 0;
@@ -110,6 +110,7 @@ window.onload = function () {
 	// 
     }
     //beginning show city loop
+
     //console.log(cities[0][attributesChosen[0]][0])
     //console.log(cities[0][attributesChosen[0]][1])
    	
