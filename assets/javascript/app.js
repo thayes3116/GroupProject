@@ -110,8 +110,8 @@ window.onload = function () {
 	// 
     }
     //beginning show city loop
-    console.log(cities[0][attributesChosen[0]][0])
-    console.log(cities[0][attributesChosen[0]][1])
+    //console.log(cities[0][attributesChosen[0]][0])
+    //console.log(cities[0][attributesChosen[0]][1])
    	
    	
    		function showCity0List(){ 
@@ -120,7 +120,9 @@ window.onload = function () {
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
-                	$("body").append(citybutton); 
+                	$("#first").append(citybutton); 
+                    $('#name').html(userName);
+                    $('#firstAttribute').html(attributesChosen[0]);
                  	console.log(cities[i][attributesChosen[0]][1]);   
            		}
         	}               
@@ -132,7 +134,9 @@ window.onload = function () {
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
-                	$("body").append(citybutton); 
+                	$("#second").append(citybutton); 
+                    $('#name').html(userName);
+                    $('#secondAttribute').html([attributesChosen[1]]);
                  	console.log(cities[i][attributesChosen[1]][1]);   
            		}
         	}               
@@ -143,7 +147,10 @@ window.onload = function () {
                 	var citybutton = $('<button>')
                 	.attr("data-name", cities[i].city)
                 	.text(cities[i].city)
-                	$("body").append(citybutton); 
+                	$("body").append(citybutton);
+                    $("#third").append(citybutton); 
+                    $('#name').html(userName);
+                    $('#thirdAttribute').html([attributesChosen[2]]);
                  	console.log(cities[i][attributesChosen[2]][1]);   
            		}
         	}               
