@@ -21,7 +21,7 @@
         map;
 
     $(document).ready(function() {
-
+         // $("#mainBox1").hide();
         // 
         //Capture usersName on submit button click
         //Hide name input prompt
@@ -33,6 +33,7 @@
 
             userName = $('#userNameInput').val().trim();
             
+            $('.name').html("Hi, " + userName)
             $('#initialPrompt').hide();
             
             fireQuestionnaire();
