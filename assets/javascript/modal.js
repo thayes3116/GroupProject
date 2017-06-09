@@ -40,10 +40,29 @@ $(document).ready(function(){
     // when div is clicked, shows city name
     // 
 	$(".charts").on('click', ".cityBtn", function () {
-        console.log('click')
+        
+        var nameCity = $(this).data('name');
+        
         var fullname = $(this).data('full');
+        
         console.log(fullname)
+<<<<<<< HEAD
         $('.cityName').html('<h4>' + fullname + '</h4>');
+=======
+        
+        var lat = $(this).data('lat');
+        
+        console.log(lat)
+        
+        $('.cityName').html('<h4>' + fullname + '</h4>');
+
+        for (i = 0; i < cities.length; i++) {
+            if (nameCity === cities[i].city) {
+                console.log(nameCity);
+                showGraph(i);
+            }
+        }
+>>>>>>> 1d3539b55b44e052317db37e2e47a9097692cc1a
 
 	});
 

@@ -2,6 +2,12 @@
 
         citybutton,
 
+        citylat,
+
+        citylong,
+
+        citytemp,
+
         userName,
 
         APIKey = "166a433c57516f51dfab1f7edaed8413",
@@ -28,6 +34,8 @@
             event.preventDefault();
 
             userName = $('#userNameInput').val().trim();
+
+            $(".name").html("Hi, " + userName)
             
             $('#initialPrompt').hide();
             

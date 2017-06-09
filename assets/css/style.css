@@ -2,10 +2,15 @@
     width: 100%;
     height: 180px;
 }
+<<<<<<< HEAD
 
 .box {
     display: ;
     height:600px;
+=======
+#initialPrompt{
+    margin-top: 10px;
+>>>>>>> 1d3539b55b44e052317db37e2e47a9097692cc1a
 }
 .cityBtn {
     width: 230px;
@@ -15,7 +20,7 @@
     padding-top:8px;
 }
 #nav {
-    height: 80px;
+    height: auto;
 }
 .attribute{
     clear:both;
@@ -57,3 +62,18 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.graphModal {
+    position: relative;
+    float: right;
+}
+
+ .bubbleChart {
+       min-width: 100px;
+       max-width: 700px;
+       height: 700px;
+       margin: 0 auto;
+     }
+     .bubbleChart svg{
+       /*background: #000000;*/
+     }
