@@ -57,3 +57,8 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.graphModal {
+    position: relative;
+    float: right;
+}
