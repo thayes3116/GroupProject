@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	// **** SAM Y MARIO **** //
 var userName;
-var categories = ['Housing', 'Cost of Living', 'Education', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
+var categories = ['Housing', 'Cost of Living', 'Education', 'Commute', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
 
 var numberOfClicks = 0;
