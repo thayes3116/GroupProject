@@ -1,47 +1,4 @@
-$(document).ready(function () {
-  // data.hide();
 
-  // var button1 = $("<button class='cityBtn'>Austin</button>");
-  // var button2 = $("<button class='cityBtn'>Denver</button>");
-  // button1.attr("data-name", "austin");
-  // button2.attr("data-name", "denver");
-
-  var score = 0;
-
-
-
-  var cities = [
-    {
-      'city': "austin",
-      'Housing'  :  [2, 'Housing'],
-      'Cost of Living'  :  [2, 'Cost of Living'],
-      'Commute'  :  [2, 'Commute'],
-      'Safety'  :  [3, 'Safety'], 
-      'Education'  :  [3, 'Education'],
-      'Environmental Quality' :  [4, 'Environmental Quality'],
-      'Economy'  :  [3, 'Economy'],
-      'Taxation'  :  [2, 'Taxation'],
-      'Leisure & Culture' :  [3, 'Leisure & Culture'],
-      'Outdoors'  :  [2, 'Outdoors']
-    },
-
-    {
-      'city': "denver",
-      'Housing'  :  [2, 'Housing'],
-      'Cost of Living'  :  [2, 'Cost of Living'],
-      'Commute'  :  [2, 'Commute'],
-      'Safety'  :  [3, 'Safety'],
-      'Education'  :  [2, 'Education'],
-      'Environmental Quality' :  [4, 'Environmental Quality'],
-      'Economy'  :  [3, 'Economy'],
-      'Taxation'  :  [2, 'Taxation'],
-      'Leisure & Culture' :  [3, 'Leisure & Culture'],
-      'Outdoors'  :  [4, 'Outdoors']
-    }
-  ]
-
-  // for (var i = 0; i < cities.length; i++) {
-    var j;
   
         $(".cityBtn").on("click", function() {
             var bb = $(this).data('name');
@@ -57,7 +14,7 @@ $(document).ready(function () {
             }
 
       
-   // }   
+   })  
       // console.log(j);
   // function City(city,housing,costOfLiving,commute,safety,education,environment){
 
@@ -176,8 +133,7 @@ $(document).ready(function () {
           }]
       });
 
+      $(".graphModal").append(bubbleChart);
     }
 
- })
 
-});
