@@ -2,9 +2,19 @@
     width: 100%;
     height: 180px;
 }
-
+.cityBtn {
+    width: 230px;
+    height: 175px;
+    font-size:24px;
+    text-transform: capitalize;
+    padding-top:8px;
+}
 #nav {
     height: 80px;
+}
+.attribute{
+    clear:both;
+
 }
 
 .submit {

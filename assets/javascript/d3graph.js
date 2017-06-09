@@ -1,13 +1,10 @@
 $(document).ready(function () {
   // data.hide();
 
-  var button1 = $("<button class='cityBtn'>Austin</button>");
-  var button2 = $("<button class='cityBtn'>Denver</button>");
-  button1.attr("data-name", "austin");
-  button2.attr("data-name", "denver");
-
-  $("body").prepend(button1);
-  $("body").prepend(button2);
+  // var button1 = $("<button class='cityBtn'>Austin</button>");
+  // var button2 = $("<button class='cityBtn'>Denver</button>");
+  // button1.attr("data-name", "austin");
+  // button2.attr("data-name", "denver");
 
   var score = 0;
 

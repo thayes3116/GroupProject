@@ -19,12 +19,18 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!--Import jQuery before materialize.js-->
+    <!--Import jQuery before materialize.js--> 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
-    <script type="text/javascript" src="assets/javascript/citylist.js"></script>
+    <script type="text/javascript" src="assets/javascript/cityLists.js"></script>
 
-    <!--&lt;!&ndash;d3 scripts&ndash;&gt;-->
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
+    <script type="text/javascript" src="assets/javascript/modal.js"></script>
+    <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
+    
+
+    <!--d3 scripts-->
     <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="http://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
   <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
@@ -36,10 +42,7 @@
   <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
   <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
 
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
-
-  <script src="assets/javascript/d3Graph.js"></script>
+  
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
@@ -83,7 +86,7 @@
         <div class="modal-content">
             <div id="map"></div>
             <div class="indexCity">
-            <div class="cityName">HELLO</div>
+            <div class="cityName"></div>
             <p>Orlando belong to Mickey</p>
         <div class="modal-footer">
                 <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">CLOSE</a>
@@ -118,13 +121,13 @@
     <div class="row">
     	<div class="col s12">
     		<span class="charts" id="first">
-    		<h2 id="firstAttribute"></h2>
+    		<h2 id="firstAttribute" class=attribute></h2>
     		</span>
     		<span class="charts" id="second">
-    		<h2 id="secondAttribute"></h2>
+    		<h2 id="secondAttribute" class=attribute></h2>
     		</span>
     		<span class="charts" id="third">
-    		<h2 id="thirdAttribute"></h2>
+    		<h2 id="thirdAttribute" class=attribute></h2>
     		</span>
     	</div>
     </div>
