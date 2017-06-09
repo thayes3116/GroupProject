@@ -12,12 +12,26 @@
     text-transform: capitalize;
     padding-top:8px;
 }
+
 #nav {
     height: auto;
 }
 .attribute{
     clear:both;
 
+}
+
+h2 {
+    padding-top: 0px;
+}
+
+.section {
+    padding-top: 10px;
+}
+
+.move {
+    font-size: 40px;
+    margin-top: 0;
 }
 
 .submit {
@@ -28,14 +42,26 @@
     margin:5px;
 }
 
-#modal1 {
-    width: 85%;
+#mainBox1 {
+    display: none;
+    width: 90%;
+    height: 600px;
+    margin: 0px auto 50px auto;
+
+}
+   
+#h4city {
+    margin: 40px;
 }
 
+
+
 #map {
+    height:500px;
+    width: 500px;
     position: absolute;
-    height:400px;
-    width: 300px;
+    margin: 20px;
+    margin-top: 60px;
 }
 
 .indexCity {
@@ -67,11 +93,17 @@ main {
 }
 
  .bubbleChart {
-       min-width: 100px;
+    width: 500px;
+       min-width: 200px;
        max-width: 700px;
-       height: 700px;
-       margin: 0 auto;
+       height: 500px;
+       /*margin: 0 auto;*/
+       float: right;
+       /*position: relative;*/
+       margin-right: 20px;
+
      }
      .bubbleChart svg{
        /*background: #000000;*/
+       padding: 0;
      }

@@ -1,6 +1,6 @@
 $(document).ready(function(){
-
-        $('.modal').modal();
+       
+        
 
     //
     // calling google.maps API
@@ -32,7 +32,7 @@ $(document).ready(function(){
     // Shows google map in modal
     //var card = $('<div id="map">');
     $('#map').append(map);
-    initMap();
+   
 
    
 
@@ -50,8 +50,14 @@ $(document).ready(function(){
         var lat = $(this).data('lat');
         
         console.log(lat)
+
+        $("#mainBox1").css("display", "block")
+
+        $("#mainBox2").hide();
+
+         initMap();
         
-        $('.cityName').html('<h4>' + fullname + '</h4>');
+        $('.cityName').html('<h4 id ="h4city">' + fullname + '</h4>');
 
         for (i = 0; i < cities.length; i++) {
             if (nameCity === cities[i].city) {
