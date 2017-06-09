@@ -10,6 +10,7 @@ var map3;
 
 window.onload = function () {
 
+
     // SUBMIT BTN on click hidde:
     $('#userNameSubmit').on('click', function (event) {
         event.preventDefault();
@@ -105,3 +106,48 @@ window.onload = function () {
 };
 
 // *****   SAM Y MARIO ****  ////
+
+
+// WHAT I NEED !!!!
+
+var map;
+
+// API GOOGLE MAPS
+function initMap() {
+    var city = {lat: -34.397, lng: 150.644},
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: city,
+            zoom: 10,
+            disableDefaultUI: true
+        });
+    var marker = new google.maps.Marker({
+        position: city,
+        map: map,
+        title: 'Hello World!'
+    });
+}
+
+// SHOW Google Maps
+var card = $('<div id="map">');
+$('#map').append(map);
+initMap();
+
+$(document).ready(function(){
+    $('.modal').modal();
+});
+
+
+$('#btn').on('click', function () {
+    var name = $(this).attr('data-name');
+
+    $('#cityNme').append('<h4>' + name + '</h4>');
+
+    console.log('hello')
+
+});
+
+
+
+
+
+
