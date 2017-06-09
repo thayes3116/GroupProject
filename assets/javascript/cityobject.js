@@ -9,7 +9,7 @@
 			'Education'  :  [3, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
@@ -24,7 +24,7 @@
 			'Education'  :  [2, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors']
 		},
@@ -69,7 +69,7 @@
 			'Education'  :  [4, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
@@ -84,7 +84,7 @@
 			'Education'  :  [4, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
@@ -99,7 +99,7 @@
 			'Education'  :  [2, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
@@ -114,7 +114,7 @@
 			'Education'  :  [2, 'Education'],
 			'Environmental Quality' :  [3, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
@@ -144,7 +144,7 @@
 			'Education'  :  [2, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		},
@@ -159,7 +159,7 @@
 			'Education'  :  [2, 'Education'],
 			'Environmental Quality' :  [3, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [1, 'Outdoors']
 		},
@@ -219,7 +219,7 @@
 			'Education'  :  [3, 'Education'],
 			'Environmental Quality' :  [5, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors']
 		},
@@ -249,7 +249,7 @@
 			'Education'  :  [3, 'Education'],
 			'Environmental Quality' :  [4, 'Environmental Quality'],
 			'Economy'  :  [3, 'Economy'],
-			'Taxation'  :  [2, 'Taxation'],
+			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors']
 		}		

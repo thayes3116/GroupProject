@@ -2,21 +2,21 @@ var attributesChosen = [];
 var citybutton;
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 $(document).ready(function() {
-    var queryURL1;
 
-    var queryURL2;
+	var queryURL1;
+	var queryURL2;
+	var cityName;
 
-
-
-    var cityName;
-    // **** SAM Y MARIO **** //
-    var userName;
-    var categories = ['Housing', 'Cost of Living', 'Education', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
+var userName;
+var categories = ['Housing', 'Cost of Living', 'Education', 'Commute', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
 
-    var numberOfClicks = 0;
+var numberOfClicks = 0;
+var map;
+
 
     window.onload = function() {
+
 
         // SUBMIT BTN on click hidden:
         $('#userNameSubmit').on('click', function(event) {
@@ -234,21 +234,55 @@ $(document).ready(function() {
         }
     }
 
-    //end of functions to showcity lists
 
+    //end of functions to showcity lists
 
     function showScores(response) {
 
+    	$.each(response.categories, function(key, value) {
+    		var out_of_5 = value.score_out_of_10 / 2;
+    		var roundScore = Math.round(out_of_5);
+    		valueName = value.name;
+    	})
+    }
+
+    // API GOOGLE MAPS
+    function initMap() {
+        var city = {lat: -34.397, lng: 150.644},
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: city,
+                zoom: 10,
+                disableDefaultUI: true
+            });
+        var marker = new google.maps.Marker({
+            position: city,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+
+    // SHOW Google Maps
+    var card = $('<div id="map">');
+    $('#map').append(map);
+    initMap();
+
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
 
 
-        $.each(response.categories, function(key, value) {
+	$('#btn').on('click', function () {
+    var name = $(this).attr('data-name');
 
-            var out_of_5 = value.score_out_of_10 / 2;
+    $('#cityNme').append('<h4>' + name + '</h4>');
 
-            var roundScore = Math.round(out_of_5);
+    console.log('hello')
 
-            valueName = value.name;
-            // console.log("", value.name, "", ": ", roundScore);
+	});
+});
+
+
+
 
 
         })
