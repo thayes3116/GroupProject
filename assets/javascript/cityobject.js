@@ -1,7 +1,7 @@
 	var cities = [
 		{
 			'city': 'austin',
-			'fullName': "Austin,Texas",
+			'fullName': "Austin, Texas",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -16,7 +16,7 @@
 
 		{
 			'city': 'denver',
-			'fullName': "Denver,Colorado",
+			'fullName': "Denver, Colorado",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -46,6 +46,7 @@
 
 		{
 			'city': 'seattle',
+			'fullName': "Seattle, Washington",
 			'Housing'  :  [1, 'Housing'],
 		  	'Cost of Living'  :  [1, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -60,6 +61,7 @@
 
 		{
 			'city': 'raleigh',
+			'fullName': "Raleigh-Durham, North Carolina",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -74,6 +76,7 @@
 
 		{
 			'city': 'boston',
+			'fullName': "Boston, Massachusetts",
 			'Housing'  :  [1, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -88,6 +91,7 @@
 
 		{
 			'city': 'des-moines',
+			'fullName': "Des Moines, Iowa",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [1, 'Commute'],
@@ -102,6 +106,7 @@
 
 		{
 			'city': 'salt-lake-city',
+			'fullName': "Salt Lake City, Utah",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -116,6 +121,7 @@
 
 		{
 			'city': 'colorado-springs',
+			'fullName': "Colorado Springs, Colorado",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [0, 'Cost of Living'],
 			'Commute'  :  [1, 'Commute'],
@@ -130,6 +136,7 @@
 
 		{
 			'city': 'boise',
+			'fullName': "Boise, Idaho",
 			'Housing'  :  [4, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'],
 			'Commute'  :  [1, 'Commute'],
@@ -144,6 +151,7 @@
 
 		{
 			'city': 'nashville',
+			'fullName': "Nashville, Tennessee",
 			'Housing'  :  [2, 'Housing'],
 		  	'Cost of Living'  :  [2, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -158,6 +166,7 @@
 
 		{
 			'city': 'charlotte',
+			'fullName': "Charolette, North Carolina",
 			'Housing'  :  3,
 		  	'Cost of Living'  :  2,
 			'Commute'  :  [2, 'Commute'],
@@ -172,6 +181,7 @@
 
 		{
 			'city': 'dallas',
+			'fullName': "Dallas, Texas",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -186,6 +196,7 @@
 
 		{
 			'city': 'san-francisco-bay-area',
+			'fullName': "San Francisco, California",
 			'Housing'  :  [1, 'Housing'],
 		  	'Cost of Living'  :  [1, 'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
@@ -200,6 +211,7 @@
 
 		{
 			'city': 'madison',
+			'fullName': "Madison, Wisconsin",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'], 
 			'Commute'  :  [3, 'Commute'],
@@ -214,6 +226,7 @@
 
 		{
 			'city': 'houston',
+			'fullName': "Houston, Texas",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [3, 'Cost of Living'],
 			'Commute'  :  [2,'Commute'],
@@ -228,6 +241,7 @@
 
 		{
 			'city': 'minneapolis-saint-paul',
+			'fullName': "Minneapolis, Minnesota",
 			'Housing'  :  [3, 'Housing'],
 		  	'Cost of Living'  :  [2,'Cost of Living'],
 			'Commute'  :  [2, 'Commute'],
