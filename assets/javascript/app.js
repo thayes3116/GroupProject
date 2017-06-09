@@ -4,7 +4,6 @@ $(document).ready(function() {
 	var queryURL2;
 	var cityName;
 
-	// **** SAM Y MARIO **** //
 var userName;
 var categories = ['Housing', 'Cost of Living', 'Education', 'Commute', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'];
 
@@ -57,7 +56,6 @@ window.onload = function () {
 // *****   SAM Y MARIO ****  ////
 
 	for (var i = 0; i < cities.length; i++) {
-		// console.log(cities[i].city);
 		// API url that grabs geoname API
 		queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/";
 		// console.log(queryURL1);
@@ -66,12 +64,10 @@ window.onload = function () {
         url: queryURL1,
         method: "GET"
 	    }).done(function(response) {
-	        // console.log("Lets see ", response);
 	        var link = response._links;
 	        // grabs API url inside of queryURL1 that grabs
 	        // city name and population
 	        var geoID = response["_links"]["ua:identifying-city"]["href"];
-			// console.log(geoID);
 
 			$.ajax ({
 				url: geoID,
@@ -79,38 +75,25 @@ window.onload = function () {
 			}).done(function(pop) {
 			  	var cityPop = pop.population;
 			  	cityName = pop.full_name;
-			  	// console.log(cityName);
-			  	// console.log("Population: ", cityPop);
 			  	showScores(response);
 			})
 		});
 
 	    // API url that grabs the scores from the city
-	    //
+
 	    queryURL2 =  "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
 
 	    $.ajax({
 	    	url: queryURL2,
 	    	method: "GET"
 	    }).done(function(response) {
-	    	// console.log("response ", response);
-	    	// for (var i = 0; i < cities.length; i++) {
-
-	    	// cities.response[i] = response;
-	    	// console.log(cities[i]);
 	    	showScores(response);
 
 	    })
-
-    //
 	// end for loop
-	//
     }
     //beginning show city loop
 
-
-    //console.log(cities[0][attributesChosen[0]][0])
-    //console.log(cities[0][attributesChosen[0]][1])
    		function showCity0List(){
         	for(var i = 0; i < cities.length; i++){
             	if(cities[i][attributesChosen[0]][0] >= 3){
@@ -159,7 +142,6 @@ window.onload = function () {
     		var out_of_5 = value.score_out_of_10 / 2;
     		var roundScore = Math.round(out_of_5);
     		valueName = value.name;
-    		// console.log("", value.name, "", ": ", roundScore);
     	})
     }
 
