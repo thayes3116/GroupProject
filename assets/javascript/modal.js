@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-        $('.modal').modal();
+
+
+
 
     //
     // calling google.maps API
@@ -9,15 +11,11 @@ $(document).ready(function(){
 
         //giving lat and long to city
         var city = {lat: -34.397, lng: 150.644};
-        
-        //grabbing variable map and giving it API to call   
+        //grabbing variable map and giving it API to call
         map = new google.maps.Map(document.getElementById('map'), {
-
                 //centers the city in the map
                 center: city,
-                
                 zoom: 10,
-                
                 //disables user from functioning map
                 disableDefaultUI: true
             });
@@ -34,6 +32,8 @@ $(document).ready(function(){
     $('#map').append(map);
     initMap();
 
+
+
    
 
     // 
@@ -43,7 +43,7 @@ $(document).ready(function(){
         console.log('click')
         var fullname = $(this).data('full');
         console.log(fullname)
-        $('.cityName').append('<h4>' + fullname + '</h4>');
+        $('.cityName').html('<h4>' + fullname + '</h4>');
 
 	});
 

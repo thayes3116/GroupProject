@@ -16,6 +16,8 @@
 
     $(document).ready(function() {
 
+        $('#mainbox').();
+
         // 
         //Capture usersName on submit button click
         //Hide name input prompt
