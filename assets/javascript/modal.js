@@ -45,7 +45,7 @@ $(document).ready(function(){
         console.log(fullname)
         var lat = $(this).data('lat');
         console.log(lat)
-        $('.cityName').append('<h4>' + fullname + '</h4>');
+        $('.cityName').html('<h4>' + fullname + '</h4>');
 
 	});
 
