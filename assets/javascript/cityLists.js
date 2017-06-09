@@ -13,7 +13,8 @@
                         .attr("data-full", cities[i].fullName)
                         .attr("data-name", cities[i].city)
                         .text(cities[i].fullName)
-                        .addClass('cityBtn');
+                        .addClass('cityBtn')
+                        .addClass('firstChart');
 
                     $.ajax({
                         url: queryURL3,
@@ -23,11 +24,11 @@
                         console.log(response.coord.lat);
                         console.log(response.coord.lon);
                         console.log("Temperature (F): " + response.main.temp);
-
-                        citybutton.attr('data-lat', response.coord.lat)
-                        citybutton.attr('data-lon', response.coord.lon)
+                        $('.firstChart').attr('data-lat', response.coord.lat)
+                        $('.firstChart').attr('data-lon', response.coord.lon)
+                        $('.firstChart').attr('data-lon', response.coord.temp)
                     })
-
+                        
                     $("#first").append(citybutton);
 
                     $('#firstAttribute').html(attributesChosen[0]);
@@ -38,7 +39,7 @@
         function showCity1List() {
             for (var i = 0; i < cities.length; i++) {
                 
-                if (cities[i][attributesChosen[0]][0] >= 3) {
+                if (cities[i][attributesChosen[1]][0] >= 3) {
                     
                     var queryURL4 = "http://api.openweathermap.org/data/2.5/weather?" +
                         "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
@@ -47,7 +48,8 @@
                         .attr("data-full", cities[i].fullName) 
                         .attr("data-name", cities[i].city)
                         .text(cities[i].fullName)
-                        .addClass('cityBtn');
+                        .addClass('cityBtn')
+                        .addClass('secondChart');
 
                     $.ajax({
                         url: queryURL4,
@@ -60,8 +62,9 @@
                         console.log(response.coord.lon);
                         console.log("Temperature (F): " + response.main.temp);
 
-                        citybutton.attr('data-lat', response.coord.lat)
-                        citybutton.attr('data-lon', response.coord.lon)
+                        $('.secondChart').attr('data-lat', response.coord.lat)
+                        $('.secondChart').attr('data-lon', response.coord.lon)
+                        $('.secondChart').attr('data-lon', response.coord.temp)
                     })
 
                     $("#second").append(citybutton);
@@ -73,7 +76,7 @@
 
         function showCity2List() {
             for (var i = 0; i < cities.length; i++) {
-                if (cities[i][attributesChosen[0]][0] >= 3) {
+                if (cities[i][attributesChosen[2]][0] >= 3) {
                     
                     var queryURL5 = "http://api.openweathermap.org/data/2.5/weather?" +
                         "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
@@ -82,7 +85,8 @@
                         .attr("data-full", cities[i].fullName)
                         .attr("data-name", cities[i].city)
                         .text(cities[i].fullName)
-                        .addClass('cityBtn');
+                        .addClass('cityBtn')
+                        .addClass('thirdChart');
 
                     $.ajax({
                         url: queryURL5,
@@ -95,8 +99,9 @@
                         console.log(response.coord.lon);
                         console.log("Temperature (F): " + response.main.temp);
 
-                        citybutton.attr('data-lat', response.coord.lat)
-                        citybutton.attr('data-lon', response.coord.lon)
+                        $('.thirdChart').attr('data-lat', response.coord.lat)
+                        $('.thirdChart').attr('data-lon', response.coord.lon)
+                        $('.thirdChart').attr('data-lon', response.coord.temp)
                     })
 
                     $("#third").append(citybutton);

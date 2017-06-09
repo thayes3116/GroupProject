@@ -43,6 +43,8 @@ $(document).ready(function(){
         console.log('click')
         var fullname = $(this).data('full');
         console.log(fullname)
+        var lat = $(this).data('lat');
+        console.log(lat)
         $('.cityName').append('<h4>' + fullname + '</h4>');
 
 	});
