@@ -3,18 +3,39 @@
     height: 180px;
 }
 
+#nav {
+    height: 80px;
+}
+
 .submit {
     margin-top: 25px;
 }
 
 .attBtn {
-    margin:10px;
+    margin:5px;
+}
+
+#modal1 {
+    width: 85%;
 }
 
 #map {
-    width: ;
-    height: 100%;
-    background-color: grey;
+    position: absolute;
+    height:400px;
+    width: 300px;
+}
+
+.indexCity {
+    position: relative;
+}
+
+.modal.modal-fixed-footer .modal-footer {
+    position: fixed;
+}
+
+.waves-effect {
+    margin: 5px;
+    display: compact;
 }
 
 body {

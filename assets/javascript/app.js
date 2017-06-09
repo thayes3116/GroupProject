@@ -20,9 +20,11 @@ window.onload = function () {
         userName = $('#userNameInput').val().trim();
         $('#initialPrompt').hide();
         fireQuestionnaire();
+        $('.name').html('Hi, ' + userName);
+
     });
 
-   // BTN OPTIONS PICK 3
+    // BTN OPTIONS PICK 3
     function fireQuestionnaire() {
         var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
         $('#questionDiv').html(question);
@@ -34,9 +36,10 @@ window.onload = function () {
             $('#questionnaire').append(categoryButton);
         }
     }
+
     // GRAB 3 BTN OPTIONS store in var attributesChosen[]:
-    $('#questionnaire').on('click','.attributes', function(){
-       var dataName = $(this).data('category');
+    $('#questionnaire').on('click', '.attributes', function () {
+        var dataName = $(this).data('category');
         console.log(dataName);
         attributesChosen.push(dataName);
         numberOfClicks++;
@@ -48,39 +51,17 @@ window.onload = function () {
             showCity1List();
             showCity2List();
         }
-
         console.log(attributesChosen);
-	});
-
-    // API GOOGLE MAPS
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-    }
-
-    // SHOW Google Maps
-    var card = $('<div id="map">');
-    $('#map').append(map);
-
-    initMap();
-
-    // TRIGGER MODAL city information
-    $(document).ready(function(){
-
-        $('.modal').modal()
-
-	});
+    });
 };
 // *****   SAM Y MARIO ****  ////
 
 	for (var i = 0; i < cities.length; i++) {
-		// console.log(cities[i].city); 
+		// console.log(cities[i].city);
 		// API url that grabs geoname API
 		queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/";
 		// console.log(queryURL1);
-		
+
 		$.ajax({
         url: queryURL1,
         method: "GET"
@@ -96,16 +77,16 @@ window.onload = function () {
 				url: geoID,
 			  	method: "GET"
 			}).done(function(pop) {
-			  	var cityPop = pop.population;  	
+			  	var cityPop = pop.population;
 			  	cityName = pop.full_name;
-			  	// console.log(cityName);			  	
+			  	// console.log(cityName);
 			  	// console.log("Population: ", cityPop);
 			  	showScores(response);
 			})
 		});
 
 	    // API url that grabs the scores from the city
-	    // 
+	    //
 	    queryURL2 =  "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
 
 	    $.ajax({
@@ -118,59 +99,58 @@ window.onload = function () {
 	    	// cities.response[i] = response;
 	    	// console.log(cities[i]);
 	    	showScores(response);
-	    
+
 	    })
 
-    // 
+    //
 	// end for loop
-	// 
+	//
     }
     //beginning show city loop
 
 
     //console.log(cities[0][attributesChosen[0]][0])
     //console.log(cities[0][attributesChosen[0]][1])
-   		function showCity0List(){ 
+   		function showCity0List(){
         	for(var i = 0; i < cities.length; i++){
             	if(cities[i][attributesChosen[0]][0] >= 3){
-                	var citybutton = $('<button>')
+                	var citybutton = $('<a class="modal-trigger waves-effect waves-light btn" href="#modal1">')
                 	.attr("data-name", cities[i].city)
-
-                	.text(cities[i].city)
-                	$("#first").append(citybutton); 
+                	.text(cities[i].city);
+                	$("#first").append(citybutton);
                     $('#name').html(userName);
                     $('#firstAttribute').html(attributesChosen[0]);
-                 	console.log(cities[i][attributesChosen[0]][1]);   
+                 	console.log(cities[i][attributesChosen[0]][1]);
            		}
-        	}               
+        	}
     	}
-    	function showCity1List(){ 
+    	function showCity1List(){
         	for(var i = 0; i < cities.length; i++){
         		console.log(attributesChosen[1]);
             	if(cities[i][attributesChosen[1]][0] >= 3){
-                	var citybutton = $('<button>')
+                	var citybutton = $('<a class="modal-trigger waves-effect waves-light btn" href="#modal1">')
                 	.attr("data-name", cities[i].city)
-                	.text(cities[i].city)
-                	$("#second").append(citybutton); 
+                	.text(cities[i].city);
+                	$("#second").append(citybutton);
                     $('#name').html(userName);
                     $('#secondAttribute').html([attributesChosen[1]]);
-                 	console.log(cities[i][attributesChosen[1]][1]);   
+                 	console.log(cities[i][attributesChosen[1]][1]);
            		}
-        	}               
+        	}
     	}
-    	function showCity2List(){ 
+    	function showCity2List(){
         	for(var i = 0; i < cities.length; i++){
             	if(cities[i][attributesChosen[2]][0] >= 3){
-                	var citybutton = $('<button>')
+                	var citybutton = $('<a class="modal-trigger waves-effect waves-light btn" id="btn" href="#modal1">')
                 	.attr("data-name", cities[i].city)
-                	.text(cities[i].city)
+                	.text(cities[i].city);
                 	$("body").append(citybutton);
-                    $("#third").append(citybutton); 
+                    $("#third").append(citybutton);
                     $('#name').html(userName);
                     $('#thirdAttribute').html([attributesChosen[2]]);
-                  	console.log(cities[i][attributesChosen[2]][1]);   
+                  	console.log(cities[i][attributesChosen[2]][1]);
            		}
-        	}               
+        	}
     	}
     //end of functions to showcity lists
 
@@ -183,14 +163,43 @@ window.onload = function () {
     	})
     }
 
-    // GOOGLE MAPS //
+    // API GOOGLE MAPS
+    function initMap() {
+        var city = {lat: -34.397, lng: 150.644},
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: city,
+                zoom: 10,
+                disableDefaultUI: true
+            });
+        var marker = new google.maps.Marker({
+            position: city,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+
+    // SHOW Google Maps
+    var card = $('<div id="map">');
+    $('#map').append(map);
+    initMap();
+
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
 
 
+	$('#btn').on('click', function () {
+    var name = $(this).attr('data-name');
 
+    $('#cityNme').append('<h4>' + name + '</h4>');
+
+    console.log('hello')
+
+	});
 });
-   
-	
-	
+
+
+
 
 
 

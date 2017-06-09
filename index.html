@@ -24,35 +24,35 @@
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
     <script type="text/javascript" src="assets/javascript/citylist.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <!--d3 scripts-->
-    <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-  <!--<script src="assets/javascript/d3Graph.js"></script>-->
+    <!--&lt;!&ndash;d3 scripts&ndash;&gt;-->
+    <!--<script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>-->
+  <!--<script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>-->
 
     <!-- Google Maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&callback">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
+
+  <!--<script src="assets/javascript/d3Graph.js"></script>-->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
 <!-- MAIN -->
 <body>
 <!-- NAV BAR -->
 <header>
 <nav>
-    <div class="nav-wrapper green darken-3">
+    <div class="nav-wrapper green darken-3" id="nav">
         <div class="container" id = "maincontainer">
             <div class="row">
-                <div class="col s2">
-                    <a href="#" class="brand-logo">Logo</a>
+                <div class="col s12">
+                   <h3><div class="name">Welcome </div></h3>
                 </div>
             </div>
         </div>
@@ -66,6 +66,8 @@
 
 <!-- MAIN -->
 <main>
+
+    <!-- QUESTIONS USER CITIES -->
 <div class="container text-alling center green lighten-5 z-depth-5">
     <div class="row">
         <div class="col s12 questions">
@@ -76,52 +78,45 @@
         </div>
     </div>
 
-
-    <!-- Modal Trigger -->
-    <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-
-    <!-- Modal Structure -->
+    <!-- BOX CITY PROPERTIES -->
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>My City</h4>
             <div id="map"></div>
+            <div class="indexCity">
+            <div class="cityName">HELLO</div>
             <p>Orlando belong to Mickey</p>
-        </div>
         <div class="modal-footer">
-            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">CLOSE</a>
+                <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">CLOSE</a>
+            </div>
         </div>
     </div>
+</div>
 
-
+    <!-- INITIAL PAGE WELCOME -->
     <div class="row">
         <div class="col s12" id="initialPrompt">
-
             <h2 class="header col s12 light">Moving can be difficult. Let's decide where to live together!</h2>
             <h2 class="header col s12 light">First, enter your name:</h2>
-
             <div class="col s12">
                 <br>
             <img class="submitImg z-depth-4" src="assets/img/submit.jpg">
             </div>
-
             <div class="row">
                 <div class="col s4">
                 </div>
-        <div class="input-field col s4">
+                <div class="input-field col s4">
             <i class="material-icons prefix">account_circle</i>
-            <input id="userNameInput" type="text" class="invalid">
+            <input id="userNameInput" type="text" class="valid">
             <label for="userNameInput">First Name</label>
-
-                <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
+            <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit<i class="material-icons right">send</i>
             </button>
-			
+        </div>
             </div>
         </div>
-    </div>
+
+        <!-- SHOWS BTN CITIES RESULTS -->
     <div class="row">
     	<div class="col s12">
-    		
     		<span class="charts" id="first">
     		<h2 id="firstAttribute"></h2>
     		</span>
