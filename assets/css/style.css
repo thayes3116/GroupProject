@@ -12,12 +12,26 @@
     text-transform: capitalize;
     padding-top:8px;
 }
+
 #nav {
     height: auto;
 }
+
+#backAttr {
+    display: none;    
+}
+
 .attribute{
     clear:both;
+}
 
+.section {
+    padding-top: 10px;
+}
+
+.move {
+    font-size: 40px;
+    margin-top: 0;
 }
 
 .submit {
@@ -28,14 +42,31 @@
     margin:5px;
 }
 
-#modal1 {
-    width: 85%;
+#mainBox1 {
+    display: none;
+    width: 90%;
+    height: 600px;
+}
+
+main {
+    margin-top: 70px;
+}
+
+.btn-floating.btn-large {
+    float: right;
+}
+
+.cityName {
+    font-family: "Roboto", sans-serif;
+    padding-top: 10px;
 }
 
 #map {
+    height:500px;
+    width: 500px;
     position: absolute;
-    height:400px;
-    width: 300px;
+    margin: 20px;
+    margin-top: 90px;
 }
 
 .indexCity {
@@ -67,11 +98,17 @@ main {
 }
 
  .bubbleChart {
-       min-width: 100px;
+    width: 500px;
+       min-width: 200px;
        max-width: 700px;
-       height: 700px;
-       margin: 0 auto;
+       height: 500px;
+       /*margin: 0 auto;*/
+       float: right;
+       /*position: relative;*/
+       margin-right: 20px;
+
      }
      .bubbleChart svg{
        /*background: #000000;*/
+       padding: 0;
      }

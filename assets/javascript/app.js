@@ -21,7 +21,7 @@
         map;
 
     $(document).ready(function() {
-
+         // $("#mainBox1").hide();
         // 
         //Capture usersName on submit button click
         //Hide name input prompt
@@ -33,32 +33,79 @@
 
             userName = $('#userNameInput').val().trim();
 
-            $(".name").html("Hi, " + userName)
+            $(".name").html("Hi, " + userName);
             
+            $('.name').html("Hi, " + userName);
             $('#initialPrompt').hide();
             
             fireQuestionnaire();
         });
 
+        $('#userNameInput').keypress(function(e) {
+            if(e.which == 13) {
+                event.preventDefault();
+
+                userName = $('#userNameInput').val().trim();
+
+                $(".name").html("Hi, " + userName);
+
+                $('.name').html("Hi, " + userName);
+                $('#initialPrompt').hide();
+
+                fireQuestionnaire();            }
+        });
+
+        //
+        //Back BTN to attr chose
+        //
+            $('#backAttr').on('click', function () {
+
+                var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+
+                $('#mainbox3').hide();
+
+                $('#first').empty();
+                $('#second').empty();
+                $('#third').empty();
+                $('#mainBox2').show();
+                $('.questions').show();
+                $('#questionnaire').empty();
+                $('.questions').css('display', 'block');
+
+                numberOfClicks = 0;
+                attributesChosen = [];
+
+                fireQuestionnaire();
+
+
+
+                // console.log(this + 'isaimdi');
+                //
+                // $('#questionDiv').html(question);
+
+            });
+
+
+
         //
         //Function to populate questionnaire
         //
         function fireQuestionnaire() {
-            
+
             var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
-            
+
             $('#questionDiv').html(question);
-            
+
             for (var i = 0; i < categories.length; i++) {
-            
+
                 var categoryButton = $('<button>');
-            
+
                 categoryButton.addClass('attributes waves-effect waves-light btn attBtn');
-            
+
                 categoryButton.attr('data-category', categories[i]);
-            
+
                 categoryButton.text(categories[i]);
-            
+
                 $('#questionnaire').append(categoryButton);
             }
         }
@@ -67,33 +114,42 @@
         //Capture categories selected by user
         //Fire show city functions
         //
-        $('#questionnaire').on('click', '.attributes', function() {
-        
+        $('#questionnaire').on('click', '.attributes', function () {
+
             var dataName = $(this).data('category');
-        
+
             attributesChosen.push(dataName);
 
             numberOfClicks++;
 
 
             $(this).hide();
- 
+
+            console.log(numberOfClicks)
+
             if (numberOfClicks === 3) {
- 
+
                $('.questions').hide();
- 
+
                 showCity0List();
                 showCity1List();
                 showCity2List();
+
+                $('#backAttr').css('display', 'block');
+
+                $('#mainbox3').show();
+
             }
         });
+
+
 
         //
         //Entering city names into teleport api to get population
         //
         for (var i = 0; i < cities.length; i++) {
 
-            var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/"
+            var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/";
 
             $.ajax({
                 url: queryURL1,
@@ -116,7 +172,7 @@
 
                 //showScores(response);
             })
-        })
+        });
 
         //    
         // API to get city scores
@@ -132,7 +188,7 @@
 
             })
         }
-});        
+});
 
         // 
         // end for loop

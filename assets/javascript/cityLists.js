@@ -8,7 +8,7 @@
                    
                     var queryURL3 = "http://api.openweathermap.org/data/2.5/weather?" +
                         "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
-                    
+                        console.log(cities[i].city)
                     citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
                         .attr("data-full", cities[i].fullName)
                         .attr("data-name", cities[i].city)
@@ -112,6 +112,6 @@
             }
         }
 
-        //    
+        //
         //end of functions to showcity lists
         //
