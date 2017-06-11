@@ -63,8 +63,12 @@
                 var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
                 $('#mainbox3').hide();
+
+                $('#first').empty();
+                $('#second').empty();
+                $('#third').empty();
                 $('#mainBox2').show();
-                $('.questions').show;
+                $('.questions').show();
                 $('#questionnaire').empty();
                 $('.questions').css('display', 'block');
 
