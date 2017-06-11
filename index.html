@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    
+    <title>Money Makers</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <!--Chart Font-->
@@ -18,10 +21,14 @@
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
     <script type="text/javascript" src="assets/javascript/cityLists.js"></script>
+    <script type="text/javascript" src="assets/javascript/modal.js"></script>
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
-    <script type="text/javascript" src="assets/javascript/modal.js"></script>
-    <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
+    <script type="text/javascript" src="assets/javascript/poi.js"</script>
+    
+    
+    
+    
     
     <!--d3 scripts-->
     <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
@@ -34,7 +41,7 @@
   <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
   <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
   <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-  
+  <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
@@ -55,14 +62,30 @@
 </nav>
 </header>
 <div class="section no-pad-bot" id="index-banner">
-    <br>
-    <br>
-    <br>
-</div>
+    </div>
 <!-- MAIN -->
 <main>
+    <!-- BOX CITY PROPERTIES -->
+<div class="container text-alling center green lighten-5 z-depth-5" id="mainBox1">    
+    <div class="row">
+                <div class="modal-content">
+                    <div id="map">
+                    </div>
+                    <div class="indexCity">
+                        <div class="cityName">
+                        </div>
+                        <div class="bubbleChart">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">CLOSE</a>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
     <!-- QUESTIONS USER CITIES -->
-<div class="container text-alling center green lighten-5 z-depth-5">
+<div class="container text-alling center green lighten-5 z-depth-5" id="mainBox2">
     <div class="row">
         <div class="col s12 questions">
             <div id="questionDiv">
@@ -71,24 +94,11 @@
             </div>
         </div>
     </div>
-    <!-- BOX CITY PROPERTIES -->
-    <div id="modal1" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <div id="map"></div>
-            <div class="indexCity">
-            <div class="cityName"></div>
-            <p>Orlando belong to Mickey</p>
-        <div class="modal-footer">
-                <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">CLOSE</a>
-            </div>
-        </div>
-    </div>
-</div>
     <!-- INITIAL PAGE WELCOME -->
     <div class="row">
         <div class="col s12" id="initialPrompt">
-            <h2 class="header col s12 light">Moving can be difficult. Let's decide where to live together!</h2>
-            <h2 class="header col s12 light">First, enter your name:</h2>
+            <h2 class="header col s12 light move">Moving can be difficult. Let's decide where to live together!</h2>
+            <h2 class="header col s12 light move">First, enter your name:</h2>
             <div class="col s12">
                 <br>
             <img class="submitImg z-depth-4" src="assets/img/submit.jpg">
@@ -122,8 +132,6 @@
 </div>
 </div>
 </main>
-    <br>
-    <br>
 <!-- FOOTER -->
 <footer class="page-footer green darken-3">
     <div class="footer-copyright">
