@@ -112,6 +112,6 @@
             }
         }
 
-        //    
+        //
         //end of functions to showcity lists
         //

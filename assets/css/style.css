@@ -16,6 +16,11 @@
 #nav {
     height: auto;
 }
+
+#backAttr {
+    display: none;    
+}
+
 .attribute{
     clear:both;
 }
