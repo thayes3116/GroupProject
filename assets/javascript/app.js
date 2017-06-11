@@ -33,12 +33,26 @@
 
             userName = $('#userNameInput').val().trim();
 
-            $(".name").html("Hi, " + userName)
+            $(".name").html("Hi, " + userName);
             
-            $('.name').html("Hi, " + userName)
+            $('.name').html("Hi, " + userName);
             $('#initialPrompt').hide();
             
             fireQuestionnaire();
+        });
+
+        $('#userNameInput').keypress(function(e) {
+            if(e.which == 13) {
+                event.preventDefault();
+
+                userName = $('#userNameInput').val().trim();
+
+                $(".name").html("Hi, " + userName);
+
+                $('.name').html("Hi, " + userName);
+                $('#initialPrompt').hide();
+
+                fireQuestionnaire();            }
         });
 
         //
