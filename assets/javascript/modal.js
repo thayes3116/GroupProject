@@ -1,6 +1,4 @@
 $(document).ready(function(){
-       
-        
 
     //
     // calling google.maps API
@@ -79,4 +77,4 @@ $(document).ready(function(){
 
 	});
 
-});  
+});
