@@ -1,7 +1,42 @@
+/* slideshow */
+.mySlides {
+    display:none
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+img {
+    height: 400px;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* slider end */
+
 .submitImg {
     width: 100%;
     height: 180px;
 }
+
 #initialPrompt{
     margin-top: 10px;
 }
@@ -12,13 +47,31 @@
     text-transform: capitalize;
     padding-top:8px;
 }
+#cityListPara{
+    margin: 20px 70px;
+    font-size:25px;
+    font-family: "roboto";
+
+}
+
+.slider {
+    width: 900px;
+}
 
 #nav {
     height: auto;
 }
 
+#backbtn {
+    float: right;
+    margin-right: 10px;
+}
+
 #backAttr {
-    display: none;    
+    display: none;
+    width: 150px;
+    float: right;
+    margin-right: 10px;
 }
 
 .attribute{
@@ -45,7 +98,7 @@
 #mainBox1 {
     display: none;
     width: 90%;
-    height: 600px;
+    height: auto;
 }
 
 main {
@@ -62,11 +115,11 @@ main {
 }
 
 #map {
-    height:500px;
-    width: 500px;
-    position: absolute;
+    height:400px;
+    width: 400px;
+    float: left;
     margin: 20px;
-    margin-top: 90px;
+   
 }
 
 .indexCity {
@@ -97,18 +150,43 @@ main {
     float: right;
 }
 
- .bubbleChart {
+.bubbleChart {
     width: 500px;
-       min-width: 200px;
-       max-width: 700px;
-       height: 500px;
-       /*margin: 0 auto;*/
-       float: right;
-       /*position: relative;*/
-       margin-right: 20px;
+    height: 500px;
+    /*margin: 0 auto;*/
+    float: right;
+    /*position: relative;*/
+    margin-right: 20px;
 
-     }
-     .bubbleChart svg{
-       /*background: #000000;*/
-       padding: 0;
-     }
+ }
+ .bubbleChart svg{
+   /*background: #000000;*/
+   padding: 0;
+ }
+
+@media screen and (max-width: 980px) { 
+    #map {
+        width: 400px;
+        height: 400px;
+    }
+
+    .bubbleChart {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    #map {
+        width: 320px;
+        height: 320px;
+    }
+
+    .bubbleChart {
+        width: 320px;
+        height: 320px;
+        margin: 10px;
+    }
+}
+
+

@@ -1,20 +1,60 @@
+d3.svg.BubbleChart.define("central-click", function (options) {
+  var self = this;
 
+  self.setup = (function (node) {
+    var original = self.setup;
+    return function (node) {
+      var fn = original.apply(this, arguments);
+      self.event.on("click", function(node) {
+        // console.log(node.data()[0].item)
+      });
+      return fn;
+    };
+  })();
+
+  self.reset = (function (node) {
+    var original = self.reset;
+    return function (node) {
+      var fn = original.apply(this, arguments);
+      node.select("text.central-click").remove();
+      return fn;
+    };
+  })();
+
+  self.moveToCentral = (function (node) {
+    var original = self.moveToCentral;
+    return function (node) {
+      var fn = original.apply(this, arguments);
+      var transition = self.getTransition().centralNode;
+      transition.each("end", function() {
+        node.append("text").classed({"central-click": true})
+          .attr(options.attr)
+          .style(options.style)
+          .attr("x", function (d) {return d.cx;})
+          .attr("y", function (d) {return d.cy;})
+          .text(options.text)
+          .style("opacity", 0).transition().duration(self.getOptions().transitDuration / 2).style("opacity", "0.8");
+      });
+      return fn;
+    };
+  })();
+});
   
-        $(".cityBtn").on("click", function() {
-            var bb = $(this).data('name');
-            // console.log(this);
-            console.log(bb);
-            // (showGraph()).hide();
-            for ( i = 0; i < cities.length; i++) {
+   //      $(".cityBtn").on("click", function() {
+   //          var bb = $(this).data('name');
+   //          // console.log(this);
+   //          console.log(bb);
+   //          // (showGraph()).hide();
+   //          for ( i = 0; i < cities.length; i++) {
  
-                if (bb === cities[i].city) {
-                    console.log(cities[i].city);
-                    showGraph(i);
-                }
-            }
+   //              if (bb === cities[i].city) {
+   //                  console.log(cities[i].city);
+   //                  showGraph(i);
+   //              }
+   //          }
 
       
-   })  
+   // })  
       // console.log(j);
   // function City(city,housing,costOfLiving,commute,safety,education,environment){
 
@@ -32,7 +72,9 @@
 
   // console.log(austin.housing);
   // var thisCity = $("<h1>" + cities[0].city + "</h1>");
-
+      // $("text.centralClick").on("click",function(d){
+      //       d3.select(this).remove();
+      //   });
   // $("body").prepend(thisCity)
     function showGraph(add) {
       var bubbleChart = new d3.svg.BubbleChart({
@@ -71,7 +113,7 @@
             options: {
               text: "Score out of 5",
               style: {
-                "font-size": "12px",
+                "font-size": "20px",
                 "font-style": "italic",
                 "font-family": "Source Sans Pro, sans-serif",
                 //"font-weight": "700",
@@ -121,11 +163,11 @@
               ],
               centralFormat: [
                 {// Line #0
-                  style: {"font-size": "50px"},
+                  style: {"font-size": "100px"},
                   attr: {}
                 },
                 {// Line #1
-                  style: {"font-size": "30px"},
+                  style: {"font-size": "35px"},
                   attr: {dy: "40px"}
                 }
               ]
