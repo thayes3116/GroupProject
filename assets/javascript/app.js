@@ -147,48 +147,54 @@
         //
         //Entering city names into teleport api to get population
         //
-        for (var i = 0; i < cities.length; i++) {
+        // for (var i = 0; i < cities.length; i++) {
 
-            var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/";
 
-            $.ajax({
-                url: queryURL1,
-                method: "GET"
-            }).done(function(response) {
+        //     var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/"
+
+
+        //     $.ajax({
+        //         url: queryURL1,
+        //         method: "GET"
+        //     }).done(function(response) {
             
-                var link = response._links;
+        //         var link = response._links;
 
-                var geoID = response["_links"]["ua:identifying-city"]["href"];
+        //         var geoID = response["_links"]["ua:identifying-city"]["href"];
  
 
-            $.ajax({
-                url: geoID,
-                method: "GET"
-            }).done(function(pop) {
+        //     $.ajax({
+        //         url: geoID,
+        //         method: "GET"
+        //     }).done(function(pop) {
                 
-                var cityPop = pop.population;
+        //         var cityPop = pop.population;
                 
-                cityName = pop.full_name;
+        //         cityName = pop.full_name;
 
-                //showScores(response);
-            })
-        });
+
+        //         //showScores(response);
+        //     })
+        // })
+
 
         //    
         // API to get city scores
         // 
-            var queryURL2 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
+            // var queryURL2 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
 
-            $.ajax({
-                url: queryURL2,
-                method: "GET"
-            }).done(function(response) {
+            // $.ajax({
+            //     url: queryURL2,
+            //     method: "GET"
+            // }).done(function(response) {
 
-                //showScores(response);
+            //     //showScores(response);
 
-            })
-        }
-});
+
+            // })
+        // }
+});        
+
 
         // 
         // end for loop
