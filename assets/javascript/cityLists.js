@@ -17,22 +17,10 @@
                         .addClass('cityBtn')
                         .addClass('firstChart')
                         .addClass('cityBtn' + i)
-                        .attr("id", "city" + i);
+                        .attr("id", "city0" + i);
                         ;
 
-                        citytemp = $("<div>Hello</div>")
-                        .css("float", "right")
-                        .css("border", "2px solid black")
-
-                         // console.log(citybutton.id);
-                         // console.log($("citybutton").attr("id"));
-                        // if ($("#city" + i).selector === "#city" ) {
-
-
-                        //     console.log("$.val()");
-                        // }
-                         // console.log(citybutton);
-                         // console.log($("#city" + i).selector);
+                        
                     $.ajax({
                         url: queryURL3,
                         method: "GET"
@@ -42,18 +30,18 @@
                         // console.log(response.coord.lon);
                         // console.log("Temperature (F): " + response.main.temp);
                         for (var i = 0; i < cities.length; i++) {
-                            if($("#city"+ i).hasClass("cityBtn" + i)) {
+                            if($("#city0"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
                                 
                                 if (splitName === response.name) {
-                                    $("#city" + i).html(response.main.temp);
-                                    $("#city" + i).append(cities[i].fullName);
-                                    $("#city" + i).attr('data-lat', response.coord.lat);
-                                    $("#city" + i).attr('data-lon', response.coord.lon);
+                                    $("#city0" + i).html(response.main.temp);
+                                    $("#city0" + i).append(cities[i].fullName);
+                                    $("#city0" + i).attr('data-lat', response.coord.lat);
+                                    $("#city0" + i).attr('data-lon', response.coord.lon);
                                     
                                     // console.log(splitName);
-                                    citylat = $("#city" + i).data("lat");
-                                    citylong = $("#city" + i).data("lon");
+                                    citylat = $("#city0" + i).data("lat");
+                                    citylong = $("#city0" + i).data("lon");
 
                                 }
                                
@@ -64,14 +52,14 @@
 
                        
                         // console.log(response.name);
-                        if (splitName[0] === response.name) {
+                        // if (splitName[0] === response.name) {
                             // console.log(splitName[0]);
                             // console.log(response.coord.lat);
                             // console.log(response.coord.lon);
                             // console.log("Temperature (F): " + response.main.temp);
                            
                             // $(".cityBtn").append(response.main.temp)
-                        }
+                        // }
                         
                         
                     })
@@ -103,7 +91,7 @@
                         .addClass('cityBtn')
                         .addClass('secondChart')
                         .addClass('cityBtn' + i)
-                        .attr("id", "city" + i);
+                        .attr("id", "city1" + i);
 
                     $.ajax({
                         url: queryURL4,
@@ -117,18 +105,18 @@
                         // console.log("Temperature (F): " + response.main.temp);
 
                         for (var i = 0; i < cities.length; i++) {
-                            if($("#city"+ i).hasClass("cityBtn" + i)) {
+                            if($("#city1"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
                                 
                                 if (splitName === response.name) {
-                                    $("#city" + i).html(response.main.temp);
-                                    $("#city" + i).append(cities[i].fullName);
-                                    $("#city" + i).attr('data-lat', response.coord.lat);
-                                    $("#city" + i).attr('data-lon', response.coord.lon);
+                                    $("#city1" + i).html(response.main.temp);
+                                    $("#city1" + i).append(cities[i].fullName);
+                                    $("#city1" + i).attr('data-lat', response.coord.lat);
+                                    $("#city1" + i).attr('data-lon', response.coord.lon);
                                     
                                     // console.log(splitName);
-                                    citylat = $("#city" + i).data("lat");
-                                    citylong = $("#city" + i).data("lon");
+                                    citylat = $("#city1" + i).data("lat");
+                                    citylong = $("#city1" + i).data("lon");
 
                                 }
                                
@@ -158,7 +146,7 @@
                         .addClass('cityBtn')
                         .addClass('thirdChart')
                         .addClass('cityBtn' + i)
-                        .attr("id", "city" + i);
+                        .attr("id", "city2" + i);
 
                     $.ajax({
                         url: queryURL5,
@@ -172,18 +160,18 @@
                         // console.log("Temperature (F): " + response.main.temp);
 
                         for (var i = 0; i < cities.length; i++) {
-                            if($("#city"+ i).hasClass("cityBtn" + i)) {
+                            if($("#city2"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
                                 
                                 if (splitName === response.name) {
-                                    $("#city" + i).html(response.main.temp);
-                                    $("#city" + i).append(cities[i].fullName);
-                                    $("#city" + i).attr('data-lat', response.coord.lat);
-                                    $("#city" + i).attr('data-lon', response.coord.lon);
+                                    $("#city2" + i).html(response.main.temp);
+                                    $("#city2" + i).append(cities[i].fullName);
+                                    $("#city2" + i).attr('data-lat', response.coord.lat);
+                                    $("#city2" + i).attr('data-lon', response.coord.lon);
                                     
                                     // console.log(splitName);
-                                    citylat = $("#city" + i).data("lat");
-                                    citylong = $("#city" + i).data("lon");
+                                    citylat = $("#city2" + i).data("lat");
+                                    citylong = $("#city2" + i).data("lon");
 
                                 }
                                
