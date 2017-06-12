@@ -1,12 +1,14 @@
 $(document).ready(function(){
 
+    var long;
+    var lat;
     //
     // calling google.maps API
     //    
-    function initMap(hello) {
+    function initMap() {
 
         //giving lat and long to city
-        var city = {lat: 43.61, lng: -116.2};
+        var city = {lat: lat, lng: long};
         // console.log(lat);
        
         
@@ -16,7 +18,7 @@ $(document).ready(function(){
                 //centers the city in the map
                 center: city,
                 
-                zoom: 10,
+                zoom: 12,
                 
                 //disables user from functioning map
                 disableDefaultUI: true
@@ -54,9 +56,9 @@ $(document).ready(function(){
         
         console.log(fullname)
         
-        var lat = $(this).data('lat');
+        lat = $(this).data('lat');
 
-        var long = $(this).data('lon');
+        long = $(this).data('lon');
         
         console.log(lat);
 
