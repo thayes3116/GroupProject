@@ -8,6 +8,8 @@
 
         citytemp,
 
+        citiesSearched = [],
+
         userName,
 
         APIKey = "166a433c57516f51dfab1f7edaed8413",
@@ -56,6 +58,8 @@
 
             userName = $('#userNameInput').val().trim();
 
+            var localuserName = localStorage.setItem('userName', userName);
+
             $(".name").html("Hi, " + userName);
             
             $('.name').html("Hi, " + userName);
@@ -69,6 +73,8 @@
                 event.preventDefault();
 
                 userName = $('#userNameInput').val().trim();
+
+                var localuserName = localStorage.setItem('userName', userName);
 
                 $(".name").html("Hi, " + userName);
 
@@ -100,15 +106,7 @@
 
                 fireQuestionnaire();
 
-
-
-                // console.log(this + 'isaimdi');
-                //
-                // $('#questionDiv').html(question);
-
             });
-
-
 
         //
         //Function to populate questionnaire
@@ -144,7 +142,6 @@
             attributesChosen.push(dataName);
 
             numberOfClicks++;
-
 
             $(this).hide();
 
