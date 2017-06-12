@@ -120,10 +120,10 @@
 
         function flickrAPI(response) {
     
-       // for (var j = 0; j < cities.length; j++) {
-            //var cityFlickrSearch = cities[0].city;
+       for (var j = 0; j < cities.length; j++) {
+            var cityFlickrSearch = cities[j].city;
             var flickrAPIKey = 'c7cff0c15cf991b259116b841af8142c';
-            var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&text=austin&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1&auth_token=72157681980284482-113bff057d626a7f&api_sig=b743093452c5a0c72c3ee8063b14fc8f';
+            var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&text='+ cityFlickrSearch +'&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1&auth_token=72157681984208042-0ff91e65e2009b83&api_sig=4a3141748851339842c5d0c544e7b7fe';
 
 
 
@@ -142,7 +142,7 @@
                            } //console.log(response);
                         })*/
                 })
-        //}
+        }
     
 };
 flickrAPI();
