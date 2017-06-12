@@ -17,7 +17,7 @@
     </script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--Import jQuery before materialize.js--> 
+    <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
     <script type="text/javascript" src="assets/javascript/cityLists.js"></script>
@@ -72,8 +72,11 @@
     <div id="mainBox1" class="container text-alling center green lighten-5 z-depth-5">
     <div class="row">
         <div class="modal-content">
-            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons" >fast_rewind</i></a>
-            
+
+            <a id="backbtn" class="btn-floating" class="waves-effect waves-light btn-large" ><i class="material-icons right">replay</i>Back</a>
+            <div id="map">
+            </div>
+
             <div class="indexCity">
                 <div class="cityName">
                 </div>
@@ -102,9 +105,28 @@
             <h2 class="header col s12 light move">Moving can be difficult. Let's decide where to live together!</h2>
             <h2 class="header col s12 light move">First, enter your name:</h2>
             <div class="col s12">
-                <br>
-            <img class="submitImg z-depth-4" src="assets/img/submit.jpg">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="assets/img/img2.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/img/img3.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/img/img1.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/img/img4.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/img/img5.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/img/img6.jpg" style="width:100%">
+                    </div>
+                </div>
             </div>
+
             <div class="row">
                 <div class="col s4">
                 </div>
@@ -120,8 +142,11 @@
         <!-- SHOWS BTN CITIES RESULTS -->
     <div class="row">
         <div class="col s12" id="mainbox3">
-            <a id="backAttr" class="btn btn-floating btn-large cyan pulse"><i class="material-icons" >fast_rewind</i></a>
+
+            <a id="backAttr" class="waves-effect waves-light btn-large"><i class="material-icons right">replay</i>Back</a>
+
             <div id = "cityListParaDiv"></div>
+
             <h2 id="firstAttribute" class=attribute></h2>
             <span class="charts" id="first">
             </span>
@@ -136,6 +161,7 @@
 </div>
 </div>
 </main>
+
 <!-- FOOTER -->
 <footer class="page-footer green darken-3">
     <div class="footer-copyright">
