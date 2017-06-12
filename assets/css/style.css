@@ -63,13 +63,16 @@ img {
 }
 
 #backbtn {
+   border-radius: 0%;
+    width: 100px;
     float: right;
-    margin-right: 10px;
+    margin: 5px 15px 5px 5px;
+
 }
 
 #backAttr {
     display: none;
-    width: 150px;
+    width: 100px;
     float: right;
     margin-right: 10px;
 }
@@ -106,7 +109,7 @@ main {
 }
 
 .btn-floating.btn-large {
-    float: right;
+    /*float: right;*/
 }
 
 .cityName {
@@ -120,6 +123,11 @@ main {
     float: left;
     margin: 20px;
    
+}
+
+.cityPar {
+    padding: 10px 90px;
+    margin: 5px;
 }
 
 .indexCity {
@@ -151,8 +159,8 @@ main {
 }
 
 .bubbleChart {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     /*margin: 0 auto;*/
     float: right;
     /*position: relative;*/
@@ -166,13 +174,13 @@ main {
 
 @media screen and (max-width: 980px) { 
     #map {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
     }
 
     .bubbleChart {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
     }
 }
 
@@ -186,6 +194,10 @@ main {
         width: 320px;
         height: 320px;
         margin: 10px;
+    }
+
+    .cityPar {
+        padding: 1% 5%;
     }
 }
 
