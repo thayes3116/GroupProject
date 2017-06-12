@@ -118,10 +118,11 @@ main {
 }
 
 #map {
-    height:400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     float: left;
     margin: 20px;
+    margin-left: 40px;
    
 }
 
@@ -159,8 +160,8 @@ main {
 }
 
 .bubbleChart {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     /*margin: 0 auto;*/
     float: right;
     /*position: relative;*/
@@ -172,7 +173,19 @@ main {
    padding: 0;
  }
 
-@media screen and (max-width: 980px) { 
+@media screen and (max-width: 1175px) {
+    #map {
+        width: 450px;
+        height: 450px;
+    }
+
+    .bubbleChart {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1080px) { 
     #map {
         width: 350px;
         height: 350px;
@@ -188,6 +201,7 @@ main {
     #map {
         width: 320px;
         height: 320px;
+        margin: 5%;
     }
 
     .bubbleChart {
