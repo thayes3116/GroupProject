@@ -22,6 +22,7 @@
 
     $(document).ready(function() {
 
+
         //
         // slider pics
         //
@@ -41,6 +42,10 @@
         }
 
         //
+
+        $("#cityListPara").hide();
+        // 
+
         //Capture usersName on submit button click
         //Hide name input prompt
         //Fire questionnaire function
