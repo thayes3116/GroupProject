@@ -1,7 +1,7 @@
 function flickrAPI (response){
 	var flickrAPIKey = 'c7cff0c15cf991b259116b841af8142c';
-	var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=3950f232459715e902de0bae5973fca3&tags=austin&per_page=1&format=json&nojsoncallback=1&auth_token=72157681933887214-d5a21ed7c3c97c3b&api_sig=2de91e176c2a19602819221b8364ccf4';
-
+	var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f59c9b562e2c1aed744210c690b1a763&text=austin%2C+texas&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1&auth_token=72157681980284482-113bff057d626a7f&api_sig=b743093452c5a0c72c3ee8063b14fc8f';
+	
 
 
 $.ajax({
@@ -9,10 +9,10 @@ $.ajax({
 	method: 'GET'
 })
 .done(function(response){
- 
-    $('#image').append("<img src='"+ "https://farm" + response.photo[1].farm + ".staticflickr.com/" + response.photo[1].server + "/" + response.photo[1].id + "_" +response.photo[1].secret + "_m.jpg"+ "'>");    
+ console.log(response);
+    $('#image').append("<img src='"+ "https://farm" + response.photos.photo[0].farm + ".staticflickr.com/" + response.photos.photo[0].server + "/" + response.photos.photo[0].id + "_" +response.photos.photo[0].secret + "_m.jpg"+ "'>");    
   	 
-console.log(response);
+//console.log(response);
 
 })
 };
