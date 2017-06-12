@@ -94,6 +94,8 @@
                     })
 
                     .done(function(response) {
+                    $.each()
+                        console.log(data);
 
                         console.log(response.coord.lat);
                         console.log(response.coord.lon);
