@@ -12,6 +12,12 @@
     text-transform: capitalize;
     padding-top:8px;
 }
+#cityListPara{
+    margin: 20px 70px;
+    font-size:25px;
+    font-family: "roboto";
+
+}
 
 #nav {
     height: auto;
