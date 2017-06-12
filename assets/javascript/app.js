@@ -45,8 +45,10 @@
 
         //
 
+
         $("#cityListPara").hide();
         // 
+
 
         //Capture usersName on submit button click
         //Hide name input prompt
@@ -56,32 +58,39 @@
 
             event.preventDefault();
 
-            userName = $('#userNameInput').val().trim();
+            var x = document.forms["myForm"]["fname"].value;
+
+
+            if (x == "") {
+                return false;
+            } else {
+                userName = $('#userNameInput').val().trim();
+                $(".name").html("Hi, " + userName);
+                $('#initialPrompt').hide();
+                fireQuestionnaire();
+            }
 
             var localuserName = localStorage.setItem('userName', userName);
 
-            $(".name").html("Hi, " + userName);
-            
-            $('.name').html("Hi, " + userName);
-            $('#initialPrompt').hide();
-            
-            fireQuestionnaire();
         });
 
         $('#userNameInput').keypress(function(e) {
-            if(e.which == 13) {
-                event.preventDefault();
 
-                userName = $('#userNameInput').val().trim();
-
+            var x = document.forms["myForm"]["fname"].value;
                 var localuserName = localStorage.setItem('userName', userName);
+            
+            if(e.which == 13) {
 
-                $(".name").html("Hi, " + userName);
-
-                $('.name').html("Hi, " + userName);
-                $('#initialPrompt').hide();
-
-                fireQuestionnaire();            }
+                if (x == "") {
+                    return false;
+                } else {
+                    userName = $('#userNameInput').val().trim();
+                    $(".name").html("Hi, " + userName);
+                    $('#initialPrompt').hide();
+                    fireQuestionnaire();
+                }
+                console.log(keypress + 'this')
+            }
         });
 
         //
