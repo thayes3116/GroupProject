@@ -7,9 +7,9 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <!--Chart Font-->
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- OUR CSS -->
     <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
     <!-- OUR JAVASCRIPT -->
@@ -19,29 +19,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/flickr.js"></script>
     <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
     <script type="text/javascript" src="assets/javascript/cityLists.js"></script>
     <script type="text/javascript" src="assets/javascript/modal.js"></script>
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
 
-    <script type="text/javascript" src="assets/javascript/poi.js"</script>
-    
+    <script type="text/javascript" src="assets/javascript/poi.js"></script>
+    <script type="text/javascript" src="assets/javascript/wiki.js"></script>
 
     
     
     
     <!--d3 scripts-->
-    <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
   <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
@@ -69,20 +70,26 @@
 <!-- MAIN -->
 <main>
     <!-- BOX CITY PROPERTIES -->
-    <div class="container text-alling center green lighten-5 z-depth-5" id="mainBox1">
-    <div class="row">
-        <div class="modal-content">
-            <a id="backbtn" class="btn-floating" class="waves-effect waves-light btn-large" ><i class="material-icons right">replay</i>Back</a>
-            <div id="map">
-            </div>
-            <div class="indexCity">
-                <div class="cityName">
+    <div id="mainBox1" class="container text-alling center green lighten-5 z-depth-5">
+        <div class="row">
+            <div class="modal-content">
+
+                
+
+                
+                    <div class="cityName">
+                    </div>
+                    <div id="map">
+                    </div>
+                    <div class="bubbleChart">
+                    </div>
+                <div class="col s12">
+                    <h5 class="cityTit"> Placeholder Title</h5>
+                    <p class="cityPar">The most southerly of the capitals of the contiguous forty-eight states, Austin is located in Central Texas, along the Balcones Escarpment and Interstate 35, 150 miles (240 kilometres) northwest of Houston. It is also 160 miles (260 kilometres) south of Dallas and 75 miles (121 kilometres) north of San Antonio. Its elevation varies from 425 feet (130 m) to approximately 1,000 feet (305 m) above sea level.[50] In 2010, the city occupied a total area of 271.8 square miles (704 km2).[51] Approximately 6.9 square miles (18 km2) of this area is water.[52]</p>
                 </div>
-                <div class="bubbleChart">
-                </div>
+                <a id="backbtn" class="btn-floating" class="waves-effect waves-light btn-large">Back</a>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- QUESTIONS USER CITIES -->
@@ -137,7 +144,11 @@
         <!-- SHOWS BTN CITIES RESULTS -->
     <div class="row">
         <div class="col s12" id="mainbox3">
-            <a id="backAttr" class="waves-effect waves-light btn-large"><i class="material-icons right">replay</i>Back</a>
+
+            <a id="backAttr" class="waves-effect waves-light btn-large">Back</a>
+
+            <div id = "cityListParaDiv"></div>
+
             <h2 id="firstAttribute" class=attribute></h2>
             <span class="charts" id="first">
             </span>
@@ -147,6 +158,7 @@
             <h2 id="thirdAttribute" class=attribute></h2>
             <span class="charts" id="third">
             </span>
+            <span id="image"></span>
         </div>
     </div>
 </div>

@@ -8,6 +8,8 @@
 
         citytemp,
 
+        citiesSearched = [],
+
         userName,
 
         APIKey = "166a433c57516f51dfab1f7edaed8413",
@@ -21,6 +23,7 @@
         map;
 
     $(document).ready(function() {
+
 
         //
         // slider pics
@@ -41,11 +44,12 @@
         }
 
         //
-        //valid input
-        //
 
 
-        //
+        $("#cityListPara").hide();
+        // 
+
+
         //Capture usersName on submit button click
         //Hide name input prompt
         //Fire questionnaire function
@@ -56,21 +60,25 @@
 
             var x = document.forms["myForm"]["fname"].value;
 
+
             if (x == "") {
                 return false;
             } else {
                 userName = $('#userNameInput').val().trim();
                 $(".name").html("Hi, " + userName);
-                $('.name').html("Hi, " + userName);
                 $('#initialPrompt').hide();
                 fireQuestionnaire();
             }
+
+            var localuserName = localStorage.setItem('userName', userName);
+
         });
 
         $('#userNameInput').keypress(function(e) {
 
             var x = document.forms["myForm"]["fname"].value;
-
+                var localuserName = localStorage.setItem('userName', userName);
+            
             if(e.which == 13) {
 
                 if (x == "") {
@@ -78,7 +86,6 @@
                 } else {
                     userName = $('#userNameInput').val().trim();
                     $(".name").html("Hi, " + userName);
-                    $('.name').html("Hi, " + userName);
                     $('#initialPrompt').hide();
                     fireQuestionnaire();
                 }
@@ -108,15 +115,7 @@
 
                 fireQuestionnaire();
 
-
-
-                // console.log(this + 'isaimdi');
-                //
-                // $('#questionDiv').html(question);
-
             });
-
-
 
         //
         //Function to populate questionnaire
@@ -152,7 +151,6 @@
             attributesChosen.push(dataName);
 
             numberOfClicks++;
-
 
             $(this).hide();
 
