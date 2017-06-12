@@ -2,6 +2,7 @@
         //Beginning show city loops
         //
         function showCity0List() {
+            $("#cityListParaDiv").html("<p id = 'cityListPara'>Here are lists of highly ranked cities in each one of the categories important to you.  Click on an individual city to get more information.</p>")  
             for (var i = 0; i < cities.length; i++) {
 
                 if (cities[i][attributesChosen[0]][0] >= 3) {
