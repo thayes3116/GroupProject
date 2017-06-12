@@ -199,14 +199,14 @@ main {
 
 @media screen and (max-width: 768px) { 
     #map {
-        width: 320px;
-        height: 320px;
+        width: 310px;
+        height: 310px;
         margin: 5%;
     }
 
     .bubbleChart {
-        width: 320px;
-        height: 320px;
+        width: 310px;
+        height: 310px;
         margin: 10px;
     }
 
