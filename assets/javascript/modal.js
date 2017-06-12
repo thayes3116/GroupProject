@@ -3,10 +3,12 @@ $(document).ready(function(){
     //
     // calling google.maps API
     //    
-    function initMap() {
+    function initMap(hello) {
 
         //giving lat and long to city
-        var city = {lat: -34.397, lng: 150.644};
+        var city = {lat: 43.61, lng: -116.2};
+        // console.log(lat);
+       
         
         //grabbing variable map and giving it API to call   
         map = new google.maps.Map(document.getElementById('map'), {
@@ -53,8 +55,12 @@ $(document).ready(function(){
         console.log(fullname)
         
         var lat = $(this).data('lat');
+
+        var long = $(this).data('lon');
         
-        console.log(lat)
+        console.log(lat);
+
+        console.log(long);
 
         $("#mainBox1").css("display", "block")
 
