@@ -1,4 +1,4 @@
-// var queryURL5 = "https://en.wikipedia.org/w/api.php?action=query&titles=Austin&prop=info&format=jsonfm";
+// var queryURL5 = "https://cors-bcs.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&titles=Austin&prop=info&format=json";
 // 					$.ajax({
 //                         url: queryURL5,
 //                         method: "GET"

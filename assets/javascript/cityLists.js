@@ -1,4 +1,4 @@
-//
+        //
         //Beginning show city loops
         //
         function showCity0List() {
@@ -9,8 +9,7 @@
                    
                     var queryURL3 = "http://api.openweathermap.org/data/2.5/weather?" +
                         "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
-                        // console.log(cities[i].city)
-                         // console.log(queryURL3);
+                        
                     citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
                         .attr("data-full", cities[i].fullName)
                         .attr("data-name", cities[i].city)
@@ -26,10 +25,7 @@
                         url: queryURL3,
                         method: "GET"
                     }).done(function(response) {
-                        // console.log(response.name);
-                        // console.log(response.coord.lat);
-                        // console.log(response.coord.lon);
-                        // console.log("Temperature (F): " + response.main.temp);
+                        
                         for (var i = 0; i < cities.length; i++) {
                             if($("#city0"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
@@ -40,42 +36,20 @@
                                     $("#city0" + i).attr('data-lat', response.coord.lat);
                                     $("#city0" + i).attr('data-lon', response.coord.lon);
                                     
-                                    // console.log(splitName);
                                     citylat = $("#city0" + i).data("lat");
                                     citylong = $("#city0" + i).data("lon");
 
-                                }
-                               
-                            }
-                           
+                                }                               
+                            }                           
                         }
-
-
-                       
-                        // console.log(response.name);
-                        // if (splitName[0] === response.name) {
-                            // console.log(splitName[0]);
-                            // console.log(response.coord.lat);
-                            // console.log(response.coord.lon);
-                            // console.log("Temperature (F): " + response.main.temp);
-                           
-                            // $(".cityBtn").append(response.main.temp)
-                        // }
-                        
-                        
                     })
-                    
-                     
+                                        
                     $("#first").append(citybutton);
-
 
                     $('#firstAttribute').html(attributesChosen[0]);
                 }
             }
         }
-
-
-
 
         function showCity1List() {
             for (var i = 0; i < cities.length; i++) {
@@ -100,11 +74,7 @@
                     })
 
                     .done(function(response) {
-                        // console.log(response.name);
-                        // console.log(response.coord.lat);
-                        // console.log(response.coord.lon);
-                        // console.log("Temperature (F): " + response.main.temp);
-
+                        
                         for (var i = 0; i < cities.length; i++) {
                             if($("#city1"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
@@ -115,14 +85,11 @@
                                     $("#city1" + i).attr('data-lat', response.coord.lat);
                                     $("#city1" + i).attr('data-lon', response.coord.lon);
                                     
-                                    // console.log(splitName);
                                     citylat = $("#city1" + i).data("lat");
                                     citylong = $("#city1" + i).data("lon");
 
-                                }
-                               
-                            }
-                           
+                                }                               
+                            }                           
                         }
                     })
 
@@ -156,11 +123,6 @@
 
                     .done(function(response) {
 
-                        // console.log(response.name);
-                        // console.log(response.coord.lat);
-                        // console.log(response.coord.lon);
-                        // console.log("Temperature (F): " + response.main.temp);
-
                         for (var i = 0; i < cities.length; i++) {
                             if($("#city2"+ i).hasClass("cityBtn" + i)) {
                                 var splitName = cities[i].city;
@@ -171,16 +133,12 @@
                                     $("#city2" + i).attr('data-lat', response.coord.lat);
                                     $("#city2" + i).attr('data-lon', response.coord.lon);
                                     
-                                    // console.log(splitName);
                                     citylat = $("#city2" + i).data("lat");
                                     citylong = $("#city2" + i).data("lon");
 
-                                }
-                               
-                            }
-                           
+                                }                               
+                            }  
                         }
-
                     })
 
                     $("#third").append(citybutton);
@@ -195,31 +153,31 @@
         //end of functions to showcity lists
         //
 
-        function flickrAPI(response) {
+//         function flickrAPI(response) {
     
-       for (var j = 0; j < cities.length; j++) {
-            var cityFlickrSearch = cities[j].city;
-            var flickrAPIKey = 'c7cff0c15cf991b259116b841af8142c';
-            var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&text='+ cityFlickrSearch +'&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1&auth_token=72157681984208042-0ff91e65e2009b83&api_sig=4a3141748851339842c5d0c544e7b7fe';
+//        for (var j = 0; j < cities.length; j++) {
+//             var cityFlickrSearch = cities[j].city;
+//             var flickrAPIKey = 'c7cff0c15cf991b259116b841af8142c';
+//             var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&text='+ 'austin' +'&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1&auth_token=72157681984208042-0ff91e65e2009b83&api_sig=4a3141748851339842c5d0c544e7b7fe';
 
 
 
-            $.ajax({
-                    url: queryURL9,
-                    method: 'GET'
-                })
-                .done(function(response) {
-                    console.log(response);
-                   /* $.each($('.cityBtn'),
-                        function(index, value) {
-                            for (j = 0; j < cities.length; j++) {
-                            if (($(this)).data('name') === cities[j].fullName)
-                            $('.cityBtn').append("<img src='" + "https://farm" + response.photos.photo[0].farm + ".staticflickr.com/" + response.photos.photo[0].server + "/" + response.photos.photo[0].id + "_" + response.photos.photo[0].secret + "_m.jpg" + "'>");
+//             $.ajax({
+//                     url: queryURL9,
+//                     method: 'GET'
+//                 })
+//                 .done(function(response) {
+//                     console.log(response);
+//                    /* $.each($('.cityBtn'),
+//                         function(index, value) {
+//                             for (j = 0; j < cities.length; j++) {
+//                             if (($(this)).data('name') === cities[j].fullName)
+//                             $('.cityBtn').append("<img src='" + "https://farm" + response.photos.photo[0].farm + ".staticflickr.com/" + response.photos.photo[0].server + "/" + response.photos.photo[0].id + "_" + response.photos.photo[0].secret + "_m.jpg" + "'>");
 
-                           } //console.log(response);
-                        })*/
-                })
-        }
+//                            } //console.log(response);
+//                         })*/
+//                 })
+//         }
     
-};
-flickrAPI();
+// };
+// flickrAPI();
