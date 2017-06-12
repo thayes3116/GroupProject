@@ -16,13 +16,13 @@
 #nav {
     height: auto;
 }
-.attribute{
-    clear:both;
 
+#backAttr {
+    display: none;    
 }
 
-h2 {
-    padding-top: 0px;
+.attribute{
+    clear:both;
 }
 
 .section {
@@ -46,22 +46,27 @@ h2 {
     display: none;
     width: 90%;
     height: 600px;
-    margin: 0px auto 50px auto;
-
-}
-   
-#h4city {
-    margin: 40px;
 }
 
+main {
+    margin-top: 70px;
+}
 
+.btn-floating.btn-large {
+    float: right;
+}
+
+.cityName {
+    font-family: "Roboto", sans-serif;
+    padding-top: 10px;
+}
 
 #map {
     height:500px;
     width: 500px;
     position: absolute;
     margin: 20px;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 
 .indexCity {

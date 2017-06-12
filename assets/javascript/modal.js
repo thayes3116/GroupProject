@@ -1,6 +1,4 @@
 $(document).ready(function(){
-       
-        
 
     //
     // calling google.maps API
@@ -27,16 +25,23 @@ $(document).ready(function(){
         // the red marker on map
         var marker = new google.maps.Marker({
             position: city,
-            map: map,
+            map: map
         });
     }
 
     // Shows google map in modal
     //var card = $('<div id="map">');
     $('#map').append(map);
-   
 
-   
+    // back button at map page
+    function backbtn() {
+        $('.btn-floating').on('click', function () {
+
+            $("#mainBox1").hide();
+
+            $("#mainBox2").css("display", "block");
+        });
+    }
 
     // 
     // when div is clicked, shows city name
@@ -62,7 +67,11 @@ $(document).ready(function(){
         $("#mainBox2").hide();
 
          initMap();
-        
+
+         backbtn();
+
+        $('.bubbleChart').empty();
+
         $('.cityName').html('<h4 id ="h4city">' + fullname + '</h4>');
 
         for (i = 0; i < cities.length; i++) {
@@ -74,4 +83,4 @@ $(document).ready(function(){
 
 	});
 
-});  
+});
