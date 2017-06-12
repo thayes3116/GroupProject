@@ -40,6 +40,10 @@ img {
 #initialPrompt{
     margin-top: 10px;
 }
+
+data-error {
+    display: none;
+}
 .cityBtn {
     width: 230px;
     height: 175px;

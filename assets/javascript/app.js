@@ -41,6 +41,11 @@
         }
 
         //
+        //valid input
+        //
+
+
+        //
         //Capture usersName on submit button click
         //Hide name input prompt
         //Fire questionnaire function
@@ -49,28 +54,36 @@
 
             event.preventDefault();
 
-            userName = $('#userNameInput').val().trim();
+            var x = document.forms["myForm"]["fname"].value;
 
-            $(".name").html("Hi, " + userName);
-            
-            $('.name').html("Hi, " + userName);
-            $('#initialPrompt').hide();
-            
-            fireQuestionnaire();
+            if (x == "") {
+                return false;
+            } else {
+                userName = $('#userNameInput').val().trim();
+                $(".name").html("Hi, " + userName);
+                $('.name').html("Hi, " + userName);
+                $('#initialPrompt').hide();
+                fireQuestionnaire();
+            }
         });
 
         $('#userNameInput').keypress(function(e) {
+
+            var x = document.forms["myForm"]["fname"].value;
+
             if(e.which == 13) {
-                event.preventDefault();
 
-                userName = $('#userNameInput').val().trim();
-
-                $(".name").html("Hi, " + userName);
-
-                $('.name').html("Hi, " + userName);
-                $('#initialPrompt').hide();
-
-                fireQuestionnaire();            }
+                if (x == "") {
+                    return false;
+                } else {
+                    userName = $('#userNameInput').val().trim();
+                    $(".name").html("Hi, " + userName);
+                    $('.name').html("Hi, " + userName);
+                    $('#initialPrompt').hide();
+                    fireQuestionnaire();
+                }
+                console.log(keypress + 'this')
+            }
         });
 
         //
