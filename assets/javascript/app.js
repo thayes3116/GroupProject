@@ -74,11 +74,14 @@
 
         //
 
+
         $("#cityListPara").hide();
+
 
 
         // 
         //Capture user's Name on submit button click
+
         //Hide name input prompt
         //Fire questionnaire function
         //
@@ -86,7 +89,17 @@
 
             event.preventDefault();
 
-            userName = $('#userNameInput').val().trim();
+            var x = document.forms["myForm"]["fname"].value;
+
+
+            if (x == "") {
+                return false;
+            } else {
+                userName = $('#userNameInput').val().trim();
+                $(".name").html("Hi, " + userName);
+                $('#initialPrompt').hide();
+                fireQuestionnaire();
+            }
 
             //Storage userName in local storage
 
@@ -124,39 +137,51 @@
 
         $('#userNameInput').keypress(function(e) {
 
+
+            var x = document.forms["myForm"]["fname"].value;
+
             if(e.which == 13) {
 
-              //Storage userName in local storage
+                if (x == "") {
+                  
+                    return false;
+                  
+                } else {
+                  
+                    userName = $('#userNameInput').val().trim();
 
-                if ((pastUsers.indexOf(userName)) === -1){
+                    //Storage userName in local storage
 
-                    pastUsers.push(userName);
+                    if ((pastUsers.indexOf(userName)) === -1){
 
-                    var pastUsersString = JSON.stringify(pastUsers)
+                        pastUsers.push(userName);
 
-                    localStorage.setItem('pastUsers',pastUsersString)
+                        var pastUsersString = JSON.stringify(pastUsers)
 
-                    $(".name").html("Hi, " + userName);
+                        localStorage.setItem('pastUsers',pastUsersString)
 
-                    $('#initialPrompt').hide();
-                    
-                    userNumber++
+                        $(".name").html("Hi, " + userName);
 
-                    fireQuestionnaire();
+                        $('#initialPrompt').hide();
 
-                }else{
+                        userNumber++
 
-                    //If user is returning get previously searched cities
+                        fireQuestionnaire();
 
-                    $(".name").html("Welcome back, " + userName + "! ");
+                    }else{
 
-                    if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+                        //If user is returning get previously searched cities
 
-                        var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+                        $(".name").html("Welcome back, " + userName + "! ");
 
-                        //showPreviousSearch()  
+                        if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                            var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                            //showPreviousSearch()  
                     } 
                 }   
+
             }
         });
 

@@ -129,17 +129,16 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col s4">
                 </div>
                 <div class="input-field col s4">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="userNameInput" type="text" class="valid">
-            <label for="userNameInput">First Name</label>
+                    <form name="myForm" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
+                        <i class="material-icons prefix">account_circle</i><input id="userNameInput" type="text" class="validate invalid" name="fname" required><label for="userNameInput">First Name</label>
+                    </form>
             <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit<i class="material-icons right">send</i>
             </button>
-        </div>
+                </div>
             </div>
         </div>
         <!-- SHOWS BTN CITIES RESULTS -->
