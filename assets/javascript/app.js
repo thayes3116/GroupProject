@@ -24,7 +24,7 @@
 
 	    cityName,
 
-        numberOfClicks = 0,
+        categoriesClicked = 0,
  
         map;
 
@@ -75,6 +75,7 @@
             setTimeout(showSlides, 3000);
         }
 
+
         $("#cityListPara").hide();
 
         // 
@@ -86,22 +87,21 @@
 
             event.preventDefault();
 
-            var x = $('#userNameInput').val().trim();
+            var unverifiedUserInput = $('#userNameInput').val().trim();
 
-            if (x == "" || !/^[a-zA-Z0-9-]+$/i.test(x)) {
+            if (unverifiedUserInput == "" || !/^[a-zA-Z0-9-]+$/i.test(unverifiedUserInput)) {
 
                 return false;
 
             } else {
                
-                userName = x;
+                userName = unverifiedUserInput;
 
                 if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
 
                     var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
 
                     citiesSearched = JSON.parse(citiesSearchedString);
-
 
                 }else{
 
@@ -147,27 +147,33 @@
         //
         //Back BTN to attr chose
         //
-            $('#backAttr').on('click', function () {
+        $('#backAttr').on('click', function () {
 
-                var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+            var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
-                $('#mainbox3').hide();
+            $('#mainbox3').hide();
 
-                $('#first').empty();
-                $('#second').empty();
-                $('#third').empty();
-                $('#mainBox2').show();
-                $('.questions').show();
-                $('#questionnaire').empty();
-                $('.questions').css('display', 'block');
+            $('#first').empty();
 
-                numberOfClicks = 0;
+            $('#second').empty();
 
-                attributesChosen = [];
+            $('#third').empty();
 
-                fireQuestionnaire();
+            $('#mainBox2').show();
 
-            });
+            $('.questions').show();
+
+            $('#questionnaire').empty();
+
+            $('.questions').css('display', 'block');
+
+            categoriesClicked = 0;
+
+            attributesChosen = [];
+
+            fireQuestionnaire();
+
+        });
 
         //
         //Function to populate questionnaire
@@ -202,13 +208,11 @@
 
             attributesChosen.push(dataName);
 
-            numberOfClicks++;
+            categoriesClicked++;
 
             $(this).hide();
 
-            console.log(numberOfClicks)
-
-            if (numberOfClicks === 3) {
+            if (categoriesClicked === 3) {
 
                $('.questions').hide();
 
