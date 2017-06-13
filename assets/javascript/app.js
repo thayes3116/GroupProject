@@ -6,9 +6,15 @@
 
         citylong,
 
+        pastUsersString,
+
         citytemp,
 
+        citiesClicked = 0,
+
         citiesSearched = [],
+
+        userNumber,
 
         userName,
 
@@ -22,9 +28,32 @@
  
         map;
 
+        // function UserStorage(username, citiesChosen){
+        //     this.username = username;
+        //     this.citiesChosen = []
+        // }
+
     $(document).ready(function() {
 
+        //
+        //Check local storage for past users
+        //
 
+        if (window.localStorage.getItem('pastUsers')) {
+
+            var local = localStorage.getItem('pastUsers');
+
+            var pastUsers = JSON.parse(local);
+
+            userNumber = pastUsers.length
+
+        }else{
+
+            pastUsers = [];
+
+        }
+
+        
         //
         // slider pics
         //
@@ -47,10 +76,12 @@
 
 
         $("#cityListPara").hide();
+
+
+
         // 
+        //Capture user's Name on submit button click
 
-
-        //Capture usersName on submit button click
         //Hide name input prompt
         //Fire questionnaire function
         //
@@ -70,26 +101,87 @@
                 fireQuestionnaire();
             }
 
-            var localuserName = localStorage.setItem('userName', userName);
+            //Storage userName in local storage
+
+            if ((pastUsers.indexOf(userName)) === -1){
+
+                pastUsers.push(userName);
+
+                var pastUsersString = JSON.stringify(pastUsers)
+
+                localStorage.setItem('pastUsers',pastUsersString)
+
+                $(".name").html("Hi, " + userName);
+
+                $('#initialPrompt').hide();
+                
+                userNumber++
+
+                fireQuestionnaire();
+
+            }else{
+
+                //If user is returning get previously searched cities
+
+                $(".name").html("Welcome back, " + userName + "! ");
+
+                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                    //showPreviousSearch()  
+                } 
+            }
 
         });
 
         $('#userNameInput').keypress(function(e) {
 
+
             var x = document.forms["myForm"]["fname"].value;
-                var localuserName = localStorage.setItem('userName', userName);
-            
+
             if(e.which == 13) {
 
                 if (x == "") {
+                  
                     return false;
+                  
                 } else {
+                  
                     userName = $('#userNameInput').val().trim();
-                    $(".name").html("Hi, " + userName);
-                    $('#initialPrompt').hide();
-                    fireQuestionnaire();
-                }
-                console.log(keypress + 'this')
+
+                    //Storage userName in local storage
+
+                    if ((pastUsers.indexOf(userName)) === -1){
+
+                        pastUsers.push(userName);
+
+                        var pastUsersString = JSON.stringify(pastUsers)
+
+                        localStorage.setItem('pastUsers',pastUsersString)
+
+                        $(".name").html("Hi, " + userName);
+
+                        $('#initialPrompt').hide();
+
+                        userNumber++
+
+                        fireQuestionnaire();
+
+                    }else{
+
+                        //If user is returning get previously searched cities
+
+                        $(".name").html("Welcome back, " + userName + "! ");
+
+                        if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                            var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                            //showPreviousSearch()  
+                    } 
+                }   
+
             }
         });
 
@@ -111,6 +203,7 @@
                 $('.questions').css('display', 'block');
 
                 numberOfClicks = 0;
+
                 attributesChosen = [];
 
                 fireQuestionnaire();
