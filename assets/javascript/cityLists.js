@@ -8,7 +8,7 @@ function showCity0List() {
 
         if (cities[i][attributesChosen[0]][0] >= 3) {
 
-            var queryURL3 = "http://api.openweathermap.org/data/2.5/weather?" +
+            var queryURL3 = "https://api.openweathermap.org/data/2.5/weather?" +
                 "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
             // console.log(cities[i].city)
             // console.log(queryURL3);
@@ -125,7 +125,7 @@ function showCity1List() {
 
         if (cities[i][attributesChosen[1]][0] >= 3) {
 
-            var queryURL4 = "http://api.openweathermap.org/data/2.5/weather?" +
+            var queryURL4 = "https://api.openweathermap.org/data/2.5/weather?" +
                 "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
 
             citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
@@ -197,7 +197,7 @@ function showCity2List() {
     for (var i = 0; i < cities.length; i++) {
         if (cities[i][attributesChosen[2]][0] >= 3) {
 
-            var queryURL5 = "http://api.openweathermap.org/data/2.5/weather?" +
+            var queryURL5 = "https://api.openweathermap.org/data/2.5/weather?" +
                 "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
 
             citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
