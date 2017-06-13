@@ -76,8 +76,13 @@ data-error {
 
 #nav {
     height: auto;
+    background-color: #237e88 !important;
 }
-
+.page-footer{
+    color: #fff;
+    background-color: #237e88 !important;
+    padding-bottom: 20px;
+}
 #backbtn {
     border-radius: 0%;
     width: 100px;
@@ -90,7 +95,7 @@ data-error {
     display: none;
     width: 100px;
     float: right;
-    margin-right: 10px;
+    margin-right: 40px;
 }
 
 .attribute{
@@ -122,6 +127,7 @@ data-error {
 }
 
 #mainBox2 {
+    margin-top: 20px;
     margin-bottom: 80px;
 }
 
@@ -164,6 +170,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url('../img/connect.png');
 }
 
 main {
