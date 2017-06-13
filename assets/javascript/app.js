@@ -12,7 +12,7 @@
 
         citiesClicked = 0,
 
-        citiesSearched = [],
+        citiesSearched,
 
         userNumber,
 
@@ -41,9 +41,9 @@
 
         if (window.localStorage.getItem('pastUsers')) {
 
-            var local = localStorage.getItem('pastUsers');
+            var pastUsersString = localStorage.getItem('pastUsers');
 
-            var pastUsers = JSON.parse(local);
+            var pastUsers = JSON.parse(pastUsersString);
 
             userNumber = pastUsers.length
 
@@ -52,7 +52,6 @@
             pastUsers = [];
 
         }
-
         
         //
         // slider pics
@@ -77,8 +76,6 @@
 
         $("#cityListPara").hide();
 
-
-
         // 
         //Capture user's Name on submit button click
 
@@ -89,16 +86,28 @@
 
             event.preventDefault();
 
-            var x = document.forms["myForm"]["fname"].value;
+            var x = $('#userNameInput').val().trim();
 
+            if (x == "" || !/^[a-zA-Z0-9-]+$/i.test(x)) {
 
-            if (x == "") {
                 return false;
+
             } else {
-                userName = $('#userNameInput').val().trim();
-                $(".name").html("Hi, " + userName);
-                $('#initialPrompt').hide();
-                fireQuestionnaire();
+               
+                userName = x;
+
+                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                    citiesSearched = JSON.parse(citiesSearchedString);
+
+
+                }else{
+
+                     citiesSearched = [];
+
+                }
             }
 
             //Storage userName in local storage
@@ -133,57 +142,6 @@
                 } 
             }
 
-        });
-
-        $('#userNameInput').keypress(function(e) {
-
-
-            var x = document.forms["myForm"]["fname"].value;
-
-            if(e.which == 13) {
-
-                if (x == "") {
-                  
-                    return false;
-                  
-                } else {
-                  
-                    userName = $('#userNameInput').val().trim();
-
-                    //Storage userName in local storage
-
-                    if ((pastUsers.indexOf(userName)) === -1){
-
-                        pastUsers.push(userName);
-
-                        var pastUsersString = JSON.stringify(pastUsers)
-
-                        localStorage.setItem('pastUsers',pastUsersString)
-
-                        $(".name").html("Hi, " + userName);
-
-                        $('#initialPrompt').hide();
-
-                        userNumber++
-
-                        fireQuestionnaire();
-
-                    }else{
-
-                        //If user is returning get previously searched cities
-
-                        $(".name").html("Welcome back, " + userName + "! ");
-
-                        if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
-
-                            var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
-
-                            //showPreviousSearch()  
-                        } 
-                    }   
-
-                }
-            }    
         });
 
         //
