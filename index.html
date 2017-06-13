@@ -56,7 +56,7 @@
         <div class="container" id = "maincontainer">
             <div class="row">
                 <div class="col s12">
-                   <h3><div class="name">Welcome </div></h3>
+                   <h3 class="name">Welcome</h3>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                     <h5 class="cityTit"> Placeholder Title</h5>
                     <p class="cityPar">The most southerly of the capitals of the contiguous forty-eight states, Austin is located in Central Texas, along the Balcones Escarpment and Interstate 35, 150 miles (240 kilometres) northwest of Houston. It is also 160 miles (260 kilometres) south of Dallas and 75 miles (121 kilometres) north of San Antonio. Its elevation varies from 425 feet (130 m) to approximately 1,000 feet (305 m) above sea level.[50] In 2010, the city occupied a total area of 271.8 square miles (704 km2).[51] Approximately 6.9 square miles (18 km2) of this area is water.[52]</p>
                 </div>
-                <a id="backbtn" class="btn-floating" class="waves-effect waves-light btn-large">Back</a>
+                <a id="backbtn" class="btn-floating waves-effect waves-light btn-large">Back</a>
             </div>
         </div>
     </div>
@@ -110,22 +110,22 @@
             <div class="col s12">
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="assets/img/img2.jpg" style="width:100%">
+                        <img src="assets/img/img2.jpg"  alt="city picture">
                     </div>
                     <div class="mySlides fade">
-                        <img src="assets/img/img3.jpg" style="width:100%">
+                        <img src="assets/img/img3.jpg" alt="city picture">
                     </div>
                     <div class="mySlides fade">
-                        <img src="assets/img/img1.jpg" style="width:100%">
+                        <img src="assets/img/img1.jpg" alt="city picture">
                     </div>
                     <div class="mySlides fade">
-                        <img src="assets/img/img4.jpg" style="width:100%">
+                        <img src="assets/img/img4.jpg" alt="city picture">
                     </div>
                     <div class="mySlides fade">
-                        <img src="assets/img/img5.jpg" style="width:100%">
+                        <img src="assets/img/img5.jpg" alt="city picture">
                     </div>
                     <div class="mySlides fade">
-                        <img src="assets/img/img6.jpg" style="width:100%">
+                        <img src="assets/img/img6.jpg" alt="city picture">
                     </div>
                 </div>
             </div>
@@ -133,11 +133,26 @@
                 <div class="col s4">
                 </div>
                 <div class="input-field col s4">
-                    <form name="myForm" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
-                        <i class="material-icons prefix">account_circle</i><input id="userNameInput" type="text" class="validate invalid" name="fname" required><label for="userNameInput">First Name</label>
+
+                    <form>
+
+                        <i class="material-icons prefix">account_circle</i>
+
+                        <input id="userNameInput" type="text" class="validate">
+
+                        <label for="userNameInput">First Name
+                        </label>
+                    
+                        <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit">Submit
+
+                        <i class="material-icons right">send</i>
+                        
+                        </button>
+
                     </form>
-            <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit" name="action">Submit<i class="material-icons right">send</i>
-            </button>
+
+                    
+
                 </div>
             </div>
         </div>
