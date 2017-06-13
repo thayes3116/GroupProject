@@ -179,10 +179,11 @@
                             var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
 
                             //showPreviousSearch()  
-                    } 
-                }   
+                        } 
+                    }   
 
-            }
+                }
+            }    
         });
 
         //
