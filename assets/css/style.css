@@ -95,9 +95,9 @@ data-error {
     display: none;
     width: 100px;
     float: right;
-    margin-right: 40px;
-}
+    margin-right: 15px;
 
+}
 .attribute{
     clear:both;
 }
