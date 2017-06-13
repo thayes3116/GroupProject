@@ -14,8 +14,6 @@
 
         citiesSearched,
 
-        userNumber,
-
         userName,
 
         APIKey = "166a433c57516f51dfab1f7edaed8413",
@@ -24,17 +22,44 @@
 
 	    cityName,
 
-        numberOfClicks = 0,
+        categoriesClicked = 0,
  
         map;
 
-        // function UserStorage(username, citiesChosen){
-        //     this.username = username;
-        //     this.citiesChosen = []
-        // }
+        //
+        //Function to add search history to sidebar
+        //
+
+        function favoriteListFire(){
+            $("#searchHistoryDiv").empty();
+            for(var j = 0 ; j < citiesSearched.length ; j++){
+                $("#searchHistoryDiv").append("<ul id='favoritelist'>")
+                var listItems = $("<li>").text(citiesSearched[j]);
+                $("#favoritelist").append(listItems)
+            }
+        }
 
     $(document).ready(function() {
 
+        $("#sidebar").hide();
+
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+        
+        $("#resetHistory").on('click', function(){
+            
+            console.log("click")
+
+            citiesSearched = [];
+
+            //var citiesSearchedString = JSON.stringify(citiesSearched);
+            
+            var citiesSearchedKey = "citiesSearchedKey" + userName;
+
+            localStorage.removeItem(citiesSearchedKey);
+
+            favoriteListFire();
+        })
         //
         //Check local storage for past users
         //
@@ -71,14 +96,11 @@
             setTimeout(showSlides, 3000);
         }
 
-        //
-
 
         $("#cityListPara").hide();
 
         // 
         //Capture user's Name on submit button click
-
         //Hide name input prompt
         //Fire questionnaire function
         //
@@ -86,22 +108,29 @@
 
             event.preventDefault();
 
-            var x = $('#userNameInput').val().trim();
+            var unverifiedUserInput = $('#userNameInput').val().trim();
 
-            if (x == "" || !/^[a-zA-Z0-9-]+$/i.test(x)) {
+            if (unverifiedUserInput == "" || !/^[a-zA-Z0-9-]+$/i.test(unverifiedUserInput)) {
 
                 return false;
 
             } else {
                
-                userName = x;
+                userName = unverifiedUserInput;
+
+                $("#nameSidebar").html(userName);
+
+                $("#sidebar").show();
+
+                $('#initialPrompt').hide();
+
+                fireQuestionnaire();
 
                 if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
 
                     var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
 
                     citiesSearched = JSON.parse(citiesSearchedString);
-
 
                 }else{
 
@@ -122,23 +151,19 @@
 
                 $(".name").html("Hi, " + userName);
 
-                $('#initialPrompt').hide();
-                
-                userNumber++
-
-                fireQuestionnaire();
-
             }else{
 
                 //If user is returning get previously searched cities
 
                 $(".name").html("Welcome back, " + userName + "! ");
 
+                favoriteListFire();
+                
                 if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
 
                     var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
 
-                    //showPreviousSearch()  
+                    
                 } 
             }
 
@@ -147,27 +172,33 @@
         //
         //Back BTN to attr chose
         //
-            $('#backAttr').on('click', function () {
+        $('#backAttr').on('click', function () {
 
-                var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+            var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
-                $('#mainbox3').hide();
+            $('#mainbox3').hide();
 
-                $('#first').empty();
-                $('#second').empty();
-                $('#third').empty();
-                $('#mainBox2').show();
-                $('.questions').show();
-                $('#questionnaire').empty();
-                $('.questions').css('display', 'block');
+            $('#first').empty();
 
-                numberOfClicks = 0;
+            $('#second').empty();
 
-                attributesChosen = [];
+            $('#third').empty();
 
-                fireQuestionnaire();
+            $('#mainBox2').show();
 
-            });
+            $('.questions').show();
+
+            $('#questionnaire').empty();
+
+            $('.questions').css('display', 'block');
+
+            categoriesClicked = 0;
+
+            attributesChosen = [];
+
+            fireQuestionnaire();
+
+        });
 
         //
         //Function to populate questionnaire
@@ -202,13 +233,11 @@
 
             attributesChosen.push(dataName);
 
-            numberOfClicks++;
+            categoriesClicked++;
 
             $(this).hide();
 
-            console.log(numberOfClicks)
-
-            if (numberOfClicks === 3) {
+            if (categoriesClicked === 3) {
 
                $('.questions').hide();
 
@@ -274,7 +303,7 @@
 
             // })
         // }
-});        
+});
 
 
         // 

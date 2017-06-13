@@ -52,7 +52,8 @@
 <!-- NAV BAR -->
 <header>
 <nav>
-    <div class="nav-wrapper green darken-3" id="nav">
+
+    <div class="nav-wrapper #ffe0b2 orange lighten-4" id="nav">
         <div class="container" id = "maincontainer">
             <div class="row">
                 <div class="col s12">
@@ -69,14 +70,44 @@
 
 <!-- MAIN -->
 <main>
+
+    <!--FAVORITE CITIES-->
+    <div class="container" id="sidebar">
+        <div class="row">
+            <div class="col s12">
+                <ul id="slide-out" class="side-nav">
+                    <li><div class="userView">
+                        <div class="background">
+                            <img src="assets/img/side.jpg">
+                        </div>
+                        <div>
+                            <img id="usericon" class="circle" src="assets/img/usericon.png">
+                        </div>
+                        <div>
+                            <span  id="nameSidebar" class="white-text"></span>
+                        </div>
+                        </div>
+                    </li>
+                        <li>
+                            <span><i class="material-icons">grade</i>Your Favorites Cities</span>
+                        </li>
+
+                        <li>    
+                            <div class="divider"></div>
+                        </li>
+                    <div id="searchHistoryDiv"></div>
+                    <button id="resetHistory">Reset History</button>
+                </ul>
+                <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            
+            </div>
+        </div>
+    </div>
+    
     <!-- BOX CITY PROPERTIES -->
     <div id="mainBox1" class="container text-alling center green lighten-5 z-depth-5">
         <div class="row">
             <div class="modal-content">
-
-                
-
-                
                     <div class="cityName">
                     </div>
                     <div id="map">
@@ -102,15 +133,17 @@
             </div>
         </div>
     </div>
+
     <!-- INITIAL PAGE WELCOME -->
     <div class="row">
         <div class="col s12" id="initialPrompt">
             <h2 class="header col s12 light move">Moving can be difficult. Let's decide where to live together!</h2>
             <h2 class="header col s12 light move">First, enter your name:</h2>
+            <!-- SLIDESHOW -->
             <div class="col s12">
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="assets/img/img2.jpg"  alt="city picture">
+                        <img src="assets/img/img2.jpg" alt="city picture">
                     </div>
                     <div class="mySlides fade">
                         <img src="assets/img/img3.jpg" alt="city picture">
@@ -133,37 +166,24 @@
                 <div class="col s4">
                 </div>
                 <div class="input-field col s4">
-
                     <form>
-
                         <i class="material-icons prefix">account_circle</i>
-
                         <input id="userNameInput" type="text" class="validate">
-
                         <label for="userNameInput">First Name
                         </label>
-                    
                         <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit">Submit
-
                         <i class="material-icons right">send</i>
-                        
                         </button>
-
                     </form>
-
-                    
-
                 </div>
             </div>
         </div>
+
         <!-- SHOWS BTN CITIES RESULTS -->
     <div class="row">
         <div class="col s12" id="mainbox3">
-
             <a id="backAttr" class="waves-effect waves-light btn-large">Back</a>
-
             <div id = "cityListParaDiv"></div>
-
             <h2 id="firstAttribute" class=attribute></h2>
             <span class="charts" id="first">
             </span>
@@ -176,16 +196,21 @@
             <span id="image"></span>
         </div>
     </div>
+        <!--Show Returning user's previous searches-->
+    <div class="row">
+        <div class="col s12" id="mainbox4">
+            <div id = "SearchHistory">
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 </main>
 
 <!-- FOOTER -->
-<footer class="page-footer green darken-3">
-    <div class="footer-copyright">
-        <div class="container text-allign center">
+<footer class="page-footer #ffe0b2 orange lighten-4">
+    <div class="container text-allign center">
             &copy; We Want Your Money - 2017 &copy; Copyright
-        </div>
     </div>
 </footer>
 </body>

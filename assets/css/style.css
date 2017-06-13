@@ -18,6 +18,7 @@
 
 img {
     height: 400px;
+    width: 100%;
 }
 
 @-webkit-keyframes fade {
@@ -29,7 +30,6 @@ img {
     from {opacity: .4}
     to {opacity: 1}
 }
-
 /* slider end */
 
 .submitImg {
@@ -54,8 +54,7 @@ data-error {
 #cityListPara{
     margin: 20px 70px;
     font-size:25px;
-    font-family: "roboto";
-
+    font-family: Roboto;
 }
 
 .slider {
@@ -67,7 +66,7 @@ data-error {
 }
 
 #backbtn {
-   border-radius: 0%;
+    border-radius: 0%;
     width: 100px;
     float: right;
     margin: 5px 15px 5px 5px;
@@ -106,10 +105,11 @@ data-error {
     display: none;
     width: 90%;
     height: auto;
+    margin-bottom: 80px;
 }
 
-main {
-    margin-top: 70px;
+#mainBox2 {
+    margin-bottom: 80px;
 }
 
 .btn-floating.btn-large {
@@ -127,7 +127,6 @@ main {
     float: left;
     margin: 20px;
     margin-left: 40px;
-   
 }
 
 .cityPar {
@@ -156,6 +155,7 @@ body {
 
 main {
     flex: 1 0 auto;
+    margin-top: 20px;
 }
 
 .graphModal {
@@ -175,6 +175,18 @@ main {
  .bubbleChart svg{
    /*background: #000000;*/
    padding: 0;
+ }
+
+ .userView {
+     height: 160px;
+ }
+
+ #usericon {
+     margin-left: 35%;
+ }
+
+ #name {
+     font-size: 45px;
  }
 
 @media screen and (max-width: 1175px) {
