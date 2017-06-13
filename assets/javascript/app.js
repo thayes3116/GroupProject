@@ -24,6 +24,11 @@
 
     $(document).ready(function() {
 
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        //$('.collapsible').collapsible();
+
 
         //
         // slider pics
@@ -43,12 +48,7 @@
             setTimeout(showSlides, 3000);
         }
 
-        //
-
-
         $("#cityListPara").hide();
-        // 
-
 
         //Capture usersName on submit button click
         //Hide name input prompt
@@ -60,27 +60,6 @@
 
             var x = document.forms["myForm"]["fname"].value;
 
-
-            if (x == "") {
-                return false;
-            } else {
-                userName = $('#userNameInput').val().trim();
-                $(".name").html("Hi, " + userName);
-                $('#initialPrompt').hide();
-                fireQuestionnaire();
-            }
-
-            var localuserName = localStorage.setItem('userName', userName);
-
-        });
-
-        $('#userNameInput').keypress(function(e) {
-
-            var x = document.forms["myForm"]["fname"].value;
-                var localuserName = localStorage.setItem('userName', userName);
-            
-            if(e.which == 13) {
-
                 if (x == "") {
                     return false;
                 } else {
@@ -89,8 +68,24 @@
                     $('#initialPrompt').hide();
                     fireQuestionnaire();
                 }
-                console.log(keypress + 'this')
-            }
+            var localuserName = localStorage.setItem('userName', userName);
+        });
+
+        //
+        // submit on ENTER key
+        //
+        $('#userNameInput').keypress(function keyon(e) {
+
+            var x = document.forms["myForm"]["fname"].value;
+            var localuserName = localStorage.setItem('userName', userName);
+            if(e.which == 13 && x == "") {
+                    return false;
+                } else if (e.which == 13) {
+                    userName = $('#userNameInput').val().trim();
+                    $(".name").html("Hi, " + userName);
+                    $('#initialPrompt').hide();
+                    fireQuestionnaire();
+                }
         });
 
         //
@@ -222,7 +217,7 @@
 
             // })
         // }
-});        
+});
 
 
         // 
