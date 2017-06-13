@@ -11,7 +11,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [2, 'Outdoors']
+			'Outdoors'  :  [2, 'Outdoors'],
+			'title' : 'Austin'
 		},
 
 		{
@@ -26,7 +27,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [4, 'Outdoors']
+			'Outdoors'  :  [4, 'Outdoors'],
+			'title' : 'Denver'
 		},
 
 		{
@@ -41,7 +43,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [5, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Washington D.C. Overview'
 		},
 
 		{
@@ -56,7 +59,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
-			'Outdoors'  :  [4, 'Outdoors']
+			'Outdoors'  :  [4, 'Outdoors'],
+			'title' : 'Seattle'
 		},
 
 		{
@@ -71,7 +75,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [2, 'Outdoors']
+			'Outdoors'  :  [2, 'Outdoors'],
+			'title' : 'Raleigh'
 		},
 
 		{
@@ -86,7 +91,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Boston'
 		},
 
 		{
@@ -101,7 +107,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [2, 'Outdoors']
+			'Outdoors'  :  [2, 'Outdoors'],
+			'title' : 'Des Moines (panorama)'
 		},
 
 		{
@@ -116,7 +123,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Salt Lake City'
 		},
 
 		{
@@ -131,7 +139,8 @@
 			'Economy'  :  [3, 'Economy'], 
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
-			'Outdoors'  :  [4, 'Outdoors']
+			'Outdoors'  :  [4, 'Outdoors'],
+			'title' : 'Colorado Springs Sunrise'
 		},
 
 		{
@@ -146,7 +155,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Boise'
 		},
 
 		{
@@ -161,7 +171,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
-			'Outdoors'  :  [1, 'Outdoors']
+			'Outdoors'  :  [1, 'Outdoors'],
+			'title' : 'Nashville'
 		},
 
 		{
@@ -176,7 +187,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [1, 'Outdoors']
+			'Outdoors'  :  [1, 'Outdoors'],
+			'title' : 'Charlotte'
 		},
 
 		{
@@ -191,7 +203,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
-			'Outdoors'  :  [2, 'Outdoors']
+			'Outdoors'  :  [2, 'Outdoors'],
+			'title' : 'Dallas'
 		},
 
 		{
@@ -206,7 +219,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [5, 'Leisure & Culture'],
-			'Outdoors'  :  [4, 'Outdoors']
+			'Outdoors'  :  [4, 'Outdoors'],
+			'title' : 'San Jose'
 		},
 
 		{
@@ -221,7 +235,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
-			'Outdoors'  :  [2, 'Outdoors']
+			'Outdoors'  :  [2, 'Outdoors'],
+			'title' : 'Madison'
 		},
 
 		{
@@ -236,7 +251,8 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Houston'
 		},
 
 		{
@@ -251,6 +267,7 @@
 			'Economy'  :  [3, 'Economy'],
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
-			'Outdoors'  :  [3, 'Outdoors']
+			'Outdoors'  :  [3, 'Outdoors'],
+			'title' : 'Westbound St. Louis Park'
 		}		
 	];
