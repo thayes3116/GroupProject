@@ -14,8 +14,6 @@
 
         citiesSearched,
 
-        userNumber,
-
         userName,
 
         APIKey = "166a433c57516f51dfab1f7edaed8413",
@@ -28,17 +26,40 @@
  
         map;
 
-        // function UserStorage(username, citiesChosen){
-        //     this.username = username;
-        //     this.citiesChosen = []
-        // }
+        //
+        //Function to add search history to sidebar
+        //
+
+        function favoriteListFire(){
+            $("#searchHistoryDiv").empty();
+            for(var j = 0 ; j < citiesSearched.length ; j++){
+                $("#searchHistoryDiv").append("<ul id='favoritelist'>")
+                var listItems = $("<li>").text(citiesSearched[j]);
+                $("#favoritelist").append(listItems)
+            }
+        }
 
     $(document).ready(function() {
 
+        $("#sidebar").hide();
+
         // Initialize collapse button
         $(".button-collapse").sideNav();
-        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-        //$('.collapsible').collapsible();
+        
+        $("#resetHistory").on('click', function(){
+            
+            console.log("click")
+
+            citiesSearched = [];
+
+            //var citiesSearchedString = JSON.stringify(citiesSearched);
+            
+            var citiesSearchedKey = "citiesSearchedKey" + userName;
+
+            localStorage.removeItem(citiesSearchedKey);
+
+            favoriteListFire();
+        })
         //
         //Check local storage for past users
         //
@@ -97,6 +118,14 @@
                
                 userName = unverifiedUserInput;
 
+                $("#nameSidebar").html(userName);
+
+                $("#sidebar").show();
+
+                $('#initialPrompt').hide();
+
+                fireQuestionnaire();
+
                 if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
 
                     var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
@@ -122,23 +151,19 @@
 
                 $(".name").html("Hi, " + userName);
 
-                $('#initialPrompt').hide();
-                
-                userNumber++
-
-                fireQuestionnaire();
-
             }else{
 
                 //If user is returning get previously searched cities
 
                 $(".name").html("Welcome back, " + userName + "! ");
 
+                favoriteListFire();
+                
                 if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
 
                     var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
 
-                    //showPreviousSearch()  
+                    
                 } 
             }
 

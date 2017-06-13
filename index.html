@@ -72,7 +72,7 @@
 <main>
 
     <!--FAVORITE CITIES-->
-    <div class="container">
+    <div class="container" id="sidebar">
         <div class="row">
             <div class="col s12">
                 <ul id="slide-out" class="side-nav">
@@ -80,15 +80,26 @@
                         <div class="background">
                             <img src="assets/img/side.jpg">
                         </div>
-                        <class href="#!user"><img id="usericon" class="circle" src="assets/img/usericon.png"></class>
-                        <class href="#!name"><span  id="name" class="white-text name">JON DAVIS</span></class>
-                    </div></li>
-                    <li><a href="#!"><i class="material-icons">grade</i>Your Favorites Cities</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a class="waves-effect" href="#!">Second Link</a></li>
-                    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                        <div>
+                            <img id="usericon" class="circle" src="assets/img/usericon.png">
+                        </div>
+                        <div>
+                            <span  id="nameSidebar" class="white-text"></span>
+                        </div>
+                        </div>
+                    </li>
+                        <li>
+                            <span><i class="material-icons">grade</i>Your Favorites Cities</span>
+                        </li>
+
+                        <li>    
+                            <div class="divider"></div>
+                        </li>
+                    <div id="searchHistoryDiv"></div>
+                    <button id="resetHistory">Reset History</button>
                 </ul>
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            
             </div>
         </div>
     </div>
@@ -164,7 +175,6 @@
                         <i class="material-icons right">send</i>
                         </button>
                     </form>
-]
                 </div>
             </div>
         </div>
