@@ -64,7 +64,9 @@ $(document).ready(function(){
             citiesSearched.push(fullname)
 
             console.log(citiesSearched)
-           
+
+            favoriteListFire();
+
             var citiesSearchedString = JSON.stringify(citiesSearched);
             
             var citiesSearchedKey = "citiesSearchedKey" + userName;
