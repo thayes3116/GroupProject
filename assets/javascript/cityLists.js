@@ -164,12 +164,14 @@ function showCity1List() {
                             citylat = $("#city1" + i).data("lat");
                             citylong = $("#city1" + i).data("lon");
 
+
                         }
 
                     }
 
                 }
             })
+
 
             $.getJSON(queryURL10, function(response) {
                     console.log(response);
@@ -260,6 +262,7 @@ function showCity2List() {
         }
     }
 }
+
 
 //
 //end of functions to showcity lists

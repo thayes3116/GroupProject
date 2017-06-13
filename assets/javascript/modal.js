@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     var long;
     var lat;
+
     //
     // calling google.maps API
     //    
@@ -9,8 +10,6 @@ $(document).ready(function(){
 
         //giving lat and long to city
         var city = {lat: lat, lng: long};
-        // console.log(lat);
-       
         
         //grabbing variable map and giving it API to call   
         map = new google.maps.Map(document.getElementById('map'), {
@@ -30,39 +29,58 @@ $(document).ready(function(){
             map: map
         });
     }
-
+    //
     // Shows google map in modal
-    //var card = $('<div id="map">');
+    //
+
     $('#map').append(map);
 
+    //
     // back button at map page
-    function backbtn() {
-        $('.btn-floating').on('click', function () {
+    //
 
-            $("#mainBox1").hide();
+    $('.btn-floating').on('click', function () {
 
-            $("#mainBox2").css("display", "block");
-        });
-    }
+        $("#mainBox1").hide();
+
+        $("#mainBox2").css("display", "block");
+    });
+
 
     // 
     // when div is clicked, shows city name
     // 
+
 	$(".charts").on('click', ".cityBtn", function () {
         
+        citiesClicked++;
+
         var nameCity = $(this).data('name');
         
         var fullname = $(this).data('full');
+
+        if((citiesSearched.indexOf(fullname)) === -1){
+           
+            citiesSearched.push(fullname)
+
+            console.log(citiesSearched)
+
+            favoriteListFire();
+
+            var citiesSearchedString = JSON.stringify(citiesSearched);
+            
+            var citiesSearchedKey = "citiesSearchedKey" + userName;
         
-        console.log(fullname)
-        
+            console.log(citiesSearchedKey);
+
+            localStorage.setItem(citiesSearchedKey, citiesSearchedString);
+        }   
+
+            
+           
         lat = $(this).data('lat');
 
         long = $(this).data('lon');
-        
-        console.log(lat);
-
-        console.log(long);
 
         $("#mainBox1").css("display", "block")
 
@@ -70,19 +88,16 @@ $(document).ready(function(){
 
          initMap();
 
-         backbtn();
-
         $('.bubbleChart').empty();
 
         $('.cityName').html('<h4 id ="h4city">' + fullname + '</h4>');
 
-        for (i = 0; i < cities.length; i++) {
-            if (nameCity === cities[i].city) {
-                console.log(nameCity);
-                showGraph(i);
+            for (i = 0; i < cities.length; i++) {
+
+                if (nameCity === cities[i].city) {
+     
+                    showGraph(i);
+                }
             }
-        }
-
 	});
-
 });

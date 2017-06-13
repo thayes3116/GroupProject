@@ -6,7 +6,13 @@
 
         citylong,
 
+        pastUsersString,
+
         citytemp,
+
+        citiesClicked = 0,
+
+        citiesSearched,
 
         userName,
 
@@ -16,14 +22,85 @@
 
 	    cityName,
 
-        numberOfClicks = 0,
+        categoriesClicked = 0,
  
         map;
 
+        //
+        //Function to add search history to sidebar
+        //
+
+        function favoriteListFire(){
+            $("#searchHistoryDiv").empty();
+            for(var j = 0 ; j < citiesSearched.length ; j++){
+                $("#searchHistoryDiv").append("<ul id='favoritelist'>")
+                var listItems = $("<li>").text(citiesSearched[j]);
+                $("#favoritelist").append(listItems)
+            }
+        }
+
     $(document).ready(function() {
-         // $("#mainBox1").hide();
+
+        $("#sidebar").hide();
+
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+        
+        $("#resetHistory").on('click', function(){
+            
+            console.log("click")
+
+            citiesSearched = [];
+
+            //var citiesSearchedString = JSON.stringify(citiesSearched);
+            
+            var citiesSearchedKey = "citiesSearchedKey" + userName;
+
+            localStorage.removeItem(citiesSearchedKey);
+
+            favoriteListFire();
+        })
+        //
+        //Check local storage for past users
+        //
+
+        if (window.localStorage.getItem('pastUsers')) {
+
+            var pastUsersString = localStorage.getItem('pastUsers');
+
+            var pastUsers = JSON.parse(pastUsersString);
+
+            userNumber = pastUsers.length
+
+        }else{
+
+            pastUsers = [];
+
+        }
+        
+        //
+        // slider pics
+        //
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = $(".mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex> slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+
+        $("#cityListPara").hide();
+
         // 
-        //Capture usersName on submit button click
+        //Capture user's Name on submit button click
         //Hide name input prompt
         //Fire questionnaire function
         //
@@ -31,61 +108,97 @@
 
             event.preventDefault();
 
-            userName = $('#userNameInput').val().trim();
+            var unverifiedUserInput = $('#userNameInput').val().trim();
 
-            $(".name").html("Hi, " + userName);
-            
-            $('.name').html("Hi, " + userName);
-            $('#initialPrompt').hide();
-            
-            fireQuestionnaire();
-        });
+            if (unverifiedUserInput == "" || !/^[a-zA-Z0-9-]+$/i.test(unverifiedUserInput)) {
 
-        $('#userNameInput').keypress(function(e) {
-            if(e.which == 13) {
-                event.preventDefault();
+                return false;
 
-                userName = $('#userNameInput').val().trim();
+            } else {
+               
+                userName = unverifiedUserInput;
+
+                $("#nameSidebar").html(userName);
+
+                $("#sidebar").show();
+
+                $('#initialPrompt').hide();
+
+                fireQuestionnaire();
+
+                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                    citiesSearched = JSON.parse(citiesSearchedString);
+
+                }else{
+
+                     citiesSearched = [];
+
+                }
+            }
+
+            //Storage userName in local storage
+
+            if ((pastUsers.indexOf(userName)) === -1){
+
+                pastUsers.push(userName);
+
+                var pastUsersString = JSON.stringify(pastUsers)
+
+                localStorage.setItem('pastUsers',pastUsersString)
 
                 $(".name").html("Hi, " + userName);
 
-                $('.name').html("Hi, " + userName);
-                $('#initialPrompt').hide();
+            }else{
 
-                fireQuestionnaire();            }
+                //If user is returning get previously searched cities
+
+                $(".name").html("Welcome back, " + userName + "! ");
+
+                favoriteListFire();
+                
+                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+
+                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+
+                    
+                } 
+            }
+
         });
 
         //
         //Back BTN to attr chose
         //
-            $('#backAttr').on('click', function () {
+        $('#backAttr').on('click', function () {
 
-                var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+            var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
-                $('#mainbox3').hide();
+            $('#mainbox3').hide();
 
-                $('#first').empty();
-                $('#second').empty();
-                $('#third').empty();
-                $('#mainBox2').show();
-                $('.questions').show();
-                $('#questionnaire').empty();
-                $('.questions').css('display', 'block');
+            $('#first').empty();
 
-                numberOfClicks = 0;
-                attributesChosen = [];
+            $('#second').empty();
 
-                fireQuestionnaire();
+            $('#third').empty();
 
+            $('#mainBox2').show();
 
+            $('.questions').show();
 
-                // console.log(this + 'isaimdi');
-                //
-                // $('#questionDiv').html(question);
+            $('#questionnaire').empty();
 
-            });
+            $('.questions').css('display', 'block');
 
+            categoriesClicked = 0;
 
+            attributesChosen = [];
+
+            fireQuestionnaire();
+
+        });
 
         //
         //Function to populate questionnaire
@@ -120,14 +233,11 @@
 
             attributesChosen.push(dataName);
 
-            numberOfClicks++;
-
+            categoriesClicked++;
 
             $(this).hide();
 
-            console.log(numberOfClicks)
-
-            if (numberOfClicks === 3) {
+            if (categoriesClicked === 3) {
 
                $('.questions').hide();
 
@@ -193,7 +303,7 @@
 
             // })
         // }
-});        
+});
 
 
         // 

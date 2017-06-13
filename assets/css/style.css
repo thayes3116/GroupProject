@@ -1,9 +1,48 @@
+/* slideshow */
+.mySlides {
+    display:none
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+img {
+    height: 400px;
+    width: 100%;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+/* slider end */
+
 .submitImg {
     width: 100%;
     height: 180px;
 }
+
 #initialPrompt{
     margin-top: 10px;
+}
+
+data-error {
+    display: none;
 }
 .cityBtn {
     width: 230px;
@@ -24,12 +63,34 @@
     vertical-align: middle;
     line-height: normal;
 }
+
+#cityListPara{
+    margin: 20px 70px;
+    font-size:25px;
+    font-family: Roboto;
+}
+
+.slider {
+    width: 900px;
+}
+
 #nav {
     height: auto;
 }
 
+#backbtn {
+    border-radius: 0%;
+    width: 100px;
+    float: right;
+    margin: 5px 15px 5px 5px;
+
+}
+
 #backAttr {
-    display: none;    
+    display: none;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
 }
 
 .attribute{
@@ -56,15 +117,16 @@
 #mainBox1 {
     display: none;
     width: 90%;
-    height: 600px;
+    height: auto;
+    margin-bottom: 80px;
 }
 
-main {
-    margin-top: 70px;
+#mainBox2 {
+    margin-bottom: 80px;
 }
 
 .btn-floating.btn-large {
-    float: right;
+    /*float: right;*/
 }
 
 .cityName {
@@ -73,11 +135,16 @@ main {
 }
 
 #map {
-    height:500px;
+    height: 500px;
     width: 500px;
-    position: absolute;
+    float: left;
     margin: 20px;
-    margin-top: 90px;
+    margin-left: 40px;
+}
+
+.cityPar {
+    padding: 10px 90px;
+    margin: 5px;
 }
 
 .indexCity {
@@ -101,6 +168,7 @@ body {
 
 main {
     flex: 1 0 auto;
+    margin-top: 20px;
 }
 
 .graphModal {
@@ -108,18 +176,72 @@ main {
     float: right;
 }
 
- .bubbleChart {
+.bubbleChart {
     width: 500px;
-       min-width: 200px;
-       max-width: 700px;
-       height: 500px;
-       /*margin: 0 auto;*/
-       float: right;
-       /*position: relative;*/
-       margin-right: 20px;
+    height: 500px;
+    /*margin: 0 auto;*/
+    float: right;
+    /*position: relative;*/
+    margin-right: 20px;
 
-     }
-     .bubbleChart svg{
-       /*background: #000000;*/
-       padding: 0;
-     }
+ }
+ .bubbleChart svg{
+   /*background: #000000;*/
+   padding: 0;
+ }
+
+ .userView {
+     height: 160px;
+ }
+
+ #usericon {
+     margin-left: 35%;
+ }
+
+ #name {
+     font-size: 45px;
+ }
+
+@media screen and (max-width: 1175px) {
+    #map {
+        width: 450px;
+        height: 450px;
+    }
+
+    .bubbleChart {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1080px) { 
+    #map {
+        width: 350px;
+        height: 350px;
+    }
+
+    .bubbleChart {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    #map {
+        width: 310px;
+        height: 310px;
+        margin: 5%;
+    }
+
+    .bubbleChart {
+        width: 310px;
+        height: 310px;
+        margin: 10px;
+    }
+
+    .cityPar {
+        padding: 1% 5%;
+    }
+}
+
+
