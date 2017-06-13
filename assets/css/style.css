@@ -76,8 +76,12 @@ data-error {
 
 #nav {
     height: auto;
+    background-color: #237e88 !important;
 }
-
+.page-footer{
+    color: #fff;
+    background-color: #237e88 !important;
+}
 #backbtn {
     border-radius: 0%;
     width: 100px;
@@ -164,6 +168,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url('assets/img/connect.png');
 }
 
 main {
