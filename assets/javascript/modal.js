@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     var long;
     var lat;
-    
+
     //
     // calling google.maps API
     //    
@@ -53,16 +53,29 @@ $(document).ready(function(){
 
 	$(".charts").on('click', ".cityBtn", function () {
         
+        citiesClicked++;
+
         var nameCity = $(this).data('name');
         
         var fullname = $(this).data('full');
-        
+
         if((citiesSearched.indexOf(fullname)) === -1){
            
-            citiesSearched.push(fullname)}
-            
-            console.log(citiesSearched)
+            citiesSearched.push(fullname)
 
+            console.log(citiesSearched)
+           
+            var citiesSearchedString = JSON.stringify(citiesSearched);
+            
+            var citiesSearchedKey = "citiesSearchedKey" + userName;
+        
+            console.log(citiesSearchedKey);
+
+            localStorage.setItem(citiesSearchedKey, citiesSearchedString);
+        }   
+
+            
+           
         lat = $(this).data('lat');
 
         long = $(this).data('lon');
