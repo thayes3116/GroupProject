@@ -171,6 +171,7 @@ main {
     margin-top: 20px;
 }
 
+/* D3 GRAPHIC */
 .graphModal {
     position: relative;
     float: right;
@@ -179,15 +180,12 @@ main {
 .bubbleChart {
     width: 500px;
     height: 500px;
-    /*margin: 0 auto;*/
     float: right;
-    /*position: relative;*/
     margin-right: 20px;
 
  }
  .bubbleChart svg{
-   /*background: #000000;*/
-   padding: 0;
+       padding: 0;
  }
 
  .userView {
@@ -242,6 +240,27 @@ main {
     .cityPar {
         padding: 1% 5%;
     }
+}
+/* FINISH D3 GRAPHIC */
+
+/* SIDEBAR */
+#nameSidebar {
+    font-size: 40px;
+}
+
+.side-nav {
+    width: auto;
+    color: #26a69a;
+}
+
+#resetHistory {
+    position: fixed;
+    bottom: 60px;
+    margin-left: 35px;
+}
+
+#changeColor {
+    color: #26a69a;
 }
 
 
