@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-    var long;
-    var lat;
-
     //
     // calling google.maps API
     //    
@@ -52,26 +49,22 @@ $(document).ready(function(){
     // 
 
 	$(".charts").on('click', ".cityBtn", function () {
-        
-        citiesClicked++;
 
         var nameCity = $(this).data('name');
         
         var fullname = $(this).data('full');
 
+        wikiName =$(this).data('full');
+
         if((citiesSearched.indexOf(fullname)) === -1){
            
             citiesSearched.push(fullname)
-
-            console.log(citiesSearched)
 
             favoriteListFire();
 
             var citiesSearchedString = JSON.stringify(citiesSearched);
             
             var citiesSearchedKey = "citiesSearchedKey" + userName;
-        
-            console.log(citiesSearchedKey);
 
             localStorage.setItem(citiesSearchedKey, citiesSearchedString);
         }   
@@ -86,7 +79,9 @@ $(document).ready(function(){
 
         $("#mainBox2").hide();
 
-         initMap();
+        initMap();
+
+        showWikiPara()
 
         $('.bubbleChart').empty();
 
@@ -97,6 +92,7 @@ $(document).ready(function(){
                 if (nameCity === cities[i].city) {
      
                     showGraph(i);
+
                 }
             }
 	});

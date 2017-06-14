@@ -1,332 +1,324 @@
    var attributesChosen = [],
 
-        citybutton,
+       citybutton,
 
-        citylat,
+       pastUsersString,
 
-        citylong,
+       citiesSearched,
 
-        pastUsersString,
+       userName,
 
-        citytemp,
+       APIKeyWeather = "166a433c57516f51dfab1f7edaed8413",
 
-        citiesClicked = 0,
+       categories = ['Housing', 'Cost of Living', 'Education', 'Commute', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'],
 
-        citiesSearched,
+       cityName,
 
-        userName,
+       categoriesClicked = 0,
 
-        APIKey = "166a433c57516f51dfab1f7edaed8413",
+       map,
+    
+       long,
+    
+       lat,
 
-        categories = ['Housing', 'Cost of Living', 'Education', 'Commute', 'Safety', "Outdoors", "Leisure & Culture", "Taxation", 'Economy', 'Environmental Quality'],
+       wikiPara,
 
-	    cityName,
+       wikiName;
+   //
+   //Function to add search history to sidebar
+   //
 
-        categoriesClicked = 0,
- 
-        map;
+   function favoriteListFire() {
+       $("#searchHistoryDiv").empty();
+       for (var j = 0; j < citiesSearched.length; j++) {
+           $("#searchHistoryDiv").append("<ul id='favoritelist'>")
+           var listItems = $("<li>").text(citiesSearched[j]);
+           $("#favoritelist").append(listItems)
+       }
+   }
 
-        //
-        //Function to add search history to sidebar
-        //
+   $(document).ready(function() {
 
-        function favoriteListFire(){
-            $("#searchHistoryDiv").empty();
-            for(var j = 0 ; j < citiesSearched.length ; j++){
-                $("#searchHistoryDiv").append("<ul id='favoritelist'>")
-                var listItems = $("<li>").text(citiesSearched[j]);
-                $("#favoritelist").append(listItems)
-            }
-        }
+       $("#sidebar").hide();
 
-    $(document).ready(function() {
+       // Initialize collapse button
+       $(".button-collapse").sideNav();
 
-        $("#sidebar").hide();
+       $("#resetHistory").on('click', function() {
 
-        // Initialize collapse button
-        $(".button-collapse").sideNav();
-        
-        $("#resetHistory").on('click', function(){
-            
-            console.log("click")
+           console.log("click")
 
-            citiesSearched = [];
+           citiesSearched = [];
 
-            //var citiesSearchedString = JSON.stringify(citiesSearched);
-            
-            var citiesSearchedKey = "citiesSearchedKey" + userName;
+           //var citiesSearchedString = JSON.stringify(citiesSearched);
 
-            localStorage.removeItem(citiesSearchedKey);
+           var citiesSearchedKey = "citiesSearchedKey" + userName;
 
-            favoriteListFire();
-        })
-        //
-        //Check local storage for past users
-        //
+           localStorage.removeItem(citiesSearchedKey);
 
-        if (window.localStorage.getItem('pastUsers')) {
+           favoriteListFire();
+       })
+       //
+       //Check local storage for past users
+       //
 
-            var pastUsersString = localStorage.getItem('pastUsers');
+       if (window.localStorage.getItem('pastUsers')) {
 
-            var pastUsers = JSON.parse(pastUsersString);
+           var pastUsersString = localStorage.getItem('pastUsers');
 
-            userNumber = pastUsers.length
+           var pastUsers = JSON.parse(pastUsersString);
 
-        }else{
+           userNumber = pastUsers.length
 
-            pastUsers = [];
+       } else {
 
-        }
-        
-        //
-        // slider pics
-        //
-        var slideIndex = 0;
-        showSlides();
+           pastUsers = [];
 
-        function showSlides() {
-            var i;
-            var slides = $(".mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex> slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
+       }
 
+       //
+       // slider pics
+       //
+       var slideIndex = 0;
+       showSlides();
 
-        $("#cityListPara").hide();
+       function showSlides() {
+           var i;
+           var slides = $(".mySlides");
+           for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";
+           }
+           slideIndex++;
+           if (slideIndex > slides.length) {
+               slideIndex = 1
+           }
+           slides[slideIndex - 1].style.display = "block";
+           setTimeout(showSlides, 3000);
+       }
 
-        // 
-        //Capture user's Name on submit button click
-        //Hide name input prompt
-        //Fire questionnaire function
-        //
-        $('#userNameSubmit').on('click', function(event) {
 
-            event.preventDefault();
+       $("#cityListPara").hide();
 
-            var unverifiedUserInput = $('#userNameInput').val().trim();
+       // 
+       //Capture user's Name on submit button click
+       //Hide name input prompt
+       //Fire questionnaire function
+       //
+       $('#userNameSubmit').on('click', function(event) {
 
-            if (unverifiedUserInput == "" || !/^[a-zA-Z0-9-]+$/i.test(unverifiedUserInput)) {
+           event.preventDefault();
 
-                return false;
+           var unverifiedUserInput = $('#userNameInput').val().trim();
 
-            } else {
-               
-                userName = unverifiedUserInput;
+           if (unverifiedUserInput == "" || !/^[a-zA-Z0-9-]+$/i.test(unverifiedUserInput)) {
 
-                $("#nameSidebar").html(userName);
+               return false;
 
-                $("#sidebar").show();
+           } else {
 
-                $('#initialPrompt').hide();
+               userName = unverifiedUserInput;
 
-                fireQuestionnaire();
+               $("#nameSidebar").html(userName);
 
-                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+               $("#sidebar").show();
 
-                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+               $('#initialPrompt').hide();
 
-                    citiesSearched = JSON.parse(citiesSearchedString);
+               fireQuestionnaire();
 
-                }else{
+               if (window.localStorage.getItem("citiesSearchedKey" + userName)) {
 
-                     citiesSearched = [];
+                   var citiesSearchedString = localStorage.getItem("citiesSearchedKey" + userName);
 
-                }
-            }
+                   citiesSearched = JSON.parse(citiesSearchedString);
 
-            //Storage userName in local storage
+               } else {
 
-            if ((pastUsers.indexOf(userName)) === -1){
+                   citiesSearched = [];
 
-                pastUsers.push(userName);
+               }
+           }
 
-                var pastUsersString = JSON.stringify(pastUsers)
+           //Storage userName in local storage
 
-                localStorage.setItem('pastUsers',pastUsersString)
+           if ((pastUsers.indexOf(userName)) === -1) {
 
-                $(".name").html("Hi, " + userName);
+               pastUsers.push(userName);
 
-            }else{
+               var pastUsersString = JSON.stringify(pastUsers)
 
-                //If user is returning get previously searched cities
+               localStorage.setItem('pastUsers', pastUsersString)
 
-                $(".name").html("Welcome back, " + userName + "! ");
+               $(".name").html("Hi, " + userName);
 
-                favoriteListFire();
-                
-                if (window.localStorage.getItem("citiesSearchedKey"+userName)) {
+           } else {
 
-                    var citiesSearchedString = localStorage.getItem("citiesSearchedKey"+userName);
+               //If user is returning get previously searched cities
 
-                    
-                } 
-            }
+               $(".name").html("Welcome back, " + userName + "! ");
 
-        });
+               favoriteListFire();
 
-        //
-        //Back BTN to attr chose
-        //
-        $('#backAttr').on('click', function () {
+               if (window.localStorage.getItem("citiesSearchedKey" + userName)) {
 
-            var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+                   var citiesSearchedString = localStorage.getItem("citiesSearchedKey" + userName);
 
-            $('#mainbox3').hide();
 
-            $('#first').empty();
+               }
+           }
 
-            $('#second').empty();
+       });
 
-            $('#third').empty();
+       //
+       //Back BTN to attr chose
+       //
+       $('#backAttr').on('click', function() {
 
-            $('#mainBox2').show();
+           var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
-            $('.questions').show();
+           $('#mainbox3').hide();
 
-            $('#questionnaire').empty();
+           $('#first').empty();
 
-            $('.questions').css('display', 'block');
+           $('#second').empty();
 
-            categoriesClicked = 0;
+           $('#third').empty();
 
-            attributesChosen = [];
+           $('#mainBox2').show();
 
-            fireQuestionnaire();
+           $('.questions').show();
 
-        });
+           $('#questionnaire').empty();
 
-        //
-        //Function to populate questionnaire
-        //
-        function fireQuestionnaire() {
+           $('.questions').css('display', 'block');
 
-            var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
+           categoriesClicked = 0;
 
-            $('#questionDiv').html(question);
+           attributesChosen = [];
 
-            for (var i = 0; i < categories.length; i++) {
+           fireQuestionnaire();
 
-                var categoryButton = $('<button>');
+       });
 
-                categoryButton.addClass('attributes waves-effect waves-light btn attBtn');
+       //
+       //Function to populate questionnaire
+       //
+       function fireQuestionnaire() {
 
-                categoryButton.attr('data-category', categories[i]);
+           var question = '<h3 class="header col s12 light">Choose three attributes most important in a city to you:</h3   >';
 
-                categoryButton.text(categories[i]);
+           $('#questionDiv').html(question);
 
-                $('#questionnaire').append(categoryButton);
-            }
-        }
+           for (var i = 0; i < categories.length; i++) {
 
-        //
-        //Capture categories selected by user
-        //Fire show city functions
-        //
-        $('#questionnaire').on('click', '.attributes', function () {
+               var categoryButton = $('<button>');
 
-            var dataName = $(this).data('category');
+               categoryButton.addClass('attributes waves-effect waves-light btn attBtn');
 
-            attributesChosen.push(dataName);
+               categoryButton.attr('data-category', categories[i]);
 
-            categoriesClicked++;
+               categoryButton.text(categories[i]);
 
-            $(this).hide();
+               $('#questionnaire').append(categoryButton);
+           }
+       }
 
-            if (categoriesClicked === 3) {
+       //
+       //Capture categories selected by user
+       //Fire show city functions
+       //
+       $('#questionnaire').on('click', '.attributes', function() {
+
+           var dataName = $(this).data('category');
+
+           attributesChosen.push(dataName);
+
+           categoriesClicked++;
+
+           $(this).hide();
+
+           if (categoriesClicked === 3) {
 
                $('.questions').hide();
 
-                showCity0List();
-                showCity1List();
-                showCity2List();
+               showCity0List();
+               showCity1List();
+               showCity2List();
 
-                $('#backAttr').css('display', 'block');
+               $('#backAttr').css('display', 'block');
 
-                $('#mainbox3').show();
+               $('#mainbox3').show();
 
-            }
-        });
+           }
+       });
 
-
-
-        //
-        //Entering city names into teleport api to get population
-        //
-        // for (var i = 0; i < cities.length; i++) {
+       //
+       //Entering city names into teleport api to get population
+       //
+       // for (var i = 0; i < cities.length; i++) {
 
 
-        //     var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/"
+       //     var queryURL1 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/"
 
 
-        //     $.ajax({
-        //         url: queryURL1,
-        //         method: "GET"
-        //     }).done(function(response) {
-            
-        //         var link = response._links;
+       //     $.ajax({
+       //         url: queryURL1,
+       //         method: "GET"
+       //     }).done(function(response) {
 
-        //         var geoID = response["_links"]["ua:identifying-city"]["href"];
- 
+       //         var link = response._links;
 
-        //     $.ajax({
-        //         url: geoID,
-        //         method: "GET"
-        //     }).done(function(pop) {
-                
-        //         var cityPop = pop.population;
-                
-        //         cityName = pop.full_name;
+       //         var geoID = response["_links"]["ua:identifying-city"]["href"];
 
 
-        //         //showScores(response);
-        //     })
-        // })
+       //     $.ajax({
+       //         url: geoID,
+       //         method: "GET"
+       //     }).done(function(pop) {
+
+       //         var cityPop = pop.population;
+
+       //         cityName = pop.full_name;
 
 
-        //    
-        // API to get city scores
-        // 
-            // var queryURL2 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
-
-            // $.ajax({
-            //     url: queryURL2,
-            //     method: "GET"
-            // }).done(function(response) {
-
-            //     //showScores(response);
+       //         //showScores(response);
+       //     })
+       // })
 
 
-            // })
-        // }
-});
+       //    
+       // API to get city scores
+       // 
+       // var queryURL2 = "https://api.teleport.org/api/urban_areas/slug:" + cities[i].city + "/scores/";
+
+       // $.ajax({
+       //     url: queryURL2,
+       //     method: "GET"
+       // }).done(function(response) {
+
+       //     //showScores(response);
 
 
-        // 
-        // end for loop
-        // 
-
-        //
-        //Function to produce city scores as 1-5
-        //Have to hard code. BOB SAID SO
-        //
-
-        // function showScores(response) {
-
-        // 	$.each(response.categories, function(key, value) {
-        // 		var out_of_5 = value.score_out_of_10 / 2;
-        // 		var roundScore = Math.round(out_of_5);
-        // 		valueName = value.name;
-        // 	})
-        // } 
-
-   
+       // })
+       // }
+   });
 
 
+   // 
+   // end for loop
+   // 
 
+   //
+   //Function to produce city scores as 1-5
+   //Had to hard code. BOB SAID SO
+   //
 
+   // function showScores(response) {
 
+   //   $.each(response.categories, function(key, value) {
+   //       var out_of_5 = value.score_out_of_10 / 2;
+   //       var roundScore = Math.round(out_of_5);
+   //       valueName = value.name;
+   //   })
+   // }

@@ -30,7 +30,7 @@ img {
     from {opacity: .4}
     to {opacity: 1}
 }
-/* slider end */
+/* slideshow end */
 
 .submitImg {
     width: 100%;
@@ -129,10 +129,6 @@ data-error {
 #mainBox2 {
     margin-top: 20px;
     margin-bottom: 80px;
-}
-
-.btn-floating.btn-large {
-    /*float: right;*/
 }
 
 .cityName {
