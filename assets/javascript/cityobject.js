@@ -12,6 +12,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors'],
+			'wikiTitle': 'Austin%2C_Texas',
 			'title' : 'Austin'
 		},
 
@@ -28,6 +29,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors'],
+			'wikiTitle' : 'Denver',
 			'title' : 'Denver'
 		},
 
@@ -44,7 +46,9 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [5, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle': 'Washington,_D.C.',
 			'title' : 'Washington D.C. Overview'
+
 		},
 
 		{
@@ -60,6 +64,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors'],
+			'wikiTitle': 'Seattle',
 			'title' : 'Seattle'
 		},
 
@@ -76,6 +81,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors'],
+			'wikiTitle': 'Raleigh,_North_Carolina',
 			'title' : 'Raleigh'
 		},
 
@@ -92,6 +98,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle' : 'Boston',
 			'title' : 'Boston'
 		},
 
@@ -108,6 +115,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors'],
+			'wikiTitle' : 'Des_Moines,_Iowa',
 			'title' : 'Des Moines (panorama)'
 		},
 
@@ -124,6 +132,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle' : 'Salt_Lake_City',
 			'title' : 'Salt Lake City'
 		},
 
@@ -140,6 +149,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors'],
+			'wikiTitle': 'Colorado_Springs,_Colorado',
 			'title' : 'Colorado Springs Sunrise'
 		},
 
@@ -156,6 +166,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle': 'Boise,_Idaho',
 			'title' : 'Boise'
 		},
 
@@ -172,6 +183,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [1, 'Outdoors'],
+			'wikiTitle' : 'Nashville,_Tennessee',
 			'title' : 'Nashville'
 		},
 
@@ -188,6 +200,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [1, 'Outdoors'],
+			'wikiTitle' : 'Charlotte,_North_Carolina',
 			'title' : 'Charlotte'
 		},
 
@@ -204,6 +217,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors'],
+			'wikiTitle' : 'Dallas',
 			'title' : 'Dallas'
 		},
 
@@ -220,6 +234,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [5, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors'],
+			'wikiTitle' : 'San_Jose,_California',
 			'title' : 'San Jose'
 		},
 
@@ -236,6 +251,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [2, 'Leisure & Culture'],
 			'Outdoors'  :  [2, 'Outdoors'],
+			'wikiTitle' : 'Madison,_Wisconsin',
 			'title' : 'Madison'
 		},
 
@@ -252,6 +268,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [4, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle' : 'Houston',
 			'title' : 'Houston'
 		},
 
@@ -268,6 +285,7 @@
 			'Taxation'  :  [3, 'Taxation'],
 			'Leisure & Culture' :  [3, 'Leisure & Culture'],
 			'Outdoors'  :  [3, 'Outdoors'],
+			'wikiTitle' : 'Minneapolis',
 			'title' : 'Westbound St. Louis Park'
 		}		
 	];

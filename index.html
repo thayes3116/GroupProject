@@ -1,219 +1,222 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    
+
     <title>Money Makers</title>
-    <!-- Compiled and minified CSS -->
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <!--Chart Font-->
+    <!--Google Maps Chart Font CSS-->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-    <!--Import Google Icon Font-->
+    <!--Google Maps Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- OUR CSS -->
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
-    <!-- OUR JAVASCRIPT -->
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- JQuery Source -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--Import jQuery before materialize.js-->
+    <!--Our main JS file-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script type="text/javascript" src="assets/javascript/flickr.js"></script>
-    <script type="text/javascript" src="assets/javascript/cityobject.js"></script>
+    <!-- Hard Coded City Object JS -->
+    <script type="text/javascript" src="assets/javascript/cityObject.js"></script>
+    <!-- City List JS -->
     <script type="text/javascript" src="assets/javascript/cityLists.js"></script>
-    <script type="text/javascript" src="assets/javascript/modal.js"></script>
+    <!-- City Info JS -->
+    <script type="text/javascript" src="assets/javascript/cityInfo.js"></script>
+    <!-- Point of Interest Api JS -->
+    <script type="text/javascript" src="assets/javascript/poi.js"></script>
+    <!-- Wikipedia Api JS -->
+    <script type="text/javascript" src="assets/javascript/wiki.js"></script>
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTQnKJyDbVooBY6udREefgx1pvpiyr2Z8&"></script>
-
-    <script type="text/javascript" src="assets/javascript/poi.js"></script>
-    <script type="text/javascript" src="assets/javascript/wiki.js"></script>
-
-    
-    
-    
     <!--d3 scripts-->
     <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-  <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-  <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <script type="text/javascript" src="assets/javascript/d3graph.js"></script>
+    <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
 </head>
 <!-- MAIN -->
-<body>
-<!-- NAV BAR -->
-<header>
-<nav>
 
-    <div class="nav-wrapper #ffe0b2 orange lighten-4" id="nav">
-        <div class="container" id = "maincontainer">
-            <div class="row">
-                <div class="col s12">
-                   <h3 class="name">Welcome</h3>
+<body>
+    <!-- NAV BAR -->
+    <header>
+        <nav>
+            <div class="nav-wrapper #ffe0b2 orange lighten-4" id="nav">
+                <div class="container" id="maincontainer">
+                    <div class="row">
+                        <div class="col s12">
+                            <h3 class="name">Welcome</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</nav>
-</header>
+        </nav>
+    </header>
 
-<div class="section no-pad-bot" id="index-banner">
+    <div class="section no-pad-bot" id="index-banner">
     </div>
 
-<!-- MAIN -->
-<main>
+    <!-- MAIN -->
+    <main>
 
-    <!--FAVORITE CITIES-->
-    <div class="container" id="sidebar">
-        <div class="row">
-            <div class="col s12">
-                <ul id="slide-out" class="side-nav">
-                    <li><div class="userView">
-                        <div class="background">
-                            <img src="assets/img/side.jpg">
-                        </div>
-                        <div>
-                            <img id="usericon" class="circle" src="assets/img/usericon.png">
-                        </div>
-                        <div class="center-align">
-                            <span id="nameSidebar" class="white-text"></span>
-                        </div>
-                        </div>
-                    </li>
+        <!--FAVORITE CITIES-->
+        <div class="container" id="sidebar">
+            <div class="row">
+                <div class="col s12">
+                    <ul id="slide-out" class="side-nav">
+                        <li>
+                            <div class="userView">
+                                <div class="background">
+                                    <img src="assets/img/side.jpg">
+                                </div>
+                                <div>
+                                    <img id="usericon" class="circle" src="assets/img/usericon.png">
+                                </div>
+                                <div class="center-align">
+                                    <span id="nameSidebar" class="white-text"></span>
+                                </div>
+                            </div>
+                        </li>
                         <li>
                             <a><i class="material-icons">grade</i>Your Favorites Cities</a>
                         </li>
 
-                        <li>    
+                        <li>
                             <div class="divider"></div>
                         </li>
-                    <div id="searchHistoryDiv" class="center-align"></div>
-                    <button id="resetHistory" class="waves-effect waves-light btn-large">Reset History</button>
-                </ul>
-                <a id="changeColor" data-activates="slide-out" class="button-collapse">
+                        <div id="searchHistoryDiv" class="center-align"></div>
+                        <button id="resetHistory" class="waves-effect waves-light btn-large">Reset History</button>
+                    </ul>
+                    <a id="changeColor" data-activates="slide-out" class="button-collapse">
                     <i class="small material-icons">reorder</i></a>
-            
+
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- BOX CITY PROPERTIES -->
-    <div id="mainBox1" class="container text-alling center green lighten-5 z-depth-5">
-        <div class="row">
-            <div class="modal-content">
+
+        <!-- BOX CITY PROPERTIES -->
+        <div id="mainBox1" class="container text-alling center green lighten-5 z-depth-5">
+            <div class="row">
+                <div class="modal-content">
                     <div class="cityName">
                     </div>
                     <div id="map">
                     </div>
                     <div class="bubbleChart">
                     </div>
-                <div class="col s12">
-                    <h5 class="cityTit"> Placeholder Title</h5>
-                    <p class="cityPar">The most southerly of the capitals of the contiguous forty-eight states, Austin is located in Central Texas, along the Balcones Escarpment and Interstate 35, 150 miles (240 kilometres) northwest of Houston. It is also 160 miles (260 kilometres) south of Dallas and 75 miles (121 kilometres) north of San Antonio. Its elevation varies from 425 feet (130 m) to approximately 1,000 feet (305 m) above sea level.[50] In 2010, the city occupied a total area of 271.8 square miles (704 km2).[51] Approximately 6.9 square miles (18 km2) of this area is water.[52]</p>
-                </div>
-                <a id="backbtn" class="btn-floating waves-effect waves-light btn-large">Back</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- QUESTIONS USER CITIES -->
-<div class="container text-alling center green lighten-5 z-depth-5" id="mainBox2">
-    <div class="row">
-        <div class="col s12 questions">
-            <div id="questionDiv">
-            </div>
-            <div id="questionnaire">
-            </div>
-        </div>
-    </div>
-
-    <!-- INITIAL PAGE WELCOME -->
-    <div class="row">
-        <div class="col s12" id="initialPrompt">
-            <h2 class="header col s12 light move">Moving can be difficult. Let's decide where to live together!</h2>
-            <h2 class="header col s12 light move">First, enter your name:</h2>
-            <!-- SLIDESHOW -->
-            <div class="col s12">
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <img src="assets/img/img2.jpg" alt="city picture">
+                    <div class="col s12">
+                        <h5 class="cityTit"> About Your City</h5>
+                        <p class="cityPara">The most southerly of the capitals of the contiguous forty-eight states, Austin is located in Central Texas, along the Balcones Escarpment and Interstate 35, 150 miles (240 kilometres) northwest of Houston. It is also 160 miles (260 kilometres) south of Dallas and 75 miles (121 kilometres) north of San Antonio. Its elevation varies from 425 feet (130 m) to approximately 1,000 feet (305 m) above sea level.[50] In 2010, the city occupied a total area of 271.8 square miles (704 km2).[51] Approximately 6.9 square miles (18 km2) of this area is water.[52]</p>
                     </div>
-                    <div class="mySlides fade">
-                        <img src="assets/img/img3.jpg" alt="city picture">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="assets/img/img1.jpg" alt="city picture">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="assets/img/img4.jpg" alt="city picture">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="assets/img/img5.jpg" alt="city picture">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="assets/img/img6.jpg" alt="city picture">
-                    </div>
+                    <a id="backbtn" class="btn-floating waves-effect waves-light btn-large">Back</a>
                 </div>
             </div>
+        </div>
+
+        <!-- QUESTIONS USER CITIES -->
+        <div class="container text-alling center green lighten-5 z-depth-5" id="mainBox2">
             <div class="row">
-                <div class="col s4">
+                <div class="col s12 questions">
+                    <div id="questionDiv">
+                    </div>
+                    <div id="questionnaire">
+                    </div>
                 </div>
-                <div class="input-field col s4">
-                    <form>
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="userNameInput" type="text" class="validate">
-                        <label for="userNameInput">First Name
+            </div>
+
+            <!-- INITIAL PAGE WELCOME -->
+            <div class="row">
+                <div class="col s12" id="initialPrompt">
+                    <h2 class="header col s12 light move">Moving can be difficult. Let's decide where to live together!</h2>
+                    <h2 class="header col s12 light move">First, enter your name:</h2>
+                    <!-- SLIDESHOW -->
+                    <div class="col s12">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="assets/img/img2.jpg" alt="city picture">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/img/img3.jpg" alt="city picture">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/img/img1.jpg" alt="city picture">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/img/img4.jpg" alt="city picture">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/img/img5.jpg" alt="city picture">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/img/img6.jpg" alt="city picture">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                        </div>
+                        <div class="input-field col s4">
+                            <form>
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="userNameInput" type="text" class="validate">
+                                <label for="userNameInput">First Name
                         </label>
-                        <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit">Submit
+                                <button class="btn waves-effect waves-light submit" id="userNameSubmit" type="submit">Submit
                         <i class="material-icons right">send</i>
                         </button>
-                    </form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOWS BTN CITIES RESULTS -->
+                <div class="row">
+                    <div class="col s12" id="mainbox3">
+
+                        <div id="cityListParaDiv"></div>
+                        <h2 id="firstAttribute" class=attribute></h2>
+                        <span class="charts" id="first">
+            </span>
+                        <h2 id="secondAttribute" class=attribute></h2>
+                        <span class="charts" id="second">
+            </span>
+                        <h2 id="thirdAttribute" class=attribute></h2>
+                        <span class="charts" id="third">
+            </span>
+                        <span id="image"></span>
+                        <a id="backAttr" class="waves-effect waves-light btn-large">Back</a>
+                    </div>
+                </div>
+                <!--Show Returning user's previous searches-->
+                <div class="row">
+                    <div class="col s12" id="mainbox4">
+                        <div id="SearchHistory">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- SHOWS BTN CITIES RESULTS -->
-    <div class="row">
-        <div class="col s12" id="mainbox3">
-            
-            <div id = "cityListParaDiv"></div>
-            <h2 id="firstAttribute" class=attribute></h2>
-            <span class="charts" id="first">
-            </span>
-            <h2 id="secondAttribute" class=attribute></h2>
-            <span class="charts" id="second">
-            </span>
-            <h2 id="thirdAttribute" class=attribute></h2>
-            <span class="charts" id="third">
-            </span>
-            <span id="image"></span>
-            <a id="backAttr" class="waves-effect waves-light btn-large">Back</a>
-        </div>
-    </div>
-        <!--Show Returning user's previous searches-->
-    <div class="row">
-        <div class="col s12" id="mainbox4">
-            <div id = "SearchHistory">
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</main>
-
-<!-- FOOTER -->
-<footer class="page-footer #237e88">
-    <div class="container text-allign center">
+    <!-- FOOTER -->
+    <footer class="page-footer #237e88">
+        <div class="container text-allign center">
             &copy; We Want Your Money - 2017 &copy; Copyright
-    </div>
-</footer>
+        </div>
+    </footer>
 </body>
+
 </html>

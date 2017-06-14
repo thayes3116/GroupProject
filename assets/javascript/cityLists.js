@@ -8,10 +8,9 @@ function showCity0List() {
 
         if (cities[i][attributesChosen[0]][0] >= 3) {
 
-            var queryURL3 = "https://cors-bcs.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" +
-                "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
-            // console.log(cities[i].city)
-            // console.log(queryURL3);
+            var queryURL3 = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?" +
+                "q=" + cities[i].city + "&units=imperial&appid=" + APIKeyWeather;
+
             citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
                 .attr("data-full", cities[i].fullName)
                 .attr("data-name", cities[i].city)
@@ -22,18 +21,12 @@ function showCity0List() {
                 .attr("id", "city0" + i);;
 
             var queryURL9 = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrAPIKey + '&text=' + cities[i].city + '&sort=relevance&privacy_filter=1&per_page=1&page=1&format=json&nojsoncallback=1';
-            //var flickrImage = $('<img>')
-            //  .attr('data-full', cities[i].fullName)
-            // .attr("data-name", cities[i].city)
-            // .addClass('cityImage');
+
             $.ajax({
                 url: queryURL3,
                 method: "GET"
             }).done(function(response) {
-                    // console.log(response.name);
-                    // console.log(response.coord.lat);
-                    // console.log(response.coord.lon);
-                    // console.log("Temperature (F): " + response.main.temp);
+
                     for (var i = 0; i < cities.length; i++) {
                         if ($("#city0" + i).hasClass("cityBtn" + i)) {
                             var splitName = cities[i].city;
@@ -44,7 +37,6 @@ function showCity0List() {
                                 $("#city0" + i).attr('data-lat', response.coord.lat);
                                 $("#city0" + i).attr('data-lon', response.coord.lon);
 
-                                // console.log(splitName);
                                 citylat = $("#city0" + i).data("lat");
                                 citylong = $("#city0" + i).data("lon");
 
@@ -54,14 +46,9 @@ function showCity0List() {
 
                     }
                 });
-                // function flickrAPI(response) {
-                // for (var j = 0; j < cities.length; j++) {
-                // var cityFlickrSearch = cities[j].city;
-
-
 
                 $.getJSON(queryURL9, function(response) {
-                    console.log(response);
+
                     for (var i = 0; i < cities.length; i++) {
                         if ($("#city0" + i).hasClass("cityBtn" + i)) {
                             var splitName1 = cities[i].title;
@@ -72,61 +59,20 @@ function showCity0List() {
                         }
                     }
                 });
-                    /*$.each(response.photos.photo, function(i, item) {
-                var photoURL = "https://farm" + item.farm + ".staticflickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg" + "'>";
-                //$('.cityImage').attr("src=", photoURL);
-                $('#image').append("<img src='" + "https://farm" + response.photos.photo[j].farm + ".staticflickr.com/" + response.photos.photo[0].server + "/" + response.photos.photo[0].id + "_" + response.photos.photo[0].secret + "_m.jpg" + "'>");
-    
-            });*/
 
-
-
-                
-                //$('#image').append("<img src='" + "https://farm" + response.photos.photo[j].farm + ".staticflickr.com/" + response.photos.photo[0].server + "/" + response.photos.photo[0].id + "_" + response.photos.photo[0].secret + "_m.jpg" + "'>");
-
-                // };
-                /*$.each($('.cityBtn'), function (index, value) {
-                            console.log($(value).data('name'));
-                            var cityDataName = $(value).data('name');
-                            var cityImageData = $('.cityImage').data('name');
-                            if (cityDataName === cityImageData) {
-                                ($('.cityBtn').css('background-image', 'url('+ photoURL +')'));
-                            }
-                            });*/
-                //};
-
-                // console.log(response.name);
-                // if (splitName[0] === response.name) {
-                // console.log(splitName[0]);
-                // console.log(response.coord.lat);
-                // console.log(response.coord.lon);
-                // console.log("Temperature (F): " + response.main.temp);
-
-                // $(".cityBtn").append(response.main.temp)
-                // }
-
-
-           
-
-
-        $("#first").append(citybutton);
-
-
-        $('#firstAttribute').html(attributesChosen[0]);
+                $("#first").append(citybutton);
+                $('#firstAttribute').html(attributesChosen[0]);
+        }
     }
 }
-}
-
-
-
 
 function showCity1List() {
     for (var i = 0; i < cities.length; i++) {
 
         if (cities[i][attributesChosen[1]][0] >= 3) {
 
-            var queryURL4 = "https://cors-bcs.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" +
-                "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
+            var queryURL4 = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?" +
+                "q=" + cities[i].city + "&units=imperial&appid=" + APIKeyWeather;
 
             citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
                 .attr("data-full", cities[i].fullName)
@@ -145,10 +91,6 @@ function showCity1List() {
             })
 
             .done(function(response) {
-                // console.log(response.name);
-                // console.log(response.coord.lat);
-                // console.log(response.coord.lon);
-                // console.log("Temperature (F): " + response.main.temp);
 
                 for (var i = 0; i < cities.length; i++) {
                     if ($("#city1" + i).hasClass("cityBtn" + i)) {
@@ -160,21 +102,16 @@ function showCity1List() {
                             $("#city1" + i).attr('data-lat', response.coord.lat);
                             $("#city1" + i).attr('data-lon', response.coord.lon);
 
-                            // console.log(splitName);
                             citylat = $("#city1" + i).data("lat");
                             citylong = $("#city1" + i).data("lon");
-
-
                         }
 
                     }
 
                 }
             })
-
-
             $.getJSON(queryURL10, function(response) {
-                    console.log(response);
+                  
                     for (var i = 0; i < cities.length; i++) {
                         if ($("#city1" + i).hasClass("cityBtn" + i)) {
                             var splitName1 = cities[i].title;
@@ -197,8 +134,8 @@ function showCity2List() {
     for (var i = 0; i < cities.length; i++) {
         if (cities[i][attributesChosen[2]][0] >= 3) {
 
-            var queryURL5 = "https://cors-bcs.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" +
-                "q=" + cities[i].city + "&units=imperial&appid=" + APIKey;
+            var queryURL5 = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?" +
+                "q=" + cities[i].city + "&units=imperial&appid=" + APIKeyWeather;
 
             citybutton = $('<a class="modal-trigger waves-effect waves-light btn cityBtn" href="#modal1">')
                 .attr("data-full", cities[i].fullName)
@@ -216,10 +153,6 @@ function showCity2List() {
             })
 
             .done(function(response) {
-                // console.log(response.name);
-                // console.log(response.coord.lat);
-                // console.log(response.coord.lon);
-                // console.log("Temperature (F): " + response.main.temp);
 
                 for (var i = 0; i < cities.length; i++) {
                     if ($("#city2" + i).hasClass("cityBtn" + i)) {
@@ -231,7 +164,6 @@ function showCity2List() {
                             $("#city2" + i).attr('data-lat', response.coord.lat);
                             $("#city2" + i).attr('data-lon', response.coord.lon);
 
-                            // console.log(splitName);
                             citylat = $("#city2" + i).data("lat");
                             citylong = $("#city2" + i).data("lon");
 
@@ -243,7 +175,7 @@ function showCity2List() {
             })
 
             $.getJSON(queryURL11, function(response) {
-                    console.log(response);
+                   
                     for (var i = 0; i < cities.length; i++) {
                         if ($("#city2" + i).hasClass("cityBtn" + i)) {
                             var splitName1 = cities[i].title;
