@@ -234,7 +234,7 @@
 			'Taxation'  :  [2, 'Taxation'],
 			'Leisure & Culture' :  [5, 'Leisure & Culture'],
 			'Outdoors'  :  [4, 'Outdoors'],
-			'wikiTitle' : 'San_Jose,_California',
+			'wikiTitle' : 'San_Francisco',
 			'title' : 'San Jose'
 		},
 
