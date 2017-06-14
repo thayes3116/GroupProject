@@ -1,3 +1,6 @@
+//
+// Function to override alert button when center cirle is clicked
+// 
 d3.svg.BubbleChart.define("central-click", function (options) {
   var self = this;
 
@@ -40,42 +43,9 @@ d3.svg.BubbleChart.define("central-click", function (options) {
   })();
 });
   
-   //      $(".cityBtn").on("click", function() {
-   //          var bb = $(this).data('name');
-   //          // console.log(this);
-   //          console.log(bb);
-   //          // (showGraph()).hide();
-   //          for ( i = 0; i < cities.length; i++) {
- 
-   //              if (bb === cities[i].city) {
-   //                  console.log(cities[i].city);
-   //                  showGraph(i);
-   //              }
-   //          }
-
-      
-   // })  
-      // console.log(j);
-  // function City(city,housing,costOfLiving,commute,safety,education,environment){
-
-  //   this.city = city;
-  //   this.housing = housing;
-  //   this.costOfLiving = costOfLiving;
-  //   this.commute = commute;
-  //   this.safety = safety;
-  //   this.education = education;
-  //   this.environment = environment;
-
-  // }
-
-  // var austin = new City("austin", 2, 2, 2,);
-
-  // console.log(austin.housing);
-  // var thisCity = $("<h1>" + cities[0].city + "</h1>");
-      // $("text.centralClick").on("click",function(d){
-      //       d3.select(this).remove();
-      //   });
-  // $("body").prepend(thisCity)
+    // 
+    // d3 graph function 
+    // 
     function showGraph(add) {
       var bubbleChart = new d3.svg.BubbleChart({
         supportResponsive: true,
